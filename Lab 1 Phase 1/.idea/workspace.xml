@@ -29,12 +29,6 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="228" />
-    <option name="y" value="58" />
-    <option name="width" value="1318" />
-    <option name="height" value="858" />
-  </component>
   <component name="ProjectId" id="1Pg7MhrkbwRSEaJnrgmi9xWYx5V" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -92,6 +86,7 @@
       <workItem from="1534969145095" duration="3725000" />
       <workItem from="1535034838631" duration="316000" />
       <workItem from="1566283844549" duration="756000" />
+      <workItem from="1566451387790" duration="530000" />
     </task>
     <servers />
   </component>

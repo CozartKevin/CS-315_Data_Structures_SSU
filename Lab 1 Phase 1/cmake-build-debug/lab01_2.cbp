@@ -4,96 +4,102 @@
 	<Project>
 		<Option title="lab01_2"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug"/>
+				<Option working_dir="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lab01_2">
-				<Option output="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/lab01_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug"/>
+				<Option output="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/lab01_2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab01_2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 lab01_2"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lab01_2/fast">
-				<Option output="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/lab01_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug"/>
+				<Option output="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/lab01_2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab01_2/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 lab01_2/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Token.cpp">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.cpp">
 			<Option target="lab01_2"/>
 		</Unit>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Token.hpp">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp">
 			<Option target="lab01_2"/>
 		</Unit>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Tokenizer.cpp">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.cpp">
 			<Option target="lab01_2"/>
 		</Unit>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Tokenizer.hpp">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp">
 			<Option target="lab01_2"/>
 		</Unit>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/main.cpp">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/main.cpp">
 			<Option target="lab01_2"/>
 		</Unit>
-		<Unit filename="/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/CMakeLists.txt">
+		<Unit filename="G:/SSU Courses/CS-315/Lab 1 Phase 1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

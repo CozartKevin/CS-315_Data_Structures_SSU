@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Token.cpp" "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/lab01_2.dir/Token.cpp.o"
-  "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/Tokenizer.cpp" "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/lab01_2.dir/Tokenizer.cpp.o"
-  "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/main.cpp" "/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/lab01_2.dir/main.cpp.o"
+  "G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.cpp" "G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/lab01_2.dir/Token.cpp.obj"
+  "G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.cpp" "G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/lab01_2.dir/Tokenizer.cpp.obj"
+  "G:/SSU Courses/CS-315/Lab 1 Phase 1/main.cpp" "G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/lab01_2.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
