@@ -1,0 +1,3 @@
+/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kooshesh/Courses/2019fall/cs315/labs/lab01/cs315Lab01_phase1/cmake-build-debug/CMakeFiles/lab01_2.dir
