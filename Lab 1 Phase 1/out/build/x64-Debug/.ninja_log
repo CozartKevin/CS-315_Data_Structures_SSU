@@ -1,0 +1,5 @@
+# ninja log v5
+44	1097	588337298	CMakeFiles/lab01_2.dir/main.cpp.obj	d05bac08cd3869fc
+29	1106	588337298	CMakeFiles/lab01_2.dir/Tokenizer.cpp.obj	c9b6e4fa62bf21b
+1	1141	588337298	CMakeFiles/lab01_2.dir/Token.cpp.obj	7bd664ee635248ac
+1141	2077	588337299	lab01_2.exe	b474da46bdb6a98b
