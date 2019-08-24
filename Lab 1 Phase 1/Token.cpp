@@ -1,5 +1,6 @@
 //
 // Created by Ali A. Kooshesh on 8/21/18.
+// Leveraged By Kevin J. Cozart
 //
 
 #include <iostream>
@@ -36,18 +37,17 @@ void Token::makeCloseTag(std::string name) {
 
 }
 
+
 void Token::print() {
     std::cout << "[" << std::setw(2) << _lineNumber << ", " <<  std::setw(3) << _charPos << "] ";
 
     if(isOpenTag()) {
         std::cout << "<" << tagName() << std::endl;
-
     } else if(isCloseStandAloneTag()) {
         std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
         std::cout << "/>";
     }else if(isCloseAngleBracket()){
-        std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
-        std::cout << ">";
+        std::cout << ">" << std::endl;
     }
     // ...
 }

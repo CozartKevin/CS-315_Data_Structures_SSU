@@ -2,9 +2,12 @@
 #include <fstream>
 #include "Tokenizer.hpp"
 
-int main(int argc, char *argv[]) {
 
-    if( argc != 2 ) {  // we expect the name of the file as an argument to the program.
+int main(int argc, char *argv[])
+{
+
+    if (argc != 2)
+    {  // we expect the name of the file as an argument to the program.
         std::cout << "usage: " << argv[0] << " nameOfAnInputFile" << std::endl;
         exit(1);
     }
@@ -13,7 +16,8 @@ int main(int argc, char *argv[]) {
     // When using CLion, the input file has to be in cmake-build-debug directory.
     std::ifstream inputStream;
     inputStream.open(argv[1], std::ios::in);    // open for reading
-    if( ! inputStream.is_open()) {
+    if (!inputStream.is_open())
+    {
         std::cout << "Unable top open " << argv[1] << ". Terminating...";
         std::cout << strerror(errno) << std::endl;
         exit(2);
@@ -26,10 +30,11 @@ int main(int argc, char *argv[]) {
 
 
     Tokenizer tokenizer(argv[1]);   // use the first argument, which contains the name of the input file
-                                    // to create an instance of Tokenizer.
+    // to create an instance of Tokenizer.
     Token token = tokenizer.getToken();  // get the first token.
-    while(true){
-    token.print();
+    while (!token.endOfFile())
+    {
+        token.print();
         token = tokenizer.getToken();
 
     }
