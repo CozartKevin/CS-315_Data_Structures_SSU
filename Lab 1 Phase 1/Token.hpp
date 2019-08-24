@@ -31,6 +31,8 @@ private:
 
     std::string _tagName;
     int _lineNumber, _charPos;
+
+    void printLineandCharPos() const;
 };
 
 

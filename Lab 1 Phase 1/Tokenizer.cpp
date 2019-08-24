@@ -23,16 +23,22 @@ bool Tokenizer::charOfInterest(char c)
         return true;
     }
     else if (c == '>')
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    // return true;    you need to replace this with code that compares c with characters like '<', '>', etc.
+    {
+        return true;
+    }
+    else if (c == '/')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
+
+
+// return true;    you need to replace this with code that compares c with characters like '<', '>', etc.
+
 
 Token Tokenizer::getToken()
 {
@@ -51,7 +57,7 @@ Token Tokenizer::getToken()
         if (c == '\n')
         {
             lineNumber++;
-            charPosition = 1;
+            charPosition++;
         }
         else
         {
@@ -78,27 +84,35 @@ Token Tokenizer::getToken()
             inputStream.get(c);
             tagName = tagName + c;
 
-        } while (inputStream.peek() != '>');
+        } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
 
         token.makeOpenTag(tagName);
         charPosition += tagName.length() + 1;
         return token;
     }
+    else if (c == '>')
+    {
+
+
+        token.isCloseAngleBracket() = true;
+        charPosition++;
+        return token;
+    }
+    else if (c == '/' && inputStream.peek() == '>')
+    {
+
+        token.isCloseStandAloneTag() = true;
+        charPosition ++;
+
+        return token;
+    }
     else
     {
-        if (c == '>')
-        {
-
-
-            token.isCloseAngleBracket() = true;
-            charPosition++;
-            return token;
-        }
-        else
-        {
-
-        }
+        charPosition++;
+        return token;
     }
+
+
 }// ... more if-else statements here.
 
 

@@ -39,15 +39,22 @@ void Token::makeCloseTag(std::string name) {
 
 
 void Token::print() {
-    std::cout << "[" << std::setw(2) << _lineNumber << ", " <<  std::setw(3) << _charPos << "] ";
 
     if(isOpenTag()) {
+        printLineandCharPos();
         std::cout << "<" << tagName() << std::endl;
     } else if(isCloseStandAloneTag()) {
-        std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
-        std::cout << "/>";
+        printLineandCharPos();
+        //std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
+        std::cout << "/>" << std::endl;
     }else if(isCloseAngleBracket()){
+        printLineandCharPos();
         std::cout << ">" << std::endl;
+    }else{
+
     }
     // ...
 }
+
+void Token::printLineandCharPos() const
+{ std::cout << "[" << std::setw(2) << _lineNumber << ", " << std::setw(3) << _charPos << "] "; }
