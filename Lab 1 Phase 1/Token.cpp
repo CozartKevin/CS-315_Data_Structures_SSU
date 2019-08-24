@@ -27,11 +27,13 @@ std::string Token::tagName() { return _tagName; }
 void Token::makeOpenTag(std::string name) {
     _tagName = name;
     isOpenTag() = true;
+
 }
 
 void Token::makeCloseTag(std::string name) {
     _tagName = name;
     isCloseTag() = true;
+
 }
 
 void Token::print() {
@@ -39,9 +41,13 @@ void Token::print() {
 
     if(isOpenTag()) {
         std::cout << "<" << tagName() << std::endl;
+
     } else if(isCloseStandAloneTag()) {
         std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
         std::cout << "/>";
+    }else if(isCloseAngleBracket()){
+        std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
+        std::cout << ">";
     }
     // ...
 }
