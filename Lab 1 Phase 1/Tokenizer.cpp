@@ -14,7 +14,19 @@ Tokenizer::Tokenizer(std::string name): lineNumber{1},
 bool Tokenizer::charOfInterest(char c) {
     // is c the initial (or the sole) character of a token?
 
-    return true;   // you need to replace this with code that compares c with characters like '<', '>', etc.
+    if(c == '<')
+    {
+        std::cout << "inside interesting Char for <" << std::endl;
+        return true;
+    }else if (c == '>'){
+        std::cout << "inside interesting Char for >" << std::endl;
+        return true;
+    }
+    else
+        {
+        return false;
+        }
+   // return true;    you need to replace this with code that compares c with characters like '<', '>', etc.
 }
 
 Token Tokenizer::getToken() {
@@ -27,23 +39,48 @@ Token Tokenizer::getToken() {
     }
 
     while( inputStream.get(c) && ! charOfInterest(c) ) {
+        std::cout << "this is the value of c " + c << std::endl;
         // keep track of the line number and the character position
+        if(c == '\n')
+        {
+            lineNumber++;
+            charPosition = 1;
+        }
+        else
+        {
+            charPosition++;
+        }
     }
 
     Token token(lineNumber, charPosition);
+    std::cout << "Pre inputStream.eof" << std::endl;
     if( inputStream.eof() ) {
         token.endOfFile() = true;
         return token;
     }
+    std:: cout << "Post inputstream.eof" << std::endl;
 
     if( c == '<' ) { // A possible open tag.
         // suppose we have found an open em-tag.
-        token.makeOpenTag("em");
+//parse remaining variables within the tag until the >
+    //Then make token.makeOpenTag with full variable until >
+    //setup a stream into a string variable until we reach a >
+
+    std::string tagName;
+    while (inputStream.peek()!= '>'){
+        tagName = 
+    }
+       getline(inputStream, tagName, '>');
+       token.makeOpenTag(tagName);
+       charPosition += tagName.length() + 1;
         return token;
     } else if( c == '>' ) {
         token.isCloseAngleBracket() = true;
+        std::cout << "inside c==>" << std::endl;
         return token;
-    } // ... more if-else statements here.
+    } else {
+
+    }// ... more if-else statements here.
 
 
     return token;

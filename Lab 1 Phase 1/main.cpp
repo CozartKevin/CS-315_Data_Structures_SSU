@@ -24,11 +24,15 @@ int main(int argc, char *argv[]) {
     // Tokenizer 'inputStream' so that it just uses it.
     inputStream.close();
 
+
     Tokenizer tokenizer(argv[1]);   // use the first argument, which contains the name of the input file
                                     // to create an instance of Tokenizer.
     Token token = tokenizer.getToken();  // get the first token.
-
+    while(true){
     token.print();
+        token = tokenizer.getToken();
+
+    }
 
     /*
      * this is what the main function for your solution to phase 1 should look like.
