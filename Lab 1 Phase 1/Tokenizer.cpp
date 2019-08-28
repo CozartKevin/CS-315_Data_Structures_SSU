@@ -103,7 +103,7 @@ Token Tokenizer::getToken()
 
         token.isCloseStandAloneTag() = true;
         charPosition ++;
-
+        inputStream.get();
         return token;
     }
     else
