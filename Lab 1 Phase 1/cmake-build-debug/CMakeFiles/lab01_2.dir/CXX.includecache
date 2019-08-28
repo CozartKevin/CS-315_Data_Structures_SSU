@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp
+string
+-
+
+G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.cpp
+iostream
+-
+Tokenizer.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp
+
+G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp
+string
+-
+fstream
+-
+Token.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp
+
