@@ -1,3 +1,0 @@
-G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/lab01_2.dir
-G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/SSU Courses/CS-315/Lab 1 Phase 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
