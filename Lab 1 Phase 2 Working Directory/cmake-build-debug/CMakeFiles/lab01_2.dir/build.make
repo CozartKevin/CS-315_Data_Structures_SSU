@@ -44,10 +44,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "G:\SSU Courses\CS-315\Lab 1 Phase 1"
+CMAKE_SOURCE_DIR = "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug"
+CMAKE_BINARY_DIR = "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles\lab01_2.dir\depend.make
@@ -60,66 +60,86 @@ include CMakeFiles\lab01_2.dir\flags.make
 
 CMakeFiles\lab01_2.dir\main.cpp.obj: CMakeFiles\lab01_2.dir\flags.make
 CMakeFiles\lab01_2.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab01_2.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab01_2.dir/main.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\main.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 1\main.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\main.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\main.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab01_2.dir/main.cpp.i"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\lab01_2.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 1\main.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\main.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab01_2.dir/main.cpp.s"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\main.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 1\main.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\main.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\main.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Token.cpp.obj: CMakeFiles\lab01_2.dir\flags.make
 CMakeFiles\lab01_2.dir\Token.cpp.obj: ..\Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab01_2.dir/Token.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab01_2.dir/Token.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\Token.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 1\Token.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\Token.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Token.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab01_2.dir/Token.cpp.i"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\lab01_2.dir\Token.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 1\Token.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Token.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab01_2.dir/Token.cpp.s"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\Token.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 1\Token.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\Token.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Token.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Tokenizer.cpp.obj: CMakeFiles\lab01_2.dir\flags.make
 CMakeFiles\lab01_2.dir\Tokenizer.cpp.obj: ..\Tokenizer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab01_2.dir/Tokenizer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab01_2.dir/Tokenizer.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\Tokenizer.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 1\Tokenizer.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\Tokenizer.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Tokenizer.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Tokenizer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab01_2.dir/Tokenizer.cpp.i"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\lab01_2.dir\Tokenizer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 1\Tokenizer.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Tokenizer.cpp"
 <<
 
 CMakeFiles\lab01_2.dir\Tokenizer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab01_2.dir/Tokenizer.cpp.s"
 	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\Tokenizer.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 1\Tokenizer.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\Tokenizer.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\Tokenizer.cpp"
+<<
+
+CMakeFiles\lab01_2.dir\TagParser.cpp.obj: CMakeFiles\lab01_2.dir\flags.make
+CMakeFiles\lab01_2.dir\TagParser.cpp.obj: ..\TagParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lab01_2.dir/TagParser.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\lab01_2.dir\TagParser.cpp.obj /FdCMakeFiles\lab01_2.dir\ /FS -c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\TagParser.cpp"
+<<
+
+CMakeFiles\lab01_2.dir\TagParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab01_2.dir/TagParser.cpp.i"
+	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\lab01_2.dir\TagParser.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\TagParser.cpp"
+<<
+
+CMakeFiles\lab01_2.dir\TagParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab01_2.dir/TagParser.cpp.s"
+	C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\lab01_2.dir\TagParser.cpp.s /c "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\TagParser.cpp"
 <<
 
 # Object files for target lab01_2
 lab01_2_OBJECTS = \
 "CMakeFiles\lab01_2.dir\main.cpp.obj" \
 "CMakeFiles\lab01_2.dir\Token.cpp.obj" \
-"CMakeFiles\lab01_2.dir\Tokenizer.cpp.obj"
+"CMakeFiles\lab01_2.dir\Tokenizer.cpp.obj" \
+"CMakeFiles\lab01_2.dir\TagParser.cpp.obj"
 
 # External object files for target lab01_2
 lab01_2_EXTERNAL_OBJECTS =
@@ -127,11 +147,12 @@ lab01_2_EXTERNAL_OBJECTS =
 lab01_2.exe: CMakeFiles\lab01_2.dir\main.cpp.obj
 lab01_2.exe: CMakeFiles\lab01_2.dir\Token.cpp.obj
 lab01_2.exe: CMakeFiles\lab01_2.dir\Tokenizer.cpp.obj
+lab01_2.exe: CMakeFiles\lab01_2.dir\TagParser.cpp.obj
 lab01_2.exe: CMakeFiles\lab01_2.dir\build.make
 lab01_2.exe: CMakeFiles\lab01_2.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lab01_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable lab01_2.exe"
 	"C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\lab01_2.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2017\ENTERP~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\lab01_2.dir\objects1.rsp @<<
- /out:lab01_2.exe /implib:lab01_2.lib /pdb:"G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\lab01_2.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+ /out:lab01_2.exe /implib:lab01_2.lib /pdb:"G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\lab01_2.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -144,6 +165,6 @@ CMakeFiles\lab01_2.dir\clean:
 .PHONY : CMakeFiles\lab01_2.dir\clean
 
 CMakeFiles\lab01_2.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "G:\SSU Courses\CS-315\Lab 1 Phase 1" "G:\SSU Courses\CS-315\Lab 1 Phase 1" "G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug" "G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug" "G:\SSU Courses\CS-315\Lab 1 Phase 1\cmake-build-debug\CMakeFiles\lab01_2.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory" "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory" "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug" "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug" "G:\SSU Courses\CS-315\Lab 1 Phase 2 Working Directory\cmake-build-debug\CMakeFiles\lab01_2.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles\lab01_2.dir\depend
 

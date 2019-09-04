@@ -15,7 +15,7 @@ public:
     bool &isCloseTag();
 
     bool &isCloseAngleBracket();
-
+    bool &isOpenAngleBracket();
     bool &endOfFile();
     bool &isCloseStandAloneTag();
 
@@ -26,7 +26,7 @@ public:
     void print();
 
 private:
-    bool _isOpenTag, _isCloseTag, _isCloseAngleBracket,
+    bool _isOpenTag, _isCloseTag, _isCloseAngleBracket,_isOpenAngleBracket,
         _eof, _isCloseStandAloneTag;
 
     std::string _tagName;

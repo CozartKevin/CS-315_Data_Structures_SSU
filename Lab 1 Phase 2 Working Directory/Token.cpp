@@ -10,6 +10,7 @@
 Token::Token(int line, int pos): _isOpenTag{false},
                                  _isCloseTag{false},
                                  _isCloseAngleBracket{false},
+                                 _isOpenAngleBracket{false},
                                  _isCloseStandAloneTag{false},
                                  _tagName{""},
                                  _lineNumber{line},
@@ -19,7 +20,7 @@ bool &Token::isOpenTag() { return _isOpenTag; }
 bool &Token::isCloseTag() { return _isCloseTag; }
 
 bool &Token::isCloseAngleBracket() { return _isCloseAngleBracket; }
-
+bool &Token::isOpenAngleBracket(){ return _isOpenAngleBracket;}
 bool &Token::endOfFile() { return _eof; }
 bool &Token::isCloseStandAloneTag() { return _isCloseStandAloneTag; }
 
@@ -43,7 +44,10 @@ void Token::print() {
     if(isOpenTag()) {
         printLineandCharPos();
         std::cout << "<" << tagName() << std::endl;
-    } else if(isCloseStandAloneTag()) {
+    }else if(isCloseTag()){
+        printLineandCharPos();
+        std::cout << "<" << tagName() << std::endl;
+    }else if(isCloseStandAloneTag()) {
         printLineandCharPos();
         //std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
         std::cout << "/>" << std::endl;
@@ -51,7 +55,7 @@ void Token::print() {
         printLineandCharPos();
         std::cout << ">" << std::endl;
     }else{
-
+return;
     }
     // ...
 }

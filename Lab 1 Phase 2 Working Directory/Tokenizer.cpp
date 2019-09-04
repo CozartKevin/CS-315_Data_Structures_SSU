@@ -72,37 +72,45 @@ Token Tokenizer::getToken()
         token.endOfFile() = true;
         return token;
     }
-    if (c == '<')
+
+
+    if (c == '<' && inputStream.peek() == '/')
     {   // A possible open tag.
         // suppose we have found an open em-tag.
         //parse remaining variables within the tag until the >
         //Then make token.makeOpenTag with full variable until >
         //setup a stream into a string variable until we reach a >
         std::string tagName;
-        do
-        {
-            inputStream.get(c);
-            tagName = tagName + c;
-
-        } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
-
-        token.makeOpenTag(tagName);
+        tagName = getString(c, tagName, inputStream);
+        token.makeCloseTag(tagName);
         charPosition += tagName.length() + 1;
+
+        return token;
+    }else if (c == '<')
+    {
+        std::string tagName;
+        tagName = getString(c, tagName, inputStream);
+        if(tagName != " ")
+        {
+            token.makeOpenTag(tagName);
+            charPosition += tagName.length() + 1;
+        }else{
+            token.isOpenAngleBracket();
+            charPosition++;
+
+        }
         return token;
     }
     else if (c == '>')
     {
-
-
         token.isCloseAngleBracket() = true;
         charPosition++;
         return token;
     }
     else if (c == '/' && inputStream.peek() == '>')
     {
-
         token.isCloseStandAloneTag() = true;
-        charPosition ++;
+        charPosition += 2;
         inputStream.get();
         return token;
     }
@@ -113,6 +121,18 @@ Token Tokenizer::getToken()
     }
 
 
-}// ... more if-else statements here.
+}
+
+std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &inputStream) const
+{
+    do
+    {
+        inputStream.get(c);
+        tagName = tagName + c;
+
+    } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
+    return tagName;
+}
+// ... more if-else statements here.
 
 

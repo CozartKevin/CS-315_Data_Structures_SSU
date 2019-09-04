@@ -22,6 +22,8 @@ private:
     std::ifstream inputStream;
 
     bool charOfInterest(char c);
+
+    std::string &getString(char c, std::string &tagName, std::istream &inputStream) const;
 };
 
 

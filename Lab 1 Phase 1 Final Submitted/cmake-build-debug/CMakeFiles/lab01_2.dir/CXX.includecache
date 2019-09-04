@@ -6,37 +6,21 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.cpp
-iostream
--
-iomanip
--
-Token.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp
-
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1 Final Submitted/Token.hpp
 string
 -
 
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.cpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1 Final Submitted/Tokenizer.cpp
 iostream
 -
 Tokenizer.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1 Final Submitted/Tokenizer.hpp
 
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1 Final Submitted/Tokenizer.hpp
 string
 -
 fstream
 -
 Token.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Token.hpp
-
-G:/SSU Courses/CS-315/Lab 1 Phase 1/main.cpp
-iostream
--
-fstream
--
-Tokenizer.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 1/Tokenizer.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 1 Final Submitted/Token.hpp
 
