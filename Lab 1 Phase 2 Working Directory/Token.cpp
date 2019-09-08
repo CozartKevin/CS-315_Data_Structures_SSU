@@ -7,6 +7,7 @@
 #include <iomanip>
 #include "Token.hpp"
 
+
 Token::Token(int line, int pos): _isOpenTag{false},
                                  _isCloseTag{false},
                                  _isCloseAngleBracket{false},
@@ -37,24 +38,30 @@ void Token::makeCloseTag(std::string name) {
     isCloseTag() = true;
 
 }
+void Token::makeStandAloneCloseTag(std::string name) {
+    _tagName = name;
+    isCloseStandAloneTag() = true;
+
+}
 
 
 void Token::print() {
 
     if(isOpenTag()) {
         printLineandCharPos();
-        std::cout << "<" << tagName() << std::endl;
+        std::cout << "<" << tagName();
     }else if(isCloseTag()){
         printLineandCharPos();
-        std::cout << "<" << tagName() << std::endl;
+        std::cout << "<" << tagName();
     }else if(isCloseStandAloneTag()) {
         printLineandCharPos();
         //std::cout << "[" << _lineNumber << ", " << _charPos << "] ";
-        std::cout << "/>" << std::endl;
+        std::cout << tagName();
     }else if(isCloseAngleBracket()){
         printLineandCharPos();
-        std::cout << ">" << std::endl;
+        std::cout << ">";
     }else{
+        std::cout<<std::endl;
 return;
     }
     // ...

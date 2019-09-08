@@ -86,19 +86,30 @@ Token Tokenizer::getToken()
         charPosition += tagName.length() + 1;
 
         return token;
-    }else if (c == '<')
+    }
+    else if (c == '<')
     {
         std::string tagName;
         tagName = getString(c, tagName, inputStream);
-        if(tagName != " ")
+        if (tagName != " ")
         {
             token.makeOpenTag(tagName);
             charPosition += tagName.length() + 1;
-        }else{
+        }
+        else
+        {
             token.isOpenAngleBracket();
             charPosition++;
 
         }
+        return token;
+    }
+    else if (c == '/' && inputStream.peek() == '>')
+    {
+        token.isCloseStandAloneTag() = true;
+        token.makeStandAloneCloseTag("/>");
+        charPosition++;
+        inputStream.get();
         return token;
     }
     else if (c == '>')
@@ -107,13 +118,7 @@ Token Tokenizer::getToken()
         charPosition++;
         return token;
     }
-    else if (c == '/' && inputStream.peek() == '>')
-    {
-        token.isCloseStandAloneTag() = true;
-        charPosition += 2;
-        inputStream.get();
-        return token;
-    }
+
     else
     {
         charPosition++;

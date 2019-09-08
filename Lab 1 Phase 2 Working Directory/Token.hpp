@@ -23,7 +23,9 @@ public:
 
     void makeOpenTag(std::string);
     void makeCloseTag(std::string);
+    void makeStandAloneCloseTag(std::string name);
     void print();
+
 
 private:
     bool _isOpenTag, _isCloseTag, _isCloseAngleBracket,_isOpenAngleBracket,
@@ -33,6 +35,8 @@ private:
     int _lineNumber, _charPos;
 
     void printLineandCharPos() const;
+
+
 };
 
 

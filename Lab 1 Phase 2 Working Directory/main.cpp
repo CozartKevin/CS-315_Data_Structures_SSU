@@ -35,13 +35,12 @@ int main(int argc, char *argv[])
     Token token = tokenizer.getToken();  // get the first token.
     while (!token.endOfFile())
     {
-
-        token.print();
+        TagParser tagParser(token);
         token = tokenizer.getToken();
 
     }
-    */
-    TagParser tagParser(argv[1]);
+*/
+  TagParser tagParser(argv[1]);
     /*
      * this is what the main function for your solution to phase 1 should look like.
 

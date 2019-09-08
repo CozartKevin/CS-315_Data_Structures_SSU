@@ -3,23 +3,18 @@
 //
 
 #include "Tokenizer.hpp"
-#include "TagParser.hpp"
 #include "Token.hpp"
-
+#include "TagParser.hpp"
 TagParser::TagParser(std::string fileName)
 {
- //   std::cout << "inside TagParser" << std::endl;
-//setup traversable stack
-
-
 
     Tokenizer tokenizer(fileName);
 
     Token token = tokenizer.getToken();
 
-    while (!token.endOfFile())
-    {
 
+    do
+    {
 
         if (token.isOpenTag())
         {
@@ -35,9 +30,9 @@ TagParser::TagParser(std::string fileName)
         }
         else if (token.isCloseAngleBracket() || token.isOpenAngleBracket())
         {
-           // token.print();
+         //   token.print();
           //  std::cout << (token.isCloseAngleBracket() ? " ignoring random close angle-bracket."
-                //                                      : " ignoring random open angle-bracket.") << std::endl;
+           //                                     : " ignoring random open angle-bracket.") << std::endl;
         }
         else
         {
@@ -48,25 +43,28 @@ TagParser::TagParser(std::string fileName)
         token = tokenizer.getToken();
 
 
-}
-    processForPrint();
+    } while (!token.endOfFile());
+    printWellFormedTagsFromMap();
 }
 
 void TagParser::handleOpenTag(Token token)
 {
-
-    tags[token.tagName()].push_back(token);
-    /*
+    //Push to stack for later verification
+std::cout << token.tagName() << " Tag Name before pusing to stack" << std::endl;
+    stackToken.push(token);
+    // tags[token.tagName()].push_back(token);
+/*
     it = tags.find(token.tagName());
     if (it != tags.end())
     {
-        tags[token.tagName()] = std::vector<Token>();
 
-        tags[token.tagName()].push_back(token);
+return;
+
+
     }
     else
     {
-        tags[token.tagName()].push_back(token);
+       return;
     }
 */
 
@@ -74,39 +72,104 @@ void TagParser::handleOpenTag(Token token)
 
 void TagParser::handleCloseTag(Token token)
 {
-std::cout << "handleCloseTag     </       " << std::endl;
+//std::cout << "handleCloseTag     </       " << std::endl;
+    //  std::cout << stackToken.top().tagName() + " Stack tag name in handleClosedTag" << std::endl;
+    //  std::cout << "/" + stackToken.top().tagName() + " Stack Tag name with / in it in handlCLosedTag" << std::endl;
+    //  std::cout << token.tagName() + " Token tag name in handleClosedTag" << std::endl;
+//setup to compare close tag with top value of stack  : tagname
+//if top value tagnames match: Push to pairedTag vector
+if( stackToken.size() > 0)
+{
+    if (token.tagName() == ("/" + stackToken.top().tagName()))
+    {
+        //  pairedTags = std::make_pair(stackToken.top(),token);
+        //pairedTagsInVector.push_back(pairedTags);
 
+        checkMapPushPairPopStack(token);
+
+    }
+    else
+    {
+        printError(token);
+        stackToken.pop();
+    }
+}else{
+    printError(token);
+    return;
+}
+//if they don't match report error message.
+
+
+
+}
+
+void TagParser::checkMapPushPairPopStack(Token &token)
+{
+    it = tags.find(stackToken.top().tagName());
+
+    if (it != tags.end())
+    {
+        tags[stackToken.top().tagName()].push_back(std::make_pair(stackToken.top(), token));
+    }
+    else
+    {
+        tags[stackToken.top().tagName()] = std::vector<std::pair<Token, Token>>();
+        tags[stackToken.top().tagName()].push_back(std::make_pair(stackToken.top(), token));
+    }
+
+    stackToken.pop();
 };
 
 void TagParser::handleStandAloneTag(Token token)
 {
-    std::cout << "Stand Alone Tag            />     " << std::endl;
+
+    if(stackToken.top().tagName() == "br" && token.tagName() == "/>"){
+        checkMapPushPairPopStack(token);
+    }
 }
 
-void TagParser::processForPrint()
+void TagParser::printWellFormedTagsFromMap()
 {
-    std::cout << "The following is a list of well-formed HTML tags." << std::endl;
+
+
+    std::cout << "The following is a list of well-formed HTML tags." << std::endl << std::endl;
+
 
     for (auto mapIter = tags.begin(); mapIter != tags.end(); ++mapIter)
     {
+        std::cout << mapIter->first << " appeared in the following " << mapIter->second.size() << " locations."
+                  << std::endl;
+
         // our map, pairs an array of Tokens with tag-name strings.
-        std::vector<Token> locations = mapIter->second;
-        for (std::vector<Token>::iterator vIter = locations.begin(); vIter != locations.end(); ++vIter)
+        std::vector<std::pair<Token, Token>> locations = mapIter->second;
+        for (auto vIter = locations.begin(); vIter != locations.end(); ++vIter)
         {
-            vIter->print();
+            std::cout << "\t";
+            vIter->first.print();
+            std::cout << " -- ";
+            vIter->second.print();
+
             std::cout << std::endl;
         }
+
     }
 
+
 }
+void TagParser::printError(Token token){
+    if(token.isCloseTag())
+    {
+        token.print();
+        std::cout << "(with close angle bracket ";
 
-void TagParser::parsePrint()
-{
-
-std::cout << "Inside Tag Parce Print"  << std::endl;
-
+        std::cout << " doesn't have a matching open tag.  Will discard it." << std::endl;
+    }else if(token.isOpenTag()){
+        std::cout << token.tagName() <<  " is missing a '>' or '/>'.  Will discard it." << std::endl;
+    }
     return;
 }
+
+
 
 
 // more things to do here...

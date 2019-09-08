@@ -9,22 +9,33 @@
 #include<map>
 #include<vector>
 #include<iterator>
+#include<stack>
 #include <algorithm>
 
 
 class TagParser {
 public:
 
-    TagParser(std::string fileName);
-    void parsePrint();
+    TagParser::TagParser(std::string fileName);
+
+
+private:
+
+    std::map<std::string, std::vector<std::pair<Token,Token>>> tagErrors;
+    std::map<std::string, std::vector<std::pair<Token,Token>>> tags;
+    std::map<std::string, std::vector<std::pair<Token,Token>>>::iterator it;
+    std::stack<Token> stackToken;
+    std::stack<Token> errorStackToken;
+
+    void checkMapPushPairPopStack(Token &token);
+
+
     void handleOpenTag(Token token);
     void handleCloseTag(Token token);
     void handleStandAloneTag(Token token);
-    void processForPrint();
+    void printWellFormedTagsFromMap();
+    void printError(Token token);
 
-private:
-    std::map<std::string, std::vector<Token> > tags;
-    std::map<std::string, std::vector<Token>>::iterator it;
 };
 
 
