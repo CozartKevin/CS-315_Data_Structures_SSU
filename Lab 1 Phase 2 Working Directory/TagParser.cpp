@@ -53,8 +53,11 @@ TagParser::TagParser(std::string fileName)
             else if (previousToken.isCloseTag() && token.isCloseAngleBracket())
             {
                 //std::cout << " This error Message Call" << std::endl;
-                    if(!stackToken.empty() && (previousToken.tagName() == stackToken.top().tagName())){
-std::cout << " Inside Prious al;skdjf asdf asdf " << std::endl;
+                    if((stackToken.size() > 0) && (previousToken.tagName() == stackToken.top().tagName())){
+                        std::cout << " Inside Prious al;skdjf asdf asdf " << std::endl;
+                    }else{
+
+
                     }
 
             }
@@ -118,6 +121,7 @@ void TagParser::handleCloseTag(Token token)
 //if top value tagnames match: Push to pairedTag vector
     if (stackToken.size() > 0)
     {
+
         //std::cout << stackToken.top().tagName() + " Stack Name " + token.tagName() + " Token Tag name  inside handle close tag" << std::endl;
         if (token.tagName() == ("/" + stackToken.top().tagName()))
         {
@@ -162,12 +166,12 @@ void TagParser::handleCloseTag(Token token)
 
         }
     }
-    else
+   else
     {
      //  std::cout << " Inside Close Tag Hand send to error " << std::endl;
       //  std::cout << " This error Message Call" << std::endl;
 
-      //  printError(token);
+     //  printError(token);
        // std::cout << " after error call in Clos Tag Hand" << std::endl;
       //  return;
     }
@@ -247,20 +251,22 @@ void TagParser::printError(Token token)
             while(!errorStackToken.empty()){
                 std::cout << '/t';
                 errorStackToken.top().print();
+                stackToken.push(errorStackToken.top());
                 errorStackToken.pop();
             }
         }else if (token.isCloseTag())
         {
            // errorStackToken.top().print();
-            std::cout << "(with close angle bracket ";
             token.print();
+            std::cout << "(with close angle bracket ";
+
             std::cout << " doesn't have a matching open tag.  Will discard it." << std::endl;
 
         }
         else if (token.isOpenTag())
         {
-           // token.print();
-            std::cout << token.tagName() << " is missing a '>' or '/>'.  Will discard it." << std::endl;
+            token.print();
+            std::cout << " is missing a '>' or '/>'.  Will discard it." << std::endl;
         }
 
     return;
