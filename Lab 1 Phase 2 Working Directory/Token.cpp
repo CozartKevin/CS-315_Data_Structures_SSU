@@ -43,7 +43,14 @@ void Token::makeStandAloneCloseTag(std::string name) {
     isCloseStandAloneTag() = true;
 
 }
-
+void Token::makeClosedAngleBracket(std::string name){
+    _tagName = name;
+    isCloseAngleBracket() = true;
+}
+void Token::makeOpenAngleBracket(std::string name){
+    _tagName = name;
+    isOpenAngleBracket() = true;
+}
 
 void Token::print() {
 
@@ -59,8 +66,12 @@ void Token::print() {
         std::cout << tagName();
     }else if(isCloseAngleBracket()){
         printLineandCharPos();
-        std::cout << ">";
+        std::cout << tagName();
+    }else if(isOpenAngleBracket()){
+        printLineandCharPos();
+        std::cout << tagName();
     }else{
+
         std::cout<<std::endl;
 return;
     }

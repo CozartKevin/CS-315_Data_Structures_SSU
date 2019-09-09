@@ -25,8 +25,8 @@ public:
     void makeCloseTag(std::string);
     void makeStandAloneCloseTag(std::string name);
     void print();
-
-
+    void makeClosedAngleBracket(std::string name);
+    void makeOpenAngleBracket(std::string name);
 private:
     bool _isOpenTag, _isCloseTag, _isCloseAngleBracket,_isOpenAngleBracket,
         _eof, _isCloseStandAloneTag;

@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include "Token.hpp"
+#include "TagParser.hpp"
 
 class Tokenizer {
 
@@ -24,6 +25,9 @@ private:
     bool charOfInterest(char c);
 
     std::string &getString(char c, std::string &tagName, std::istream &inputStream) const;
+
+
+
 
 };
 

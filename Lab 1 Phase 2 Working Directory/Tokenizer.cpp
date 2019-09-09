@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include "Tokenizer.hpp"
+#include "TagParser.hpp"
 
 Tokenizer::Tokenizer(std::string name) : lineNumber{1},
                                          charPosition{1},
@@ -98,7 +99,7 @@ Token Tokenizer::getToken()
         }
         else
         {
-            token.isOpenAngleBracket();
+            token.makeOpenAngleBracket("<");
             charPosition++;
 
         }
@@ -115,11 +116,10 @@ Token Tokenizer::getToken()
     else if (c == '>')
     {
         token.isCloseAngleBracket() = true;
+        token.makeClosedAngleBracket(">");
         charPosition++;
         return token;
-    }
-
-    else
+    }else
     {
         charPosition++;
         return token;
@@ -138,6 +138,8 @@ std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &in
     } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
     return tagName;
 }
+
+
 // ... more if-else statements here.
 
 

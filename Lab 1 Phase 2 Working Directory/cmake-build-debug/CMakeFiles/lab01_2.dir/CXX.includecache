@@ -34,12 +34,6 @@ G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Token.hpp
 string
 -
 
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.cpp
-iostream
--
-Tokenizer.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
-
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
 string
 -
@@ -47,14 +41,6 @@ fstream
 -
 Token.hpp
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Token.hpp
-
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/main.cpp
-iostream
--
-fstream
--
-Tokenizer.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
 TagParser.hpp
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/TagParser.hpp
 
