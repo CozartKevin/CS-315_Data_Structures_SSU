@@ -132,8 +132,12 @@ std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &in
 {
     do
     {
+
         inputStream.get(c);
-        tagName = tagName + c;
+        if(isalpha(c) || ">" || "<" || "/")
+        {
+            tagName = tagName + c;
+        }
 
     } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
     return tagName;

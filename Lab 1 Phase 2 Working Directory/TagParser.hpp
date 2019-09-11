@@ -19,7 +19,7 @@
 class TagParser {
 public:
 
-    TagParser::TagParser(std::string fileName);
+    TagParser(std::string fileName);
 
 
 private:
