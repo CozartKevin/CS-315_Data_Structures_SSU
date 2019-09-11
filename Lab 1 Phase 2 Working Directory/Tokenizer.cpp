@@ -92,7 +92,7 @@ Token Tokenizer::getToken()
     {
         std::string tagName;
         tagName = getString(c, tagName, inputStream);
-        if (tagName != " ")
+        if (tagName != "")
         {
             token.makeOpenTag(tagName);
             charPosition += tagName.length() + 1;
@@ -115,7 +115,7 @@ Token Tokenizer::getToken()
     }
     else if (c == '>')
     {
-        token.isCloseAngleBracket() = true;
+
         token.makeClosedAngleBracket(">");
         charPosition++;
         return token;
@@ -130,14 +130,13 @@ Token Tokenizer::getToken()
 
 std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &inputStream) const
 {
+
     do
     {
 
-        inputStream.get(c);
-        if(isalpha(c) || ">" || "<" || "/")
-        {
+            inputStream.get(c);
+
             tagName = tagName + c;
-        }
 
     } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
     return tagName;

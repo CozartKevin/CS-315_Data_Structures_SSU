@@ -38,6 +38,7 @@ private:
     void handleStandAloneTag(Token token);
     void printWellFormedTagsFromMap();
     void printError(Token token);
+    bool isInMap;
 
 };
 

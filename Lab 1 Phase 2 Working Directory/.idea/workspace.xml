@@ -39,6 +39,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RecentsManager">
@@ -100,7 +101,7 @@
       <workItem from="1567274558575" duration="15512000" />
       <workItem from="1567296263017" duration="3318000" />
       <workItem from="1567883330627" duration="19555000" />
-      <workItem from="1568168984049" duration="4388000" />
+      <workItem from="1568168984049" duration="14709000" />
     </task>
     <servers />
   </component>

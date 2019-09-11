@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/TagParser.cpp
-Tokenizer.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
-Token.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Token.hpp
-TagParser.hpp
-G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/TagParser.hpp
-
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/TagParser.hpp
 iostream
 -
@@ -33,6 +25,14 @@ algorithm
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Token.hpp
 string
 -
+
+G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.cpp
+iostream
+-
+Tokenizer.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
+TagParser.hpp
+G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/TagParser.hpp
 
 G:/SSU Courses/CS-315/Lab 1 Phase 2 Working Directory/Tokenizer.hpp
 string
