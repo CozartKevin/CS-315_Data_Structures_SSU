@@ -52,13 +52,22 @@ TagParser::TagParser(std::string fileName)
             }
             else if (previousToken.isCloseTag() && token.isCloseAngleBracket())
             {
-                //std::cout << " This error Message Call" << std::endl;
-                    if((stackToken.size() > 0) && (previousToken.tagName() == stackToken.top().tagName())){
-                        std::cout << " Inside Prious al;skdjf asdf asdf " << std::endl;
-                    }else{
+                std::cout << " This error Message Call" << std::endl;
+                if (stackToken.size() > 0){
+                    std::cout << errorStackToken.size() << "Error stack size before message " << std::endl;
+                    errorStackToken.push(previousToken);
+                    std::cout << errorStackToken.size() << "after Push stack size before message " << std::endl;
+                    std::cout << previousToken.tagName() + " <- Previous tagname : token tagname -> ";
+                    token.print();
+                    printError(token);
+                    errorStackToken.pop();
+                }
+                    //if((stackToken.size() > 0) && (previousToken.tagName() == stackToken.top().tagName())){
+                     //   std::cout << " Inside Prious al;skdjf asdf asdf " << std::endl;
+                   // }else{
 
 
-                    }
+                    //}
 
             }
             else
@@ -258,8 +267,10 @@ void TagParser::printError(Token token)
         {
            // errorStackToken.top().print();
             token.print();
+            std::cout << errorStackToken.size() + "<- error stack size : error stack name value -> ";
+            errorStackToken.top().print();
             std::cout << "(with close angle bracket ";
-
+            errorStackToken.top().print();
             std::cout << " doesn't have a matching open tag.  Will discard it." << std::endl;
 
         }
