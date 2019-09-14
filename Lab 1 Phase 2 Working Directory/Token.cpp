@@ -13,6 +13,7 @@ Token::Token(int line, int pos): _isOpenTag{false},
                                  _isCloseAngleBracket{false},
                                  _isOpenAngleBracket{false},
                                  _isCloseStandAloneTag{false},
+                                 _eof{false},
                                  _tagName{""},
                                  _lineNumber{line},
                                  _charPos{pos} {}
@@ -59,7 +60,7 @@ void Token::print() {
         std::cout << "<" << tagName();
     }else if(isCloseTag()){
         printLineandCharPos();
-        std::cout << "<" << tagName();
+        std::cout << "</" << tagName();
     }else if(isCloseStandAloneTag()) {
         printLineandCharPos();
         //std::cout << "[" << _lineNumber << ", " << _charPos << "] ";

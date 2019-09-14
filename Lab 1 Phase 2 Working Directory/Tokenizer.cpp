@@ -19,22 +19,26 @@ Tokenizer::Tokenizer(std::string name) : lineNumber{1},
 bool Tokenizer::charOfInterest(char c)
 {
     // is c the initial (or the sole) character of a token?
-    if (c == '<')
-    {
-        return true;
-    }
-    else if (c == '>')
-    {
-        return true;
-    }
-    else if (c == '/')
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+
+
+       if (c == '<')
+       {
+           return true;
+       }
+       else if (c == '>')
+       {
+           return true;
+       }
+       else if (c == '/')
+       {
+           return true;
+       }
+       else
+       {
+           return false;
+       }
+
+   return false;
 }
 
 
@@ -81,10 +85,11 @@ Token Tokenizer::getToken()
         //parse remaining variables within the tag until the >
         //Then make token.makeOpenTag with full variable until >
         //setup a stream into a string variable until we reach a >
+        inputStream.get(c);
         std::string tagName;
         tagName = getString(c, tagName, inputStream);
         token.makeCloseTag(tagName);
-        charPosition += tagName.length() + 1;
+        charPosition += tagName.length() + 2;
 
         return token;
     }
@@ -100,16 +105,20 @@ Token Tokenizer::getToken()
         else
         {
             token.makeOpenAngleBracket("<");
-            charPosition++;
-
+          charPosition++;
+            std::cout << "                                                                                       In else of c == < after tagName is gotten and turns out invalid"  << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
         }
         return token;
     }
     else if (c == '/' && inputStream.peek() == '>')
     {
-        token.isCloseStandAloneTag() = true;
-        token.makeStandAloneCloseTag("/>");
-        charPosition++;
+         token.makeStandAloneCloseTag("/>");
+        charPosition += 2;
         inputStream.get();
         return token;
     }
@@ -122,6 +131,7 @@ Token Tokenizer::getToken()
     }else
     {
         charPosition++;
+        std::cout << "Unknown Token type" << std::endl;
         return token;
     }
 
@@ -135,10 +145,13 @@ std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &in
     {
 
             inputStream.get(c);
-
+        if(isalpha(c))
+        {
             tagName = tagName + c;
-
-    } while (inputStream.peek() != '>' && inputStream.peek() != ' ');
+        }else {
+            return tagName = "";
+        }
+    } while ((inputStream.peek() != '>' && inputStream.peek() != ' ' && !inputStream.eof()));
     return tagName;
 }
 

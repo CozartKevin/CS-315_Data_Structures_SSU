@@ -22,7 +22,14 @@ TagParser::TagParser(std::string fileName)
             if (previousToken.isOpenTag())
             {
                 // std::cout << " This error Message Call" << std::endl;
+              //  stackToken.top().print();
+              std::cout << " Before error print for both previous and token are open tags" << std::endl;
+
+               // previousToken.print(); token.print();
+                stackToken.pop();
                 printError(previousToken);
+
+
                 handleOpenTag(token);
             }
             else
@@ -47,25 +54,31 @@ TagParser::TagParser(std::string fileName)
             }*/
             if (previousToken.isOpenTag())
             {
-                if(stackToken.empty())
+                if(token.isOpenAngleBracket()){
+                  //  if(previousToken.tagName() == stackToken.top().tagName()){
+                //        stackToken.pop();
+                 //   }
+                    printError(previousToken);
+
+                }else
                 {
-                    stackToken.push(previousToken);
+                    if (stackToken.empty())
+                    {
+                        stackToken.push(previousToken);
+                    }
                 }
             }
             else if (previousToken.isCloseTag() && token.isCloseAngleBracket() && !isInMap)
             {
-                //std::cout << " This error Message Call" << std::endl;
-                if(stackToken.empty()){
+              std::cout << " This error Message Call" << std::endl;
+            //  previousToken.print(); token.print();
+
                     errorStackToken.push(previousToken);
                     printError(token);
                     errorStackToken.pop();
                   //  previousToken.print();
                    // token.print();
                  //   std::cout << " Inside Prious al;skdjf asdf asdf " << std::endl;
-                }else{
-
-
-                }
 
             }
             else if(isInMap){
@@ -82,6 +95,8 @@ TagParser::TagParser(std::string fileName)
             token.print();
             std::cout << " unknown token." << std::endl;
         }
+        std::cout << " After handleClose Tag " << isInMap << " is in map value." << std::endl;
+        token.print();
         previousToken = token;
         token = tokenizer.getToken();
 
@@ -127,49 +142,68 @@ void TagParser::handleCloseTag(Token token)
 //if top value tagnames match: Push to pairedTag vector
     if (stackToken.size() > 0)
     {
-
+        int cout = 0;
        // std::cout << stackToken.top().tagName() + " Stack Name " + token.tagName() + " Token Tag name  inside handle close tag" << std::endl;
-        if (token.tagName() == ("/" + stackToken.top().tagName()))
+        if ((token.tagName() == (stackToken.top().tagName())))
         {
             //  pairedTags = std::make_pair(stackToken.top(),token);
             //pairedTagsInVector.push_back(pairedTags);
-            // std::cout << "Inside if for Token tagname and stack tagname" << std::endl;
+             std::cout << "Inside if for Token tagname and stack tagname" << std::endl;
             checkMapPushPairPopStack(token);
 
         }
         else
         {
+            std::cout << std::endl;
+          std::cout <<  stackToken.size();
+            std::cout << std::endl;
            // int count = stackToken.size();
             bool badTag = false;
-           //   std::cout << "Inside else for Token tagname and stack tagname" << std::endl;
-            while(!stackToken.empty() && token.tagName() != ("/" + stackToken.top().tagName()))
-            {
-                // std::cout << " Inside while for compare empty token call" << std::endl;
-                errorStackToken.push(stackToken.top());
-                if(!stackToken.empty())
-                {
-                    stackToken.pop();
-                }
-                if(stackToken.empty()){
-                    while(!errorStackToken.empty()){
-                        stackToken.push(errorStackToken.top());
-                        errorStackToken.pop();
+            token.print();
+            std::cout << std::endl;
+            stackToken.top().print();
+if(!stackToken.empty() && stackToken.size() == 1){
 
-                   //      std::cout << " Inside while for stack to error" << std::endl;
-                    }
-                    badTag = true;
-                 //   std::cout << " Inside stack empty token call" << std::endl;
+}else {
+    std::cout << "Inside else for Token tagname and stack tagname" << std::endl;
+    while (!stackToken.empty() && (token.tagName() != (stackToken.top().tagName())) )
+    {
+    std::cout << std::endl;
+        std::cout << " Inside while for compare empty token call" << std::endl;
+        std::cout << (token.tagName() == stackToken.top().tagName());
+        std::cout << std::endl;
+        std::cout << stackToken.size();
+        std::cout << std::endl;
+        stackToken.top().print();
+        errorStackToken.push(stackToken.top());
+        stackToken.pop();
+        std::cout << stackToken.size();
+        std::cout << std::endl;
+    }
+    if ((token.tagName() == ("/" + stackToken.top().tagName())))
+    {
+        stackToken.pop();
+    }
+    //      if(!errorStackToken.empty()){
+    //     while(cout > 0){
+    //           stackToken.push(errorStackToken.top());
 
-                }
-                if(badTag){
-                    break;
-                }
-            }
+    //     }
 
-             token.print();
-           std::cout << " Error  " << std::endl;
+    std::cout << " after while for compare" << std::endl;
+    //   std::cout << " Inside st if(stackToken.empty()){
+    //                while(!errorStackToken.empty()){
+    //                    stackToken.push(errorStackToken.top());
+    //                    errorStackToken.pop();
+    //                    //      std::cout << " Inside while for stack to error" << std::endl;
+    //                }ack empty token call" << std::endl;
+
+    //token.print();
+    std::cout << " Error  " << std::endl;
+}
            if(!errorStackToken.empty())
            {
+               std::cout << " inside if of error" << std::endl;
                printError(token);
            }else{
                std::cout << "inside else of error" << std::endl;
@@ -266,11 +300,12 @@ void TagParser::printError(Token token)
             errorStackToken.top().print();
             stackToken.push(errorStackToken.top());
             errorStackToken.pop();
+            std::cout << std::endl;
         }
     }else if (token.isCloseTag() || (!errorStackToken.empty() && errorStackToken.top().isCloseTag()))
     {
         errorStackToken.top().print();
-        std::cout << "(with close angle bracket ";
+        std::cout << " (with close angle bracket ";
         token.print();
         std::cout << " doesn't have a matching open tag.  Will discard it." << std::endl;
 
