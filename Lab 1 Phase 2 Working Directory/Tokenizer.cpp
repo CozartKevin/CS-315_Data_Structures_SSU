@@ -106,12 +106,12 @@ Token Tokenizer::getToken()
         {
             token.makeOpenAngleBracket("<");
           charPosition++;
-            std::cout << "                                                                                       In else of c == < after tagName is gotten and turns out invalid"  << std::endl;
-            std::cout << std::endl;
-            std::cout << std::endl;
-            std::cout << std::endl;
-            std::cout << std::endl;
-            std::cout << std::endl;
+          //  std::cout << "                                                                                       In else of c == < after tagName is gotten and turns out invalid"  << std::endl;
+          //  std::cout << std::endl;
+          //  std::cout << std::endl;
+          //  std::cout << std::endl;
+          //  std::cout << std::endl;
+           // std::cout << std::endl;
         }
         return token;
     }
@@ -119,7 +119,7 @@ Token Tokenizer::getToken()
     {
          token.makeStandAloneCloseTag("/>");
         charPosition += 2;
-        inputStream.get();
+       inputStream.get();
         return token;
     }
     else if (c == '>')
