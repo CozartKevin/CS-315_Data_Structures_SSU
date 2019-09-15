@@ -149,6 +149,7 @@ std::string &Tokenizer::getString(char c, std::string &tagName, std::istream &in
         {
             tagName = tagName + c;
         }else {
+          inputStream.putback(c);
             return tagName = "";
         }
     } while ((inputStream.peek() != '>' && inputStream.peek() != ' ' && !inputStream.eof()));

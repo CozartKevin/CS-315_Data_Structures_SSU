@@ -306,13 +306,22 @@ void TagParser::printError(Token token)
     if(errorStackToken.size() >= 2){
         token.print();
         std::cout << " closes while the following tags remain open." << std::endl;
+        std::vector<Token> v;
+        Token t(1,1);
         while(!errorStackToken.empty()){
-            std::cout << "     ";
-            errorStackToken.top().print();
+
+        //    errorStackToken.top().print();
+          v.push_back(errorStackToken.top());
             stackToken.push(errorStackToken.top());
             errorStackToken.pop();
+        }
+        for(int i = v.size(); i > 0; i--){
+            std::cout << "     ";
+               t = v[i-1];
+               t.print();
             std::cout << std::endl;
         }
+
     }else if (token.isCloseTag() || (!errorStackToken.empty() && errorStackToken.top().isCloseTag()))
     {
         errorStackToken.top().print();
