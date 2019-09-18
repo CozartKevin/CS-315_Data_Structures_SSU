@@ -1,0 +1,10 @@
+//
+// Created by Kevin on 9/17/2019.
+//
+
+#ifndef UNTITLED_READ_INPUT_HPP
+#define UNTITLED_READ_INPUT_HPP
+
+#endif //UNTITLED_READ_INPUT_HPP
+
+void read_numbers(std::string fileName, std::vector<int> &v);

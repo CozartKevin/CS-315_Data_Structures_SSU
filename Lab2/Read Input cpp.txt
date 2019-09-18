@@ -1,0 +1,28 @@
+//
+// Created by Kevin on 9/17/2019.
+//
+#include <fstream>
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include "read_input.hpp"
+
+void read_numbers(std::string fileName, std::vector<int> &v){
+
+        std::ifstream inFile(fileName);
+
+        // Make sure the file stream is good
+        if(!inFile) {
+            std::cout << std::endl << "Failed to open file " << fileName;
+        }
+
+        long n = 0;
+        while(!inFile.eof()) {
+            inFile >> n;
+           v.push_back(n);
+        }
+        std::cout << std::endl;
+
+    }
+
+
