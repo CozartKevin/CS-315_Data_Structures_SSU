@@ -29,6 +29,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.cpp" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -62,6 +63,8 @@
       <updated>1568769229707</updated>
       <workItem from="1568769233090" duration="1999000" />
       <workItem from="1568771362280" duration="10000" />
+      <workItem from="1568771465358" duration="95000" />
+      <workItem from="1568771819020" duration="725000" />
     </task>
     <servers />
   </component>
