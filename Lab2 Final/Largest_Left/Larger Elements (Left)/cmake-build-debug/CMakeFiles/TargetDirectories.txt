@@ -1,3 +1,0 @@
-G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left)/cmake-build-debug/CMakeFiles/Larger_Elements__Left_.dir
-G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left)/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/Larger_Elements_Left_Right_Recursive.cpp
+Larger_Elements_Left_Right_Recursive.hpp
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/Larger_Elements_Left_Right_Recursive.hpp
+vector
+-
+iostream
+-
+
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/Larger_Elements_Left_Right_Recursive.hpp
+vector
+-
+
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+cstring
+-
+read_input.hpp
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/read_input.hpp
+Larger_Elements_Left_Right_Recursive.hpp
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/Larger_Elements_Left_Right_Recursive.hpp
+
+G:/SSU Courses/CS-315/Lab2/recursive/Larger Elements (Left & Right) Recursive/read_input.hpp
+vector
+-
+string
+-
+

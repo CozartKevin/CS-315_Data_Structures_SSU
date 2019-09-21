@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/Larger_Elements_Left_iterative.cpp
+Larger_Elements_Left_iterative.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/Larger_Elements_Left_iterative.hpp
+vector
+-
+iostream
+-
+
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/Larger_Elements_Left_iterative.hpp
+vector
+-
+
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+cstring
+-
+read_input.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/read_input.hpp
+Larger_Elements_Left_iterative.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/Larger_Elements_Left_iterative.hpp
+
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/read_input.cpp
+fstream
+-
+iostream
+-
+iomanip
+-
+string
+-
+vector
+-
+read_input.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/read_input.hpp
+
+G:/SSU Courses/CS-315/Lab2 Final/Largest_Left/Larger Elements (Left) Iterative/read_input.hpp
+vector
+-
+string
+-
+

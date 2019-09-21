@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.14)
+project(Larger_Elements__Left___Right__Recursive)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(Larger_Elements__Left___Right__Recursive main.cpp read_input.cpp read_input.hpp Larger_Elements_Left_Right_Recursive.cpp Larger_Elements_Left_Right_Recursive.hpp)
