@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/count_inversions_recursive.cpp
+count_inversions_recursive.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/count_inversions_recursive.hpp
+vector
+-
+iostream
+-
+
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/count_inversions_recursive.hpp
+vector
+-
+
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+cstring
+-
+read_input.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/read_input.hpp
+count_inversions_recursive.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/count_inversions_recursive.hpp
+
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/read_input.cpp
+fstream
+-
+iostream
+-
+iomanip
+-
+string
+-
+vector
+-
+read_input.hpp
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/read_input.hpp
+
+G:/SSU Courses/CS-315/Lab2 Final/Count_inversions/Count_Inversion_Recursive/read_input.hpp
+vector
+-
+string
+-
+

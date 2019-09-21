@@ -1,0 +1,16 @@
+"C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "G:\SSU Courses\CS-315\Lab2\Iterative\Larger_Element_Left_Right_Iterative"
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    Larger_Element_Left_Right_Iterative.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: Larger_Element_Left_Right_Iterative
+
+
+-- Build files have been written to: G:/SSU Courses/CS-315/Lab2/Iterative/Larger_Element_Left_Right_Iterative/cmake-build-debug

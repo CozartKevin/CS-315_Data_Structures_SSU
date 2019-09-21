@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab2/Iterative/Larger_Element_Left_Right_Iterative/Larger_Elements_Left_Right_iterative.cpp
+Larger_Elements_Left_Right_iterative.hpp
+G:/SSU Courses/CS-315/Lab2/Iterative/Larger_Element_Left_Right_Iterative/Larger_Elements_Left_Right_iterative.hpp
+vector
+-
+iostream
+-
+
+G:/SSU Courses/CS-315/Lab2/Iterative/Larger_Element_Left_Right_Iterative/Larger_Elements_Left_Right_iterative.hpp
+vector
+-
+

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Lab2/recursive/Increasing_Sequence_Recursive/increasing_sequence_recursive.cpp
+increasing_sequence_recursive.hpp
+G:/SSU Courses/CS-315/Lab2/recursive/Increasing_Sequence_Recursive/increasing_sequence_recursive.hpp
+vector
+-
+iostream
+-
+
+G:/SSU Courses/CS-315/Lab2/recursive/Increasing_Sequence_Recursive/increasing_sequence_recursive.hpp
+vector
+-
+
