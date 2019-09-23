@@ -13,8 +13,13 @@ int main()
     std::cout << "Enter level: ";
     int level;
     std::cin >> level;
+    std::cout << " Before last Call";
+    p = firsts(p);
+    std::cout << " Write List P" << std::endl;
+    write_list(p);
+    std::cout << " After last call" << std::endl;
     std::cout << "atomsAtLevel says ";
-    write_list(atomsAtLevel(p, level));
+    //write_list(atomsAtLevel(p, level));
 
     /*
 

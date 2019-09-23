@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/lex.cpp" "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/CMakeFiles/Lab03.x.dir/lex.cpp.o"
-  "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/main.cpp" "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/CMakeFiles/Lab03.x.dir/main.cpp.o"
-  "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/parser.cpp" "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/CMakeFiles/Lab03.x.dir/parser.cpp.o"
-  "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.cpp" "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/CMakeFiles/Lab03.x.dir/reclists.cpp.o"
-  "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/solutions.cpp" "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/CMakeFiles/Lab03.x.dir/solutions.cpp.o"
+  "G:/SSU Courses/CS-315/Project 1/project1_reclists/lex.cpp" "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir/lex.cpp.obj"
+  "G:/SSU Courses/CS-315/Project 1/project1_reclists/main.cpp" "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir/main.cpp.obj"
+  "G:/SSU Courses/CS-315/Project 1/project1_reclists/parser.cpp" "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir/parser.cpp.obj"
+  "G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.cpp" "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir/reclists.cpp.obj"
+  "G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.cpp" "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir/solutions.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -1,8 +1,8 @@
-# Install script for directory: /Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles
+# Install script for directory: G:/SSU Courses/CS-315/Project 1/project1_reclists
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Lab03.x")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

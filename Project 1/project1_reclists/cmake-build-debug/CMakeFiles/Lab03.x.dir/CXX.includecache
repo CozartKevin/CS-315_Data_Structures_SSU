@@ -6,69 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/lex.cpp
-ctype.h
--
-string.h
--
-stdlib.h
--
-unistd.h
--
-lex.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/lex.hpp
-
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/lex.hpp
-iostream
--
-
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/main.cpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/main.cpp
 iostream
 -
 reclists.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
 solutions.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/solutions.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
 
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/parser.cpp
-iostream
--
-cstdlib
--
-string.h
--
-stdlib.h
--
-unistd.h
--
-lex.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/lex.hpp
-reclists.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
-
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.cpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.cpp
 iostream
 -
 stdlib.h
 -
-unistd.h
--
 reclists.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
-
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
-string.h
--
-
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/solutions.cpp
-reclists.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
 solutions.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/solutions.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
 
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/solutions.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+string.h
+-
+
+G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
 iostream
 -
 reclists.hpp
-/Users/kooshesh/Courses/cs315Fall2018/labs/Lab03/Lab03_studentFiles/reclists.hpp
+G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
 

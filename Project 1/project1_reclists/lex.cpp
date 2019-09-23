@@ -1,7 +1,7 @@
 #include<ctype.h>
 #include<string.h>
 #include<stdlib.h>
-#include<unistd.h>
+//#include<unistd.h>
 #include "lex.hpp"
 
 const int ATOM_NAME_LEN = 9;

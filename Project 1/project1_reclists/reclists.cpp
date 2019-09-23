@@ -1,8 +1,9 @@
 #include<iostream>
 #include<stdlib.h>
-#include<unistd.h>
+//#include<unistd.h>
 
 #include"reclists.hpp"
+#include "solutions.hpp"
 
 using namespace std;
 
@@ -98,4 +99,52 @@ bool eq( list p, list q )
 {
     if( ! is_atom(p) || ! is_atom(q) ) return 0;
     return strcmp( p->atom, q->atom ) == 0;
+}
+
+bool is_lat(list p){
+return true;
+}
+
+list previousList = NULL;
+list last(list p){
+    if((p->rest != NULL) && cdr(p)->type == LISTS){
+        if(p->first != NULL)
+        {
+            previousList = p;
+        }
+        p = cdr(p);
+    }else if((p->first != NULL) && car(p)->type != ATOMS)
+    {
+        p = car(p);
+    }else if(p->first == NULL){
+        p = previousList;
+             if(p->first->type == ATOMS){
+            return p->first;
+        } else {
+                 p = car(p);
+             }
+    }else
+    {
+        return p->first;
+    }
+
+last(p);
+}
+
+list outputList = NULL;
+list firsts(list p){
+
+    if(p->first != NULL && p->first->type != ATOMS){
+        p = car(p);
+    }else if(p->first->type == ATOMS)
+    {
+        append(p, outputList);
+    }else if(p->rest == NULL && p->first == NULL){
+        return outputList;
+
+    }else{
+        p = cdr(p);
+    }
+    firsts(p);
+
 }
