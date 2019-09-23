@@ -133,13 +133,21 @@ last(p);
 
 list outputList = NULL;
 list firsts(list p){
-
+std::cout << " Before IF in firsts" << std::endl;
     if(p->first != NULL && p->first->type != ATOMS){
+        std::cout << " inside p first != null and First type != atoms" << std::endl;\
+        previousList = p;
         p = car(p);
     }else if(p->first->type == ATOMS)
     {
-        append(p, outputList);
+        std::cout << " Inside p first type atoms" << std::endl;
+        outputList = append(p, outputList);
+        write_list(p);
+        write_list(outputList);
+        cdr(p);
+
     }else if(p->rest == NULL && p->first == NULL){
+        std::cout << " Inside rest == null and first == null" << std::endl;
         return outputList;
 
     }else{

@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/main.cpp
-iostream
--
-reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
-solutions.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
-
 G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.cpp
 iostream
 -
