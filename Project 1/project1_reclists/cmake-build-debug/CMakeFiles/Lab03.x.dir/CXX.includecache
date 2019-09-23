@@ -6,23 +6,65 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.cpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.cpp
+ctype.h
+-
+string.h
+-
+stdlib.h
+-
+lex.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
+
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
+iostream
+-
+
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/main.cpp
+iostream
+-
+reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
+solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
+
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/parser.cpp
+iostream
+-
+cstdlib
+-
+string.h
+-
+stdlib.h
+-
+lex.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
+reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
+
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.cpp
 iostream
 -
 stdlib.h
 -
 reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 solutions.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 string.h
 -
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.cpp
+reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
+solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
+
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
 iostream
 -
 reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 

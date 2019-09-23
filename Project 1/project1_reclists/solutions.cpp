@@ -51,3 +51,59 @@ list atomsAtLevel(list p, int level) {
                                          atomsAtLevel(cdr(p), level);
     return append(atomsAtLevel(car(p), level -1 ), atomsAtLevel(cdr(p), level));
 }
+
+bool is_lat(list p){
+    return true;
+}
+
+list previousList = NULL;
+list last(list p){
+    if((p->rest != NULL) && cdr(p)->type == LISTS){
+        if(p->first != NULL)
+        {
+            previousList = p;
+        }
+        p = cdr(p);
+    }else if((p->first != NULL) && car(p)->type != ATOMS)
+    {
+        p = car(p);
+    }else if(p->first == NULL){
+        p = previousList;
+        if(p->first->type == ATOMS){
+            return p->first;
+        } else {
+            p = car(p);
+        }
+    }else
+    {
+        return p->first;
+    }
+
+    last(p);
+}
+
+list outputList = NULL;
+list firsts(list p){
+    std::cout << " Before IF in firsts" << std::endl;
+    if(p->first != NULL && p->first->type != ATOMS){
+        std::cout << " inside p first != null and First type != atoms" << std::endl;\
+        previousList = p;
+        p = car(p);
+    }else if(p->first->type == ATOMS)
+    {
+        std::cout << " Inside p first type atoms" << std::endl;
+        outputList = append(p, outputList);
+        write_list(p);
+        write_list(outputList);
+        cdr(p);
+
+    }else if(p->rest == NULL && p->first == NULL){
+        std::cout << " Inside rest == null and first == null" << std::endl;
+        return outputList;
+
+    }else{
+        p = cdr(p);
+    }
+    firsts(p);
+
+}
