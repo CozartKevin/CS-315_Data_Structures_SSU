@@ -6,52 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.cpp
-ctype.h
--
-string.h
--
-stdlib.h
--
-lex.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
-
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
-iostream
--
-
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/main.cpp
-iostream
--
-reclists.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
-solutions.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
-
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/parser.cpp
-iostream
--
-cstdlib
--
-string.h
--
-stdlib.h
--
-lex.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/lex.hpp
-reclists.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
-
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.cpp
-iostream
--
-stdlib.h
--
-reclists.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
-solutions.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
-
 C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 string.h
 -

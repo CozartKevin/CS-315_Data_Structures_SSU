@@ -33,7 +33,36 @@ bool member(list p, list q) {
     // p is an atom. q is a list of atoms. The function
     // returns true if p is one of the atoms in q. Otherwise,
     // it return false.
-    return true;
+    if(is_null(q)){
+        return false;
+    }
+    if(is_atom(car(q))){
+        if(eq(p,car(q))){
+            return true;
+        }else{
+
+           return  member(p, cdr(q));
+        }
+    }else {
+        std::cout << " Inside else after not is atom on car q" << std::endl;
+        if (member(p, car(q))) {
+            return true;
+        } else {
+            return member(p, cdr(q));
+        }
+    }
+
+    return member(p,cdr(q));
+
+    if(is_null(cdr(q))){
+        return false;
+    }
+    if(car(q) == p){
+        return true;
+    }
+
+    return member(p, cdr(q));
+
 }
 
 list append(list p, list q) {
@@ -53,36 +82,33 @@ list atomsAtLevel(list p, int level) {
 }
 
 bool is_lat(list p){
-    return true;
-}
 
-list previousList = NULL;
-list last(list p){
-    if((p->rest != NULL) && cdr(p)->type == LISTS){
-        if(p->first != NULL)
-        {
-            previousList = p;
-        }
-        p = cdr(p);
-    }else if((p->first != NULL) && car(p)->type != ATOMS)
-    {
-        p = car(p);
-    }else if(p->first == NULL){
-        p = previousList;
-        if(p->first->type == ATOMS){
-            return p->first;
-        } else {
-            p = car(p);
-        }
-    }else
-    {
-        return p->first;
+    if(is_null(p)){
+    return true;
     }
 
-    last(p);
+    if(is_atom(car(p))){
+    std::cout << "  Inside is atom of is lat" << std::endl;
+        return is_lat(cdr(p));
+    }
+    return false;
+
 }
 
+list last(list p){
+
+
+    if(is_null(p)){
+        return 0;
+    }
+
+   if(is_null(cdr(p))){
+       return car(p);
+   }
+    return last(cdr(p));
+}
 list outputList = NULL;
+list previousList = NULL;
 list firsts(list p){
     std::cout << " Before IF in firsts" << std::endl;
     if(p->first != NULL && p->first->type != ATOMS){
@@ -106,4 +132,8 @@ list firsts(list p){
     }
     firsts(p);
 
+}
+
+
+bool two_the_same(list p, list q){
 }

@@ -13,6 +13,11 @@ int main()
     std::cout << "Enter level: ";
     int level;
     std::cin >> level;
+    std::cout << " letter for compare ";
+    list q = read_list();
+    write_list(q);
+    std::cout << member(q, p) << " Member output" << std::endl;
+    std::cout  << is_lat(p) << " Is Lat Output " <<  std::endl;
     std::cout << " Before last Call";
     p = last(p);
     std::cout << " Write List P" << std::endl;

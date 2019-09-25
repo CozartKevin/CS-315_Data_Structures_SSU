@@ -18,6 +18,7 @@ list last(list p);
 //returns the last element, l[n], of a non-atomic, non-empty list.
 list firsts(list p);
 
+bool member(list p, list q);
 
-
+bool two_the_same(list p, list q);
 #endif
