@@ -21,4 +21,19 @@ list firsts(list p);
 bool member(list p, list q);
 
 bool two_the_same(list p, list q);
+
+list flat(list p);
+
+list permute(list p);
+
+list list_pair(list p, list q);
+
+bool equal(list p, list q);
+
+list shape(list p);
+
+list total_reverse(list p);
+
+list intersection(list p, list q);
+
 #endif

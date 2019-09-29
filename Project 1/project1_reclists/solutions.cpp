@@ -44,25 +44,12 @@ bool member(list p, list q) {
            return  member(p, cdr(q));
         }
     }else {
-        std::cout << " Inside else after not is atom on car q" << std::endl;
         if (member(p, car(q))) {
             return true;
         } else {
             return member(p, cdr(q));
         }
     }
-
-    return member(p,cdr(q));
-
-    if(is_null(cdr(q))){
-        return false;
-    }
-    if(car(q) == p){
-        return true;
-    }
-
-    return member(p, cdr(q));
-
 }
 
 list append(list p, list q) {
@@ -88,7 +75,6 @@ bool is_lat(list p){
     }
 
     if(is_atom(car(p))){
-    std::cout << "  Inside is atom of is lat" << std::endl;
         return is_lat(cdr(p));
     }
     return false;
@@ -107,33 +93,165 @@ list last(list p){
    }
     return last(cdr(p));
 }
-list outputList = NULL;
-list previousList = NULL;
+
+
 list firsts(list p){
-    std::cout << " Before IF in firsts" << std::endl;
-    if(p->first != NULL && p->first->type != ATOMS){
-        std::cout << " inside p first != null and First type != atoms" << std::endl;\
-        previousList = p;
-        p = car(p);
-    }else if(p->first->type == ATOMS)
-    {
-        std::cout << " Inside p first type atoms" << std::endl;
-        outputList = append(p, outputList);
-        write_list(p);
-        write_list(outputList);
-        cdr(p);
-
-    }else if(p->rest == NULL && p->first == NULL){
-        std::cout << " Inside rest == null and first == null" << std::endl;
-        return outputList;
-
-    }else{
-        p = cdr(p);
+    if(is_null(p)){
+        return null();
     }
-    firsts(p);
-
+    if(is_atom(car(p))){
+        return cons(car(p),null());
+    }else
+    {
+        return append(firsts(car(p)),firsts(cdr(p)));
+    }
 }
 
 
 bool two_the_same(list p, list q){
+    if(is_null(p) || is_null(q)){
+        return 0;
+    }
+    if(is_atom(car(p))){
+        if(member(car(p), q)){
+        return true;
+        }else{
+           return two_the_same(cdr(p), q);
+        }
+    }else{
+        if(two_the_same(car(p), q)){
+            return true;
+        }else{
+            return two_the_same(cdr(p),q);
+        }
+    }
+
+
+}
+
+list flat(list p){
+    if(is_null(p)){
+        return null();
+    }
+    if(is_atom(car(p))){
+        return cons(car(p), flat(cdr(p)));
+    }else{
+        return append(flat(car(p)), flat(cdr(p)));
+    }
+
+}
+
+list permute(list p){ // Close to the correct output for (a b c d) input
+    std::cout << " In flat" << std::endl;
+    if(is_null(p)){
+        std::cout << "inside is null p for Flat" << std::endl;
+        return 0;
+    }
+    if(is_atom(car(p))){
+        std::cout << " Inside is_atom for Car in Flat" << std::endl;
+        if(is_null(cdr(p))){
+            std::cout << " Inside is_null cdr of P for Car in Flat" << std::endl;
+            return null();
+        }else{
+
+            std::cout << " Inside ELSE of is_null cdr of P for Car in Flat" << std::endl;
+
+            return cons(car(p), flat(cdr(p)));
+        }
+    }else{
+        if(is_atom(flat(car(p)))){
+            std::cout << " Inside Not Atom for car in Flat" << std::endl;
+            return append(flat(car(p)), flat(cdr(p)));
+        }
+        std::cout << " Outside of end statment" << std::endl;
+
+    }
+
+}
+
+list list_pair(list p, list q){
+    if(is_null(p) || is_null(q)){
+        return null();
+    }
+    if(is_atom(car(p)) && is_atom(car(q)))
+    {
+        std::cout << " Inside both CAR q and p are atoms" << std::endl;
+           return cons(cons(car(p), cons(car(q),null())), list_pair(cdr(p), cdr(q)));
+
+
+    }else
+    {
+        if (is_atom(car(p)))
+        {
+           return cons(p,list_pair(p,cons(car(q),null())));
+        }
+        else if (is_atom(car(q)))
+        {
+            return cons(list_pair(car(p),q) ,cons(q,null()));
+        }
+    }
+
+
+
+}
+
+bool equal(list p, list q){
+    if(is_null(p) && is_null(p)){
+        return true;
+    }
+
+    if(is_atom(car(p)) && is_atom(car(q))){
+        if(eq(car(p),car(q))){
+            return equal(cdr(p),cdr(q));
+        }
+        return false;
+    }else{
+        if(is_atom(car(p)) || is_atom(car(q)))
+        {
+           return false;
+        }else{
+            return equal(car(p),car(q));
+        }
+    }
+
+}
+
+list shape(list p){
+    if(is_null(p)){
+        return null();
+    }
+    if(is_atom(car(p))){
+        return null();
+    }else{
+        return cons(shape(car(p)),shape(cdr(p)));
+    }
+
+}
+
+list total_reverse(list p){
+    if(is_null(p)){
+        return null();
+    }
+    if(is_atom(car(p))){
+        return append(total_reverse(cdr(p)), cons(car(p),null()));
+    }else{
+        return append(total_reverse(cdr(p)), cons(total_reverse( car(p)),null()));
+    }
+}
+
+list intersection(list p, list q){
+    if(is_null(p)){
+        return null();
+    }
+
+    if(is_atom(car(p))){
+        if(member(car(p),q)){
+            return append(car(p),intersection(cdr(p),q));
+        }else{
+            return intersection(cdr(p), q);
+        }
+
+    }else{
+        return intersection(car(p),q);
+    }
 }

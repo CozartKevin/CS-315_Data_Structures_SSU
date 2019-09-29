@@ -8,21 +8,46 @@ using namespace std;
 int main()
 {
 
-    std::cout << "Enter a recursive list for atoms at level: ";
+    std::cout << "Enter a recursive list (p) for atoms at level: ";
     list p = read_list();
     std::cout << "Enter level: ";
     int level;
     std::cin >> level;
-    std::cout << " letter for compare ";
+    std::cout << " List (q) for compare: ";
     list q = read_list();
+    write_list(total_reverse(p));
+    std::cout << " Total Reverse of P output" << std::endl;
+
+    write_list(shape(p));
+    std::cout << " Shape of P output" << std::endl;
+
+    std::cout << equal(p,q) << " Eqaul result" << std::endl;
+    write_list(list_pair(p,q));
+    std::cout << " list pair output" << std::endl;
+
+    write_list(firsts(p));
+    std::cout << " Firsts print out" << std::endl;
+    std::cout << " list (p) vs list (q) for Two the same. before" << std::endl;
+    if(two_the_same(p,q)){
+        std::cout << " Two the same TRUE" << std::endl;
+    }else{
+        std::cout << " Two the same FALSE" << std::endl;
+
+    }
+    write_list(intersection(p,q));
+    std::cout << " Intersection Output" << std::endl;
+    std::cout << " Write List Output for P" << std::endl;
+    write_list(p);
+    std::cout << " Write List Output for Q" << std::endl;
     write_list(q);
+    std::cout << " Write List FLAT  Output for p" << std::endl;
+ write_list(flat(p));
     std::cout << member(q, p) << " Member output" << std::endl;
     std::cout  << is_lat(p) << " Is Lat Output " <<  std::endl;
     std::cout << " Before last Call";
     p = last(p);
     std::cout << " Write List P" << std::endl;
     write_list(p);
-    std::cout << " After last call" << std::endl;
     std::cout << "atomsAtLevel says ";
     //write_list(atomsAtLevel(p, level));
 
