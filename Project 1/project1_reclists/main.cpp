@@ -34,6 +34,8 @@ int main()
         std::cout << " Two the same FALSE" << std::endl;
 
     }
+   write_list(list_union(p,q));
+   std::cout << " List_Union Output" << std::endl;
     write_list(intersection(p,q));
     std::cout << " Intersection Output" << std::endl;
     std::cout << " Write List Output for P" << std::endl;

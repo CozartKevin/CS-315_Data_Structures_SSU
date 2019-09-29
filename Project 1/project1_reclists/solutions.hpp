@@ -36,4 +36,6 @@ list total_reverse(list p);
 
 list intersection(list p, list q);
 
+list list_union(list p, list q);
+
 #endif
