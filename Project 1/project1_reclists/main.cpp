@@ -15,16 +15,14 @@ int main()
     std::cin >> level;
     std::cout << " List (q) for compare: ";
     list q = read_list();
+    write_list(permute(p));
+    std::cout << " Permute output" << std::endl;
+
     write_list(total_reverse(p));
     std::cout << " Total Reverse of P output" << std::endl;
-
     write_list(shape(p));
     std::cout << " Shape of P output" << std::endl;
-
     std::cout << equal(p,q) << " Eqaul result" << std::endl;
-    write_list(list_pair(p,q));
-    std::cout << " list pair output" << std::endl;
-
     write_list(firsts(p));
     std::cout << " Firsts print out" << std::endl;
     std::cout << " list (p) vs list (q) for Two the same. before" << std::endl;
@@ -46,6 +44,9 @@ int main()
  write_list(flat(p));
     std::cout << member(q, p) << " Member output" << std::endl;
     std::cout  << is_lat(p) << " Is Lat Output " <<  std::endl;
+
+    write_list(list_pair(p,q));
+    std::cout << " list pair output" << std::endl;
     std::cout << " Before last Call";
     p = last(p);
     std::cout << " Write List P" << std::endl;

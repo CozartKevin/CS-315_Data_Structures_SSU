@@ -41,7 +41,7 @@ int numAtoms(list p)
 
 }
 
-bool member(list p, list q)
+bool member(list p, list q) // Doesn't pickup a nested atom in P thus wont compare with q
 {
     // p is an atom. q is a list of atoms. The function
     // returns true if p is one of the atoms in q. Otherwise,
@@ -203,21 +203,21 @@ list permute(list p)
     std::cout << " In flat" << std::endl;
     if (is_null(p))
     {
-        std::cout << "inside is null p for Flat" << std::endl;
+        std::cout << "inside is null p for Permute" << std::endl;
         return 0;
     }
     if (is_atom(car(p)))
     {
-        std::cout << " Inside is_atom for Car in Flat" << std::endl;
+        std::cout << " Inside is_atom for Car in Permute" << std::endl;
         if (is_null(cdr(p)))
         {
-            std::cout << " Inside is_null cdr of P for Car in Flat" << std::endl;
+            std::cout << " Inside is_null cdr of P for Car in Permute" << std::endl;
             return null();
         }
         else
         {
 
-            std::cout << " Inside ELSE of is_null cdr of P for Car in Flat" << std::endl;
+            std::cout << " Inside ELSE of is_null cdr of P for Car in Permute" << std::endl;
 
             return cons(car(p), flat(cdr(p)));
         }
@@ -348,29 +348,30 @@ list list_union(list p, list q)
     {
         return null();
     }
-    if (is_atom(car(p)) || is_atom(q))
+    if (is_atom(car(p)) && is_atom(car(q)))
     {
+        if(eq(car(p),car(q))){
+            return cons(car(p),list_union(cdr(p),cdr(q)));
+        }
         if (member(car(p), q))
         {
-            std::cout << " Is member" << std::endl;
-            return append(list_union(cdr(p), q), q);
+            return list_union(cdr(p), q);
         }
         if (member(car(q), p))
         {
-                std::cout << " q is atom" << std::endl;
-                return append(list_union(p, cdr(q)), cons(car(q), null()));
+                return list_union(p, cdr(q));
         }
-
-        std::cout << " after if member" << std::endl;
-        return append(append(cons(car(p), null()), list_union(cdr(p), q)), list_union(p, car(q)));
-
+        return append(cons(car(p), cons(car(q), null())), list_union(cdr(p), cdr(q)));
     }
     else
     {
-        std::cout << " else after is atom" << std::endl;
-        return append(append(append(list_union(car(p), q), list_union(cdr(p), q)), list_union(p, car(q))),
-                      list_union(p, cdr(q)));
+        if (is_atom(car(p)))
+        {
+            return list_union(p, car(q));
+        }
+        else if (is_atom(car(q)))
+        {
+            return list_union(car(p), q);
+        }
     }
-
-
 }
