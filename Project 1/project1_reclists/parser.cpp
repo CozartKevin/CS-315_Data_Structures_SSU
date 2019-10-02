@@ -66,3 +66,24 @@ list cons(list p, list q)
     r->rest = q;
     return r;
 }
+
+
+list read_list()
+//  This is a simple recursive descend parser that recognizes the
+//  following grammar:
+
+//    <list> -->  atom | () | ( <more-list> )
+//    <more-list> --> <list> | <list> <more-list>
+
+//    This function parses <list>.  get_rest() parses <more-list>.
+
+{
+    char val[MAX_ATOM_LEN];
+    tokens token = get_token( val );
+    if( token == ATOM ) return  make_atom( val );
+    if( token == LPAREN ) return get_rest();
+    if( token == END_OF_TEXT ) return 0;
+    cout << "ERROR -- error in  readlist: " <<
+         "Did not expect: " << token << endl;
+    exit(1);
+}

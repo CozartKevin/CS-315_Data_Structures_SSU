@@ -38,4 +38,10 @@ list intersection(list p, list q);
 
 list list_union(list p, list q);
 
+list permute(list p);
+
+list helper(list p, int size);
+
+int list_size(list p);
+
 #endif

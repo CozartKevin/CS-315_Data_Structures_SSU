@@ -6,27 +6,19 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/main.cpp
-iostream
--
-reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
-solutions.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
-
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 string.h
 -
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.cpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.cpp
 reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 solutions.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
 
-G:/SSU Courses/CS-315/Project 1/project1_reclists/solutions.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/solutions.hpp
 iostream
 -
 reclists.hpp
-G:/SSU Courses/CS-315/Project 1/project1_reclists/reclists.hpp
+C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/reclists.hpp
 

@@ -198,43 +198,6 @@ list flat(list p)
 
 }
 
-list permute(list p)
-{ // Close to the correct output for (a b c d) input
-    std::cout << " In flat" << std::endl;
-    if (is_null(p))
-    {
-        std::cout << "inside is null p for Permute" << std::endl;
-        return 0;
-    }
-    if (is_atom(car(p)))
-    {
-        std::cout << " Inside is_atom for Car in Permute" << std::endl;
-        if (is_null(cdr(p)))
-        {
-            std::cout << " Inside is_null cdr of P for Car in Permute" << std::endl;
-            return null();
-        }
-        else
-        {
-
-            std::cout << " Inside ELSE of is_null cdr of P for Car in Permute" << std::endl;
-
-            return cons(car(p), flat(cdr(p)));
-        }
-    }
-    else
-    {
-        if (is_atom(flat(car(p))))
-        {
-            std::cout << " Inside Not Atom for car in Flat" << std::endl;
-            return append(flat(car(p)), flat(cdr(p)));
-        }
-        std::cout << " Outside of end statment" << std::endl;
-
-    }
-
-}
-
 list list_pair(list p, list q)
 {
     if (is_null(p) || is_null(q))
@@ -374,4 +337,25 @@ list list_union(list p, list q)
             return list_union(car(p), q);
         }
     }
+}
+
+list permute(list p){
+    return helper(p, list_size(p));
+}
+
+list helper(list p, int size){
+    if(size < 1) {
+        return null();
+    }
+    return append(append(cons(p,null()),cons(total_reverse(p),null())),helper(append(cdr(p),cons(car(p),null())),(size - 1)));
+
+}
+
+int list_size(list p){
+
+    if(is_null(p)){
+        return 0;
+    }
+    return 1 + list_size(cdr(p));
+
 }

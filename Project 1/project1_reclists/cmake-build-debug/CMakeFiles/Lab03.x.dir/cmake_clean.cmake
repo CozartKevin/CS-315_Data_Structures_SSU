@@ -7,7 +7,7 @@ file(REMOVE_RECURSE
   "Lab03.x.pdb"
   "Lab03.x.exe"
   "Lab03.x.exe.manifest"
-  "Lab03.x.lib"
+  "libLab03.x.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

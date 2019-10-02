@@ -8,14 +8,15 @@ using namespace std;
 int main()
 {
 
-    std::cout << "Enter a recursive list (p) for atoms at level: ";
-    list p = read_list();
-    std::cout << "Enter level: ";
-    int level;
-    std::cin >> level;
-    std::cout << " List (q) for compare: ";
-    list q = read_list();
-    write_list(permute(p));
+   // std::cout << "Enter a recursive list (p) for atoms at level: ";
+   // list p = read_list();
+   // std::cout << "Enter level: ";
+   // int level;
+   // std::cin >> level;
+   // std::cout << " List (q) for compare: ";
+   // list q = read_list();
+   list p = read_list_from_String("(a b c)");
+   write_list(permute(p));
     std::cout << " Permute output" << std::endl;
 
     write_list(total_reverse(p));
