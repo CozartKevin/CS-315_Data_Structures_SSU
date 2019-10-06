@@ -46,6 +46,14 @@ bool member(list p, list q) // Doesn't pickup a nested atom in P thus wont compa
     // p is an atom. q is a list of atoms. The function
     // returns true if p is one of the atoms in q. Otherwise,
     // it return false.
+    if(!is_atom(p)){
+        std::cout << "WARNING: p must be an atom" << std::endl;
+        return false;
+    }
+    if(is_atom(q)){
+        std::cout << "WARNING: q can not be an atom" << std::endl;
+        return false;
+    }
     if (is_null(q))
     {
         return false;
@@ -101,6 +109,10 @@ list atomsAtLevel(list p, int level)
 
 bool is_lat(list p)
 {
+if(is_atom(p)){
+    std::cout << " WARNING: p must be a non-atomic list and connot be an atom." << std::endl;
+    return false;
+}
 
     if (is_null(p))
     {
@@ -200,6 +212,11 @@ list flat(list p)
 
 list list_pair(list p, list q)
 {
+    if(list_size(p) != list_size(q)){
+        std::cout << "WARNING: list_pair requires list p and q to be of the same length." << std::endl;
+        return null();
+    }
+
     if (is_null(p) || is_null(q))
     {
         return null();
@@ -210,14 +227,7 @@ list list_pair(list p, list q)
     }
     else
     {
-        if (is_atom(car(p)))
-        {
-            return cons(p, list_pair(p, cons(car(q), null())));
-        }
-        else if (is_atom(car(q)))
-        {
-            return cons(list_pair(car(p), q), cons(q, null()));
-        }
+       return list_pair(flat(p),flat(q));
     }
 
 
@@ -260,11 +270,11 @@ list shape(list p)
     }
     if (is_atom(car(p)))
     {
-        return null();
+        return shape(cdr(p));
     }
     else
     {
-        return cons(shape(car(p)), shape(cdr(p)));
+        return append(cons(shape(car(p)),null()),shape(cdr(p)));
     }
 
 }
@@ -307,10 +317,17 @@ list intersection(list p, list q)
 
 list list_union(list p, list q)
 {
-    if (is_null(p) || is_null(q))
+
+    if (is_null(p) && is_null(q))
     {
         return null();
+    } else if (is_null(p)){
+        return append(cons(car(q),null()), list_union(p, cdr(q)));
+    } else if(is_null(q)){
+        return append(cons(car(p),null()), list_union(cdr(p), q));
     }
+
+
     if (is_atom(car(p)) && is_atom(car(q)))
     {
         if(eq(car(p),car(q))){
@@ -319,20 +336,18 @@ list list_union(list p, list q)
         if (member(car(p), q))
         {
             return list_union(cdr(p), q);
-        }
-        if (member(car(q), p))
+        } else if (member(car(q), p))
         {
-                return list_union(p, cdr(q));
+            return list_union(p, cdr(q));
         }
         return append(cons(car(p), cons(car(q), null())), list_union(cdr(p), cdr(q)));
     }
     else
     {
-        if (is_atom(car(p)))
+          if (is_atom(car(p)))
         {
-            return list_union(p, car(q));
-        }
-        else if (is_atom(car(q)))
+            return list_union(p,car(q));
+        }else if (is_atom(car(q)))
         {
             return list_union(car(p), q);
         }

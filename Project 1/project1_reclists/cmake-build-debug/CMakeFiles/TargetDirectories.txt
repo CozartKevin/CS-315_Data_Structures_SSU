@@ -1,3 +1,3 @@
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Kevin/Desktop/github/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/Lab03.x.dir
+G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/SSU Courses/CS-315/Project 1/project1_reclists/cmake-build-debug/CMakeFiles/rebuild_cache.dir
