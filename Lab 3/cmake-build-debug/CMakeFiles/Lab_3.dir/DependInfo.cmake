@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/BinSearchTree.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/BinSearchTree.cpp.obj"
-  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/main.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/main.cpp.obj"
+  "G:/SSU Courses/CS-315/Lab 3/BinSearchTree.cpp" "G:/SSU Courses/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/BinSearchTree.cpp.obj"
+  "G:/SSU Courses/CS-315/Lab 3/main.cpp" "G:/SSU Courses/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
