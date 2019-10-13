@@ -13,6 +13,9 @@ public:
     void leftSubtree( TreeNode *left ) { this->left = left; }
     void rightSubtree(TreeNode *right) { this->right = right; }
 
+    TreeNode *setLeftSubtree(TreeNode *temp) {this->left = temp; return left;}
+    TreeNode *setRightSubtree(TreeNode * temp){ this->right = temp; return right;}
+
     int& value() { return data; } 
 
 private:
