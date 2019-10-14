@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <queue>
+#include <stack>
 #include "TreeNode.hpp"
 #include "BinSearchTree.hpp"
 
@@ -265,16 +266,30 @@ void BinSearchTree::local_levelOrderDump(TreeNode * root)
     }
 }
 
+/*
+ * remove
+ * var in: integer
+ * var out: boolean
+ * remove passes integer v to local_remove for removal after verifying with find that it is in the TreeNode root.
+ * else it returns false.
+ */
 bool BinSearchTree::remove(int v){
-
-    if(local_remove(root,v) == nullptr){
-        return false;
-    }else{
+    if(find(v))
+    {
+        local_remove(root, v);
         return true;
+    }else{
+        return false;
     }
-
 }
 
+/*
+ * local_remove
+ * var in: TreeNode, integer
+ * var out: TreeNode
+ * local_remove finds the integer v value in the TreeNode and then removes it and returns the updated TreeNode to the
+ * root BinSearchTree structure.
+ */
 TreeNode* BinSearchTree::local_remove(TreeNode * root, int v){
 
         if(root == nullptr)
@@ -282,70 +297,43 @@ TreeNode* BinSearchTree::local_remove(TreeNode * root, int v){
             return nullptr;
         }
 
-        if(root->value() == v){
-            TreeNode * parentRoot = findParent(v);
+    if(root->value() < v){
+        return root->setRightSubtree(local_remove(root->rightSubtree(),v));
+
+    }else if (root->value() > v){
+        return root->setLeftSubtree(local_remove(root->leftSubtree(),v));
+
+    }else if(root->value() == v){
             TreeNode * temp = nullptr;
+
             if(root->leftSubtree() == nullptr && root->rightSubtree() == nullptr){
-                free(root);
+                delete(root);
+
             } else if(root->leftSubtree() != nullptr && root->rightSubtree() != nullptr){
                 temp = nextLargestValue(root->rightSubtree());
-                root->value() = temp->value();
+                root->setValue(temp->value());
                 local_remove(root->rightSubtree(), temp->value());
                 temp = root;
 
-
             }else if(root->leftSubtree() != nullptr){
                 temp = root->leftSubtree();
-                    free(root);
+                    delete(root);
 
             }else if(root->rightSubtree() != nullptr){
                  temp = root->rightSubtree();
-                    free(root);
+                    delete(root);
+
             }
             return temp;
         }
-        if(root->value() < v){
-           TreeNode *right = local_remove(root->rightSubtree(),v);
-            return root->setRightSubtree(right);
-        }else if (root->value() > v){
-            TreeNode *left = local_remove(root->leftSubtree(),v);
-            return root->setLeftSubtree(left);
-        }
-
-
-
-
-        /*
-         TreeNode * parentNode = local_findParent(root, v);
-        if(parentNode == nullptr){
-                return false;
-        }
-         if(parentNode->value() == v){
-            if(parentNode->rightSubtree()->leftSubtree() == nullptr){
-                parentNode->leftSubtree(parentNode->rightSubtree());
-            }
-            else if(parentNode->leftSubtree()->rightSubtree() == nullptr)
-            {
-                parentNode->rightSubtree((parentNode->leftSubtree());
-            }
-
-         }else if( parentNode->leftSubtree()->value() == v){
-
-             parentNode->leftSubtree()->rightSubtree()->leftSubtree(parentNode->leftSubtree()->leftSubtree());
-             parentNode->leftSubtree(parentNode->leftSubtree()->rightSubtree());
-
-         }else if(parentNode ->rightSubtree()->value() == v){
-            parentNode->rightSubtree()->leftSubtree()->rightSubtree(parentNode->rightSubtree()->rightSubtree());
-            parentNode->rightSubtree(parentNode->rightSubtree()->leftSubtree());
-
-         }
-            //remove then
-
-            return true;
-         */
 }
 
-
+/*
+ * nextLargestValue
+ * var in: TreeNode
+ * var out: TreeNode
+ *
+ */
 TreeNode *BinSearchTree::nextLargestValue(TreeNode * root)
 {
             if(root->leftSubtree() == nullptr){
@@ -354,3 +342,96 @@ TreeNode *BinSearchTree::nextLargestValue(TreeNode * root)
               return nextLargestValue(root->leftSubtree());
 }
 
+/*
+ * iterMaxDepth
+ * var in:
+ * var out: integer
+ * iterMaxDepth passes a TreeNode root to the local_iterMaxDepth and returns the output as an integer.
+ */
+int  BinSearchTree::iterMaxDepth()
+{
+    return local_maxDepth(root);
+}
+
+/*
+ * local_iterMaxDepth
+ * var in: TreeNode
+ * var out: integer
+ * local_iterMaxDepth takes a TreeNode root and returns the longest path as an integer iteratively.
+ */
+int BinSearchTree::local_iterMaxDepth(TreeNode *root)
+{
+    std::queue<TreeNode *> parentQ;
+    std::queue<TreeNode *> childQ;
+    int depth = 0;
+
+    if (root != nullptr)
+    {
+        parentQ.push(root);
+        depth++;
+    }
+
+    while(!parentQ.empty())
+    {
+        while (!parentQ.empty())
+        {
+            if (parentQ.front()->leftSubtree() != nullptr)
+                childQ.push(parentQ.front()->leftSubtree());
+
+            if (parentQ.front()->rightSubtree() != nullptr)
+                childQ.push(parentQ.front()->rightSubtree());
+
+            parentQ.pop();
+        }
+
+        if (!childQ.empty())
+        {
+            depth++;
+        }
+
+        parentQ.swap(childQ);
+        childQ.empty();
+
+    }
+        return depth;
+}
+
+/*
+ * kthSmallest
+ * var in:
+ * var out:
+ * kthSmallest takes an integer k and passes it along with the TreeNode root and creates a stack that it
+ * passes to local_kthSmallest.
+ * it returns the value of the TreeNode root that is passed back from local_kthSmallest.
+ */
+int BinSearchTree::kthSmallest(int k)
+{
+    if(local_size(root) < k){
+        return 0;
+    }
+    std::stack<TreeNode*> inOrderTreeNodeStack;
+    return local_kthSmallest(root, k, &inOrderTreeNodeStack)->value();
+}
+
+/*
+ * local_kthSmallest
+ * var in:
+ * var out:
+ * local_kthSmallest takes a TreeNode root, an integer k and a reference to a stack that is passed by pointer.
+ * it returns the TreeNode that is at place K in the stack.
+ */
+TreeNode *BinSearchTree::local_kthSmallest(TreeNode * root, int k, std::stack<TreeNode*> *inOrderTreeNodeStack)
+{
+    if(root == nullptr)
+        return root;
+
+    local_kthSmallest(root->leftSubtree(),k,inOrderTreeNodeStack);
+    if(k == inOrderTreeNodeStack->size())
+    {
+        return inOrderTreeNodeStack->top();
+    }else{
+        inOrderTreeNodeStack->push(root);
+        std::cout << inOrderTreeNodeStack->top()->value() << " stack items" << std::endl;
+    }
+    local_kthSmallest(root->rightSubtree(),k,inOrderTreeNodeStack);
+ }

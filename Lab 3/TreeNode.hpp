@@ -13,10 +13,13 @@ public:
     void leftSubtree( TreeNode *left ) { this->left = left; }
     void rightSubtree(TreeNode *right) { this->right = right; }
 
-    TreeNode *setLeftSubtree(TreeNode *temp) {this->left = temp; return left;}
-    TreeNode *setRightSubtree(TreeNode * temp){ this->right = temp; return right;}
+    TreeNode *setLeftSubtree(TreeNode *temp) {this->left = temp; return this;} //sets left subtree and returns the node
+    TreeNode *setRightSubtree(TreeNode * temp){ this->right = temp; return this;} //sets right subtree and returns the node
 
-    int& value() { return data; } 
+    int& value() { return data; }
+    int& setValue(int v) { data = v; return data; }
+
+
 
 private:
     TreeNode *left, *right;

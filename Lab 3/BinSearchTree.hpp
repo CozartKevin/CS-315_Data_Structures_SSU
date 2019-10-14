@@ -1,6 +1,6 @@
 #include<stdlib.h>
 #include "TreeNode.hpp"
-
+#include <stack>
 class BinSearchTree {
 public:
     void insert( int v );
@@ -12,7 +12,8 @@ public:
     int  maxDepth();
     void levelOrderDump();
     bool remove(int v);
-
+    int iterMaxDepth();
+    int kthSmallest(int k);
 
     ~BinSearchTree();
 private:
@@ -26,6 +27,8 @@ private:
     void local_levelOrderDump(TreeNode * root);
     TreeNode *local_remove(TreeNode * root, int v);
     TreeNode *nextLargestValue(TreeNode * root);
+    int local_iterMaxDepth(TreeNode * root);
+    TreeNode *local_kthSmallest(TreeNode * root, int k, std::stack<TreeNode*> *inOrderTreeNodeStack);
 
     TreeNode *root = nullptr;
 };
