@@ -407,10 +407,10 @@ int BinSearchTree::local_iterMaxDepth(TreeNode *root)
 int BinSearchTree::kthSmallest(int k)
 {
     if(local_size(root) < k){
+        std::cout << " Return 0 in kthSmallest" << std::endl;
         return 0;
     }
-    std::stack<TreeNode*> inOrderTreeNodeStack;
-    return local_kthSmallest(root, k, &inOrderTreeNodeStack)->value();
+    return local_kthSmallest(root, k);
 }
 
 /*
@@ -420,18 +420,134 @@ int BinSearchTree::kthSmallest(int k)
  * local_kthSmallest takes a TreeNode root, an integer k and a reference to a stack that is passed by pointer.
  * it returns the TreeNode that is at place K in the stack.
  */
-TreeNode *BinSearchTree::local_kthSmallest(TreeNode * root, int k, std::stack<TreeNode*> *inOrderTreeNodeStack)
-{
-    if(root == nullptr)
-        return root;
 
-    local_kthSmallest(root->leftSubtree(),k,inOrderTreeNodeStack);
-    if(k == inOrderTreeNodeStack->size())
-    {
-        return inOrderTreeNodeStack->top();
-    }else{
-        inOrderTreeNodeStack->push(root);
-        std::cout << inOrderTreeNodeStack->top()->value() << " stack items" << std::endl;
+int BinSearchTree::local_kthSmallest(TreeNode * root, int k)
+{
+std::cout << " TOP" << k << std::endl;
+    if(root == nullptr){
+        std::cout << " inside root == null" << std::endl;
+        return 0;
     }
-    local_kthSmallest(root->rightSubtree(),k,inOrderTreeNodeStack);
- }
+
+    if(local_size(root->leftSubtree()) + 1 == k)
+        return root->value();
+
+    if(local_size(root->leftSubtree()) + 1 < k)
+        return local_kthSmallest(root->rightSubtree(), (k - (local_size(root->leftSubtree()) + 1)));
+
+    if(local_size(root->leftSubtree()) + 1 > k)
+        return local_kthSmallest(root->leftSubtree(), k);
+
+}
+
+
+void BinSearchTree::valuesAtlevel(int k){
+    local_valuesAtLevel(root, k);
+}
+
+void BinSearchTree::local_valuesAtLevel(TreeNode * root, int k){
+        if(root == nullptr)
+            return;
+
+        local_valuesAtLevel(root->leftSubtree(), k -1);
+        if(k == 1){
+            std::cout << root->value() << " ";
+        }
+        local_valuesAtLevel(root->rightSubtree(), k -1);
+}
+
+void BinSearchTree::iterValuesAtLevel(int k){
+    local_iterValuesAtLevel(root, k);
+
+}
+void BinSearchTree::local_iterValuesAtLevel(TreeNode * root, int k){
+
+    std::queue<TreeNode *> lastLevelQ;
+    std::queue<TreeNode *> nextLevelQ;
+
+    if (root != nullptr)
+    {
+        lastLevelQ.push(root);
+        k = k - 1;
+    }
+
+    while(k >= 1)
+    {
+        while (!lastLevelQ.empty())
+        {
+            if (lastLevelQ.front()->leftSubtree() != nullptr)
+                nextLevelQ.push(lastLevelQ.front()->leftSubtree());
+
+            if (lastLevelQ.front()->rightSubtree() != nullptr)
+                nextLevelQ.push(lastLevelQ.front()->rightSubtree());
+
+            lastLevelQ.pop();
+        }
+        k = k - 1;
+        lastLevelQ.swap(nextLevelQ);
+        nextLevelQ.empty();
+    }
+    while(!lastLevelQ.empty()){
+        std::cout << lastLevelQ.front()->value() << " ";
+        lastLevelQ.pop();
+    }
+}
+
+bool BinSearchTree::hasRootToLeafSum(int sum){
+    return local_hasRootToLeafSum(root, sum);
+
+}
+
+bool BinSearchTree::local_hasRootToLeafSum(TreeNode * root, int sum){
+
+    if(root == nullptr){
+        return false;
+    }
+
+    sum = sum - root->value();
+
+    if(sum == 0){
+        if(root->leftSubtree() == nullptr && root->rightSubtree() == nullptr){
+            return true;
+        }
+    }
+
+ return  local_hasRootToLeafSum(root->leftSubtree(), (sum) )|| local_hasRootToLeafSum(root->rightSubtree(), (sum));
+}
+
+bool BinSearchTree::areIdentical(BinSearchTree *bst){
+        return local_areIdentical(root, bst->root);
+}
+
+bool BinSearchTree::local_areIdentical(TreeNode * root, TreeNode * bstRoot){
+
+    if(root == nullptr && bstRoot == nullptr){
+            return true;
+    }
+
+    if(root != nullptr && bstRoot != nullptr){
+        return local_areIdentical(root->leftSubtree(), bstRoot->leftSubtree()) && local_areIdentical(root->rightSubtree(), bstRoot->rightSubtree());
+    }
+        return false;
+}
+
+BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
+    return local_intersectWith(root, bst->root);
+}
+
+BinSearchTree *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode * bstRoot){
+
+        if(root == nullptr){
+            return nullptr;
+        }
+
+        if(local_find(bstRoot,root->value())){
+
+        }else{
+            local_remove(root,root->value());
+        }
+
+        local_intersectWith(root->leftSubtree(), bstRoot->leftSubtree())
+        local_intersectWith(root->rightSubtree(), bstRoot->rightSubtree());
+
+}

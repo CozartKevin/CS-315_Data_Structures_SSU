@@ -14,6 +14,11 @@ public:
     bool remove(int v);
     int iterMaxDepth();
     int kthSmallest(int k);
+    void valuesAtlevel(int k);
+    void iterValuesAtLevel(int k);
+    bool hasRootToLeafSum(int sum);
+    bool areIdentical(BinSearchTree *bst);
+    BinSearchTree *intersectWith(BinSearchTree *bst);
 
     ~BinSearchTree();
 private:
@@ -28,7 +33,12 @@ private:
     TreeNode *local_remove(TreeNode * root, int v);
     TreeNode *nextLargestValue(TreeNode * root);
     int local_iterMaxDepth(TreeNode * root);
-    TreeNode *local_kthSmallest(TreeNode * root, int k, std::stack<TreeNode*> *inOrderTreeNodeStack);
+    int local_kthSmallest(TreeNode * root, int k);
+    void local_valuesAtLevel(TreeNode * root, int k);
+    void local_iterValuesAtLevel(TreeNode * root, int k);
+    bool local_hasRootToLeafSum(TreeNode * root, int sum);
+    bool local_areIdentical(TreeNode * root, TreeNode * bstRoot);
+    BinSearchTree *local_intersectWith(TreeNode * root, TreeNode *bstRoot);
 
     TreeNode *root = nullptr;
 };
