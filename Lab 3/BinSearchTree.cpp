@@ -532,22 +532,46 @@ bool BinSearchTree::local_areIdentical(TreeNode * root, TreeNode * bstRoot){
 }
 
 BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
-    return local_intersectWith(root, bst->root);
+    BinSearchTree *resultBST = new BinSearchTree();
+    return local_intersectWith(root, bst->root, resultBST->root);
+
 }
 
-BinSearchTree *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode * bstRoot){
+BinSearchTree *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode * bstRoot, TreeNode *resultBST){
+    if(root == nullptr || bstRoot == nullptr){
+        return nullptr;
+    }
 
-        if(root == nullptr){
-            return nullptr;
-        }
-
-        if(local_find(bstRoot,root->value())){
-
+    if(local_find(bstRoot, root->value())){
+        if(local_find(resultBST, root->value())) {
+           // already in the tree thus do nothing
         }else{
-            local_remove(root,root->value());
+            //not in result tree thus insert
+            local_insert(resultBST, root->value());
         }
 
-        local_intersectWith(root->leftSubtree(), bstRoot->leftSubtree())
-        local_intersectWith(root->rightSubtree(), bstRoot->rightSubtree());
+    }
+    if(local_find(root, bstRoot->value())){
+        if(local_find(resultBST, bstRoot->value())) {
+        //already in result tree thus do nothing
+        }else{
+            //not in result tree thus insert
+            local_insert(resultBST, bstRoot->value());
+        }
+    }
+//local_intersectWith(root->leftSubtree(), bstRoot->leftSubtree(),resultBST) && local_intersectWith(root->rightSubtree(), bstRoot->rightSubtree(),resultBST);
 
+return nullptr;
+}
+
+BinSearchTree::~BinSearchTree(){
+    deleteBinSearchTree(root);
+};
+
+void BinSearchTree::deleteBinSearchTree(TreeNode * root){
+    if(root != nullptr) {
+        deleteBinSearchTree(root->leftSubtree());
+        deleteBinSearchTree(root->rightSubtree());
+        delete root;
+    }
 }

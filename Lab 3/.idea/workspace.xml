@@ -50,7 +50,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Lab_3" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="input.txt" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Lab_3" TARGET_NAME="Lab_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab_3" RUN_TARGET_NAME="Lab_3">
+    <configuration name="Lab_3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Lab_3" TARGET_NAME="Lab_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab_3" RUN_TARGET_NAME="Lab_3">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -73,6 +73,8 @@
       <workItem from="1571001375674" duration="15527000" />
       <workItem from="1571516634572" duration="15750000" />
       <workItem from="1571607410780" duration="2377000" />
+      <workItem from="1571788995100" duration="1699000" />
+      <workItem from="1571791030715" duration="2822000" />
     </task>
     <servers />
   </component>

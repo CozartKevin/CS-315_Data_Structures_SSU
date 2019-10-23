@@ -1,0 +1,222 @@
+
+kcozart@blue.cs.sonoma.edu's password:
+Last login: Thu Sep 19 09:04:56 2019 from 130.157.117.135
+[kcozart@blue ~]$ dir
+BinSearchTree.cpp  input.html   test.html     TreeTest.cpp
+BinSearchTree.hpp  public_html  TreeNode.hpp
+[kcozart@blue ~]$ g++ -std=c++17 *.cpp
+[kcozart@blue ~]$ ./a.out
++++++++++++++++++++++++++
+expecting no elements printed
++++++++++Expected++++++++
++++++++++++++++++++++++++
+---------Found-----------
+-------------------------
+PASS: find in empty tree.
+PASS: iterFind in empty tree.
+PASS: maxDepth expecting 0 elements.
+PASS: size expecting 0 elements.
+
+inserting 8
+inserting 4
+inserting 12
+inserting 2
+inserting 6
+inserting 10
+inserting 14
++++++++++++++++++++++++++
+expecting elements printed
++++++++++Expected++++++++
+2
+4
+6
+8
+10
+12
+14
++++++++++++++++++++++++++
+---------Found-----------
+2
+4
+6
+8
+10
+12
+14
+-------------------------
+3 PASS: expecting matching depth
+7 PASS: expecting matching size
+1 PASS: !find in tree.
+2 PASS: find in tree.
+3 PASS: !find in tree.
+4 PASS: find in tree.
+5 PASS: !find in tree.
+6 PASS: find in tree.
+7 PASS: !find in tree.
+8 PASS: find in tree.
+9 PASS: !find in tree.
+10 PASS: find in tree.
+11 PASS: !find in tree.
+12 PASS: find in tree.
+13 PASS: !find in tree.
+14 PASS: find in tree.
+15 PASS: !find in tree.
+1 PASS: !iterFind in tree.
+2 PASS: iterFind in tree.
+3 PASS: !iterFind in tree.
+4 PASS: iterFind in tree.
+5 PASS: !iterFind in tree.
+6 PASS: iterFind in tree.
+7 PASS: !iterFind in tree.
+8 PASS: iterFind in tree.
+9 PASS: !iterFind in tree.
+10 PASS: iterFind in tree.
+11 PASS: !iterFind in tree.
+12 PASS: iterFind in tree.
+13 PASS: !iterFind in tree.
+14 PASS: iterFind in tree.
+15 PASS: !iterFind in tree.
+
+inserting 6
+inserting 4
+inserting 8
+inserting 2
+inserting 10
++++++++++++++++++++++++++
+expecting elements printed
++++++++++Expected++++++++
+2
+4
+6
+8
+10
++++++++++++++++++++++++++
+---------Found-----------
+2
+4
+6
+8
+10
+-------------------------
+3 PASS: expecting matching depth
+5 PASS: expecting matching size
+1 PASS: !find in tree.
+2 PASS: find in tree.
+3 PASS: !find in tree.
+4 PASS: find in tree.
+5 PASS: !find in tree.
+6 PASS: find in tree.
+7 PASS: !find in tree.
+8 PASS: find in tree.
+9 PASS: !find in tree.
+10 PASS: find in tree.
+11 PASS: !find in tree.
+1 PASS: !iterFind in tree.
+2 PASS: iterFind in tree.
+3 PASS: !iterFind in tree.
+4 PASS: iterFind in tree.
+5 PASS: !iterFind in tree.
+6 PASS: iterFind in tree.
+7 PASS: !iterFind in tree.
+8 PASS: iterFind in tree.
+9 PASS: !iterFind in tree.
+10 PASS: iterFind in tree.
+11 PASS: !iterFind in tree.
+
+inserting 6
+inserting 2
+inserting 10
+inserting 4
+inserting 8
++++++++++++++++++++++++++
+expecting elements printed
++++++++++Expected++++++++
+2
+4
+6
+8
+10
++++++++++++++++++++++++++
+---------Found-----------
+2
+4
+6
+8
+10
+-------------------------
+3 PASS: expecting matching depth
+5 PASS: expecting matching size
+1 PASS: !find in tree.
+2 PASS: find in tree.
+3 PASS: !find in tree.
+4 PASS: find in tree.
+5 PASS: !find in tree.
+6 PASS: find in tree.
+7 PASS: !find in tree.
+8 PASS: find in tree.
+9 PASS: !find in tree.
+10 PASS: find in tree.
+11 PASS: !find in tree.
+1 PASS: !iterFind in tree.
+2 PASS: iterFind in tree.
+3 PASS: !iterFind in tree.
+4 PASS: iterFind in tree.
+5 PASS: !iterFind in tree.
+6 PASS: iterFind in tree.
+7 PASS: !iterFind in tree.
+8 PASS: iterFind in tree.
+9 PASS: !iterFind in tree.
+10 PASS: iterFind in tree.
+11 PASS: !iterFind in tree.
+
+balanced tree
+inserting: 65535
++++++++++++++++++++++++++
+insert
+average: 0
+min: 0
+max 17
+-------------------------
++++++++++++++++++++++++++
+find
+average: 0
+min: 0
+max 16
+-------------------------
++++++++++++++++++++++++++
+iterFind
+average: 0
+min: 0
+max 16
+-------------------------
+size: 65535
+size time: 554
+depth: 16
+depth time: 979
+
+unbalanced tree
+inserting: 65535
++++++++++++++++++++++++++
+insert
+average: 693
+min: 0
+max 6579
+-------------------------
++++++++++++++++++++++++++
+find
+average: 348
+min: 0
+max 883
+-------------------------
++++++++++++++++++++++++++
+iterFind
+average: 194
+min: 0
+max 531
+-------------------------
+size: 65535
+size time: 862
+depth: 65535
+depth time: 897
+
+[kcozart@blue ~]$

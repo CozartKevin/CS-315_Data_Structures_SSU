@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/BinSearchTree.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/BinSearchTree.cpp.obj"
-  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/main.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3.dir/main.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/BinSearchTree.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3_A_Test.dir/BinSearchTree.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/TreeTest.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Lab 3/cmake-build-debug/CMakeFiles/Lab_3_A_Test.dir/TreeTest.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
