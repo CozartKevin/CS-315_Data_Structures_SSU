@@ -39,7 +39,9 @@ int main( int argc, char *argv[] ) {
     std::cout << tree->kthSmallest(3) << " kthSmallest Output" << std::endl;
                    //std::cout << tree->remove(10) << " Remove 10 output" << std::endl;
     std::cout << tree->areIdentical(tree2) << " are identical OUTPUT" << std::endl;
-  tree->intersectWith(tree2)->inorderDump();   std::cout << " Intersect with OUTPUT shown by in order dump" << std::endl;
+ // tree->intersectWith(tree2)->inorderDump();   std::cout << " Intersect with OUTPUT shown by in order dump" << std::endl;
+  tree->inorderDump(); std::cout << "Tree in order dump" << std::endl;
+    tree->unionWith(tree2)->inorderDump();   std::cout << " Union with OUTPUT shown by in order dump" << std::endl;
 
     return 0;
 }

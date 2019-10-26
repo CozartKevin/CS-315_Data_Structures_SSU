@@ -539,29 +539,42 @@ BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
 
 }
 
-void *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){
+void *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
     if(root == nullptr || bstRoot == nullptr){
         return nullptr;
     }
 
     if(local_find(bstRootTop, root->value())){
-        if(!local_find(resultBST->root, root->value())) {
             resultBST->insert(root->value());
-        }else{
-            // already in the tree thus do nothing
-        }
     }
     if(local_find(rootTop, bstRoot->value())){
-        if(!local_find(resultBST->root, bstRoot->value())) {
             //not in result tree thus insert
             resultBST->insert(bstRoot->value());
-        }else{
-            //already in result tree thus do nothing
-        }
     }
 local_intersectWith(root->leftSubtree(), root, bstRoot->leftSubtree(),bstRoot, resultBST);
 local_intersectWith(root->rightSubtree(), root, bstRoot->rightSubtree(), bstRoot, resultBST);
 }
+
+
+BinSearchTree *BinSearchTree::unionWith(BinSearchTree *bst){
+    BinSearchTree *resultBST = new BinSearchTree();
+    resultBST->root = nullptr;
+    local_unionWith(root, resultBST);
+    local_unionWith(bst->root, resultBST);
+    return resultBST;
+
+}
+
+void BinSearchTree::local_unionWith(TreeNode * root, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
+    if(root != nullptr){
+        resultBST->insert(root->value());
+        local_unionWith(root->leftSubtree(), resultBST);
+        local_unionWith(root->rightSubtree(), resultBST);
+    }
+}
+
+
+
 
 BinSearchTree::~BinSearchTree(){
     deleteBinSearchTree(root);

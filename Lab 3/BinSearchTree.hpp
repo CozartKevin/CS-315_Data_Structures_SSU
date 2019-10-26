@@ -19,7 +19,8 @@ public:
     bool hasRootToLeafSum(int sum);
     bool areIdentical(BinSearchTree *bst);
     BinSearchTree *intersectWith(BinSearchTree *bst);
-void deleteBinSearchTree(TreeNode * root);
+    BinSearchTree *unionWith(BinSearchTree *bst);
+    void deleteBinSearchTree(TreeNode * root);
     ~BinSearchTree();
 private:
     TreeNode *local_insert( TreeNode *, int );
@@ -39,6 +40,6 @@ private:
     bool local_hasRootToLeafSum(TreeNode * root, int sum);
     bool local_areIdentical(TreeNode * root, TreeNode * bstRoot);
     void *local_intersectWith(TreeNode * root, TreeNode * rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree * resultBST);
-
+    void local_unionWith(TreeNode * root, BinSearchTree * resultBST);
     TreeNode *root = nullptr;
 };
