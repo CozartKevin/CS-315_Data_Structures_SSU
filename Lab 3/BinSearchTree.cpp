@@ -255,7 +255,7 @@ void BinSearchTree::local_levelOrderDump(TreeNode * root)
            if(valuePrintQ.front()->rightSubtree() != nullptr)
             trackerQ.push(valuePrintQ.front()->rightSubtree());
 
-            valuePrintQ.pop();
+           valuePrintQ.pop();
         }
 
         while(!trackerQ.empty())
@@ -303,7 +303,7 @@ TreeNode* BinSearchTree::local_remove(TreeNode * root, int v){
     }else if (root->value() > v){
         return root->setLeftSubtree(local_remove(root->leftSubtree(),v));
 
-    }else if(root->value() == v){
+    }else{
             TreeNode * temp = nullptr;
 
             if(root->leftSubtree() == nullptr && root->rightSubtree() == nullptr){
@@ -430,18 +430,21 @@ std::cout << " TOP" << k << std::endl;
     }
 
     if(local_size(root->leftSubtree()) + 1 == k)
+    {
         return root->value();
 
-    if(local_size(root->leftSubtree()) + 1 < k)
+    }else if(local_size(root->leftSubtree()) + 1 < k)
+    {
         return local_kthSmallest(root->rightSubtree(), (k - (local_size(root->leftSubtree()) + 1)));
 
-    if(local_size(root->leftSubtree()) + 1 > k)
+    }else
+    {
         return local_kthSmallest(root->leftSubtree(), k);
-
+    }
 }
 
 
-void BinSearchTree::valuesAtlevel(int k){
+void BinSearchTree::valuesAtLevel(int k){
     local_valuesAtLevel(root, k);
 }
 

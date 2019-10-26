@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Lab 3/BinSearchTree.cpp
-iostream
--
-algorithm
--
-queue
--
-stack
--
-TreeNode.hpp
-G:/SSU Courses/CS-315/Lab 3/TreeNode.hpp
-BinSearchTree.hpp
-G:/SSU Courses/CS-315/Lab 3/BinSearchTree.hpp
-
 G:/SSU Courses/CS-315/Lab 3/BinSearchTree.hpp
 stdlib.h
 -

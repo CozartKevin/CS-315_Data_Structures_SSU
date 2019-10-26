@@ -14,7 +14,7 @@ public:
     bool remove(int v);
     int iterMaxDepth();
     int kthSmallest(int k);
-    void valuesAtlevel(int k);
+    void valuesAtLevel(int k);
     void iterValuesAtLevel(int k);
     bool hasRootToLeafSum(int sum);
     bool areIdentical(BinSearchTree *bst);
