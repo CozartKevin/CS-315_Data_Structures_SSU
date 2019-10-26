@@ -42,6 +42,7 @@ int main( int argc, char *argv[] ) {
  // tree->intersectWith(tree2)->inorderDump();   std::cout << " Intersect with OUTPUT shown by in order dump" << std::endl;
   tree->inorderDump(); std::cout << "Tree in order dump" << std::endl;
     tree->unionWith(tree2)->inorderDump();   std::cout << " Union with OUTPUT shown by in order dump" << std::endl;
+    tree->differenceOf(tree2)->inorderDump(); std::cout << " Difference of with output shown by in order dump" << std::endl;
 
     return 0;
 }

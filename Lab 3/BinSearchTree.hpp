@@ -20,8 +20,10 @@ public:
     bool areIdentical(BinSearchTree *bst);
     BinSearchTree *intersectWith(BinSearchTree *bst);
     BinSearchTree *unionWith(BinSearchTree *bst);
+    BinSearchTree *differenceOf(BinSearchTree *bst);
     void deleteBinSearchTree(TreeNode * root);
     ~BinSearchTree();
+
 private:
     TreeNode *local_insert( TreeNode *, int );
     bool local_find( TreeNode * root, int v);
@@ -39,7 +41,8 @@ private:
     void local_iterValuesAtLevel(TreeNode * root, int k);
     bool local_hasRootToLeafSum(TreeNode * root, int sum);
     bool local_areIdentical(TreeNode * root, TreeNode * bstRoot);
-    void *local_intersectWith(TreeNode * root, TreeNode * rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree * resultBST);
+    void local_intersectWith(TreeNode * root, TreeNode * rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree * resultBST);
     void local_unionWith(TreeNode * root, BinSearchTree * resultBST);
+    void local_differenceOf(TreeNode * root, TreeNode * bstRoot, BinSearchTree * resultBST);
     TreeNode *root = nullptr;
 };

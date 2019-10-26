@@ -539,9 +539,9 @@ BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
 
 }
 
-void *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
+void BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
     if(root == nullptr || bstRoot == nullptr){
-        return nullptr;
+        return;
     }
 
     if(local_find(bstRootTop, root->value())){
@@ -572,6 +572,29 @@ void BinSearchTree::local_unionWith(TreeNode * root, BinSearchTree *resultBST){ 
         local_unionWith(root->rightSubtree(), resultBST);
     }
 }
+
+
+BinSearchTree *BinSearchTree::differenceOf(BinSearchTree *bst){
+    BinSearchTree *resultBST = new BinSearchTree();
+    resultBST->root = nullptr;
+    local_differenceOf(root, bst->root, resultBST);
+    return resultBST;
+}
+
+void BinSearchTree::local_differenceOf(TreeNode * root, TreeNode * bstRoot, BinSearchTree *resultBST){
+
+    if(root == nullptr){
+        return;
+    }
+
+        if(!local_find(bstRoot, root->value())){
+            resultBST->insert(root->value());
+        }
+
+        local_differenceOf(root->leftSubtree(), bstRoot, resultBST);
+        local_differenceOf(root->rightSubtree(), bstRoot, resultBST);
+}
+
 
 
 
