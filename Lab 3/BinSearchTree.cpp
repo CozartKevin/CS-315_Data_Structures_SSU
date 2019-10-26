@@ -533,35 +533,34 @@ bool BinSearchTree::local_areIdentical(TreeNode * root, TreeNode * bstRoot){
 
 BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
     BinSearchTree *resultBST = new BinSearchTree();
-    return local_intersectWith(root, bst->root, resultBST->root);
+    resultBST->root = nullptr;
+   local_intersectWith(root, root, bst->root, bst->root, resultBST);
+    return resultBST;
 
 }
 
-BinSearchTree *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode * bstRoot, TreeNode *resultBST){
+void *BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){
     if(root == nullptr || bstRoot == nullptr){
         return nullptr;
     }
 
-    if(local_find(bstRoot, root->value())){
-        if(local_find(resultBST, root->value())) {
-           // already in the tree thus do nothing
+    if(local_find(bstRootTop, root->value())){
+        if(!local_find(resultBST->root, root->value())) {
+            resultBST->insert(root->value());
         }else{
-            //not in result tree thus insert
-            local_insert(resultBST, root->value());
-        }
-
-    }
-    if(local_find(root, bstRoot->value())){
-        if(local_find(resultBST, bstRoot->value())) {
-        //already in result tree thus do nothing
-        }else{
-            //not in result tree thus insert
-            local_insert(resultBST, bstRoot->value());
+            // already in the tree thus do nothing
         }
     }
-//local_intersectWith(root->leftSubtree(), bstRoot->leftSubtree(),resultBST) && local_intersectWith(root->rightSubtree(), bstRoot->rightSubtree(),resultBST);
-
-return nullptr;
+    if(local_find(rootTop, bstRoot->value())){
+        if(!local_find(resultBST->root, bstRoot->value())) {
+            //not in result tree thus insert
+            resultBST->insert(bstRoot->value());
+        }else{
+            //already in result tree thus do nothing
+        }
+    }
+local_intersectWith(root->leftSubtree(), root, bstRoot->leftSubtree(),bstRoot, resultBST);
+local_intersectWith(root->rightSubtree(), root, bstRoot->rightSubtree(), bstRoot, resultBST);
 }
 
 BinSearchTree::~BinSearchTree(){

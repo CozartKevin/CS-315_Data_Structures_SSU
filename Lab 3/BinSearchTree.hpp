@@ -38,7 +38,7 @@ private:
     void local_iterValuesAtLevel(TreeNode * root, int k);
     bool local_hasRootToLeafSum(TreeNode * root, int sum);
     bool local_areIdentical(TreeNode * root, TreeNode * bstRoot);
-    BinSearchTree *local_intersectWith(TreeNode * root, TreeNode *bstRoot, TreeNode * resultBST);
+    void *local_intersectWith(TreeNode * root, TreeNode * rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree * resultBST);
 
     TreeNode *root = nullptr;
 };
