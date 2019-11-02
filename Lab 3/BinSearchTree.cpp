@@ -423,7 +423,6 @@ int BinSearchTree::kthSmallest(int k)
 
 int BinSearchTree::local_kthSmallest(TreeNode * root, int k)
 {
-std::cout << " TOP" << k << std::endl;
     if(root == nullptr){
         std::cout << " inside root == null" << std::endl;
         return 0;
@@ -454,7 +453,7 @@ void BinSearchTree::local_valuesAtLevel(TreeNode * root, int k){
 
         local_valuesAtLevel(root->leftSubtree(), k -1);
         if(k == 1){
-            std::cout << root->value() << " ";
+            std::cout << root->value() << std::endl;
         }
         local_valuesAtLevel(root->rightSubtree(), k -1);
 }
@@ -491,7 +490,7 @@ void BinSearchTree::local_iterValuesAtLevel(TreeNode * root, int k){
         nextLevelQ.empty();
     }
     while(!lastLevelQ.empty()){
-        std::cout << lastLevelQ.front()->value() << " ";
+        std::cout << lastLevelQ.front()->value() << std::endl;
         lastLevelQ.pop();
     }
 }
@@ -537,25 +536,28 @@ bool BinSearchTree::local_areIdentical(TreeNode * root, TreeNode * bstRoot){
 BinSearchTree *BinSearchTree::intersectWith(BinSearchTree *bst){
     BinSearchTree *resultBST = new BinSearchTree();
     resultBST->root = nullptr;
-   local_intersectWith(root, root, bst->root, bst->root, resultBST);
+    if(bst->root != nullptr)
+    {
+        local_intersectWith(root, bst->root, resultBST);
+    }
     return resultBST;
 
 }
 
-void BinSearchTree::local_intersectWith(TreeNode * root, TreeNode *rootTop, TreeNode * bstRoot, TreeNode * bstRootTop, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
-    if(root == nullptr || bstRoot == nullptr){
-        return;
-    }
+void BinSearchTree::local_intersectWith(TreeNode * root, TreeNode * bstRoot, BinSearchTree *resultBST){ // I hate this, try to figure out how to not send in root and bst root twice
+    if(root != nullptr){
 
-    if(local_find(bstRootTop, root->value())){
+
+    if(local_find(bstRoot, root->value())){
             resultBST->insert(root->value());
+
     }
-    if(local_find(rootTop, bstRoot->value())){
-            //not in result tree thus insert
-            resultBST->insert(bstRoot->value());
+    local_intersectWith(root->leftSubtree(), bstRoot, resultBST);
+    local_intersectWith(root->rightSubtree(), bstRoot, resultBST);
     }
-local_intersectWith(root->leftSubtree(), root, bstRoot->leftSubtree(),bstRoot, resultBST);
-local_intersectWith(root->rightSubtree(), root, bstRoot->rightSubtree(), bstRoot, resultBST);
+//return local_intersectWith(root->leftSubtree(), root, bstRoot->leftSubtree(),bstRoot, resultBST);
+    //local_intersectWith(root->rightSubtree(), root, bstRoot->rightSubtree(), bstRoot, resultBST);
+
 }
 
 
@@ -585,17 +587,18 @@ BinSearchTree *BinSearchTree::differenceOf(BinSearchTree *bst){
 }
 
 void BinSearchTree::local_differenceOf(TreeNode * root, TreeNode * bstRoot, BinSearchTree *resultBST){
+    if(bstRoot != nullptr)
+    {
 
-    if(root == nullptr){
-        return;
-    }
 
-        if(!local_find(bstRoot, root->value())){
-            resultBST->insert(root->value());
+        if (!local_find(root, bstRoot->value()))
+        {
+            resultBST->insert(bstRoot->value());
         }
 
-        local_differenceOf(root->leftSubtree(), bstRoot, resultBST);
-        local_differenceOf(root->rightSubtree(), bstRoot, resultBST);
+        local_differenceOf(root, bstRoot->leftSubtree(), resultBST);
+        local_differenceOf(root, bstRoot->rightSubtree(), resultBST);
+    }
 }
 
 

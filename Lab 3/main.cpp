@@ -30,7 +30,7 @@ int main( int argc, char *argv[] ) {
     tree->inorderDump();
     std::cout << tree->maxDepth() << " Max Depth output" << std::endl;
                       // std::cout << tree->iterMaxDepth() << " iter Max Depth output" << std::endl;
-    tree->valuesAtlevel(2);
+    tree->valuesAtLevel(2);
     std::cout << " Values at level Output" << std::endl;
     tree->iterValuesAtLevel(2);
     std::cout << " iterValues at level output" << std::endl;
@@ -39,7 +39,7 @@ int main( int argc, char *argv[] ) {
    std::cout << tree->kthSmallest(5) << " kthSmallest Output" << std::endl;
                   // std::cout << tree->remove(10) << " Remove 10 output" << std::endl;
     std::cout << tree->areIdentical(tree2) << " are identical OUTPUT" << std::endl;
- // tree->intersectWith(tree2)->inorderDump();   std::cout << " Intersect with OUTPUT shown by in order dump" << std::endl;
+  tree->intersectWith(tree2)->inorderDump();   std::cout << " Intersect with OUTPUT shown by in order dump" << std::endl;
   tree->inorderDump(); std::cout << "Tree in order dump" << std::endl;
     tree->unionWith(tree2)->inorderDump();   std::cout << " Union with OUTPUT shown by in order dump" << std::endl;
     tree->differenceOf(tree2)->inorderDump(); std::cout << " Difference of with output shown by in order dump" << std::endl;
