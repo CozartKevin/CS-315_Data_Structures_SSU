@@ -1,0 +1,7 @@
+[ 
+   { 
+     "gpa": 2.33256, 
+     "term": "2197", 
+     "id": "MDcwNTAwMDQxNDUzNTkwMjky" 
+   }
+]
