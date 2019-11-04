@@ -33,7 +33,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mainForLevelOrderDump.cpp.output" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -76,6 +76,7 @@
       <workItem from="1571788995100" duration="1699000" />
       <workItem from="1571791030715" duration="2822000" />
       <workItem from="1572107381794" duration="11597000" />
+      <workItem from="1572910206322" duration="19000" />
     </task>
     <servers />
   </component>

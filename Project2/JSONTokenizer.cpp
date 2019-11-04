@@ -40,6 +40,8 @@ bool JSONTokenizer::charOfInterest(char c)
     {
       //  std::cout << " inside iffy compare " << std::endl;
         return true;
+    }else if(isdigit(c)){
+        return true;
     }
     else
     {
@@ -74,23 +76,18 @@ JSONToken JSONTokenizer::getToken()
         jsontoken.makeTag(c);
         return jsontoken;
     }else if(c == ':'){
-      while(inputStream.get(c) != '"' || isdigit(inputStream.get(c))){
-
-      }
-      if(c == '"'){
-            inputStream.putback(c);
-            jsontoken.makeTag(':');
+                 jsontoken.makeTag(':');
             return jsontoken;
-      }
-      if(isdigit(c)){
-          std::string tagName;
-          tagName = getString(c, tagName, inputStream);
-          jsontoken.makeTag(tagName);
-          return jsontoken;
-      }
+
+    }else if(isdigit(c)){
+        inputStream.putback(c);
+        std::string tagName;
+        tagName = getString(c, tagName, inputStream);
+        jsontoken.makeTag(tagName);
+        return jsontoken;
 
 
-    }else if (c == '"')//TODO same todo as earlier ' " ' comparison.
+    }else if(c == '"')//TODO same todo as earlier ' " ' comparison.
     {
      //   std::cout << " Inside iffy compare 2.0 before tagname set" << std::endl;
         std::string tagName;
@@ -98,6 +95,9 @@ JSONToken JSONTokenizer::getToken()
      //   std::cout << tagName << " after GetString" << std::endl;
       //  std::cout << " before tagname Make for jsontoken" << std::endl;
         jsontoken.makeTag(tagName);
+        if(inputStream.peek() == '"') {
+            inputStream.get(c);
+        }
       //  std::cout << " jsontoken tagname before return" << std::endl;
       //  jsontoken.print();
         return jsontoken;
@@ -116,9 +116,8 @@ std::string &JSONTokenizer::getString(char c, std::string &tagName, std::istream
         inputStream.get(c);
         tagName = tagName + c;
       //  std::cout << tagName << " Tagname in loop" << std::endl;
-    } while (inputStream.peek() != '"'&& !inputStream.eof());
+    } while (inputStream.peek() != '"' && inputStream.peek() != ',' && !inputStream.eof());
    // std::cout << tagName << " Tagname after getString" << std::endl;
-    inputStream.get(c);
   //  std::cout << " before tagname return" << std::endl;
     return tagName;
 }

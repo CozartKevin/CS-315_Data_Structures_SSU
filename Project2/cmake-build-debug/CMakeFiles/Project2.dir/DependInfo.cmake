@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "G:/SSU Courses/CS-315/Project2/JSONToken.cpp" "G:/SSU Courses/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/JSONToken.cpp.obj"
-  "G:/SSU Courses/CS-315/Project2/JSONTokenizer.cpp" "G:/SSU Courses/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/JSONTokenizer.cpp.obj"
-  "G:/SSU Courses/CS-315/Project2/main.cpp" "G:/SSU Courses/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/main.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONParser.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/JSONParser.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONToken.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/JSONToken.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONTokenizer.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/JSONTokenizer.cpp.obj"
+  "C:/Users/Kevin/Desktop/github/CS-315/Project2/main.cpp" "C:/Users/Kevin/Desktop/github/CS-315/Project2/cmake-build-debug/CMakeFiles/Project2.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
