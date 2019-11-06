@@ -108,12 +108,54 @@ CMakeFiles/Project2.dir/JSONParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/JSONParser.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kevin\Desktop\github\CS-315\Project2\JSONParser.cpp -o CMakeFiles\Project2.dir\JSONParser.cpp.s
 
+CMakeFiles/Project2.dir/Pair.cpp.obj: CMakeFiles/Project2.dir/flags.make
+CMakeFiles/Project2.dir/Pair.cpp.obj: ../Pair.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Kevin\Desktop\github\CS-315\Project2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project2.dir/Pair.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project2.dir\Pair.cpp.obj -c C:\Users\Kevin\Desktop\github\CS-315\Project2\Pair.cpp
+
+CMakeFiles/Project2.dir/Pair.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/Pair.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kevin\Desktop\github\CS-315\Project2\Pair.cpp > CMakeFiles\Project2.dir\Pair.cpp.i
+
+CMakeFiles/Project2.dir/Pair.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/Pair.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kevin\Desktop\github\CS-315\Project2\Pair.cpp -o CMakeFiles\Project2.dir\Pair.cpp.s
+
+CMakeFiles/Project2.dir/EntityInstance.cpp.obj: CMakeFiles/Project2.dir/flags.make
+CMakeFiles/Project2.dir/EntityInstance.cpp.obj: ../EntityInstance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Kevin\Desktop\github\CS-315\Project2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project2.dir/EntityInstance.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project2.dir\EntityInstance.cpp.obj -c C:\Users\Kevin\Desktop\github\CS-315\Project2\EntityInstance.cpp
+
+CMakeFiles/Project2.dir/EntityInstance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/EntityInstance.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kevin\Desktop\github\CS-315\Project2\EntityInstance.cpp > CMakeFiles\Project2.dir\EntityInstance.cpp.i
+
+CMakeFiles/Project2.dir/EntityInstance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/EntityInstance.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kevin\Desktop\github\CS-315\Project2\EntityInstance.cpp -o CMakeFiles\Project2.dir\EntityInstance.cpp.s
+
+CMakeFiles/Project2.dir/Entity.cpp.obj: CMakeFiles/Project2.dir/flags.make
+CMakeFiles/Project2.dir/Entity.cpp.obj: ../Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Kevin\Desktop\github\CS-315\Project2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project2.dir/Entity.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project2.dir\Entity.cpp.obj -c C:\Users\Kevin\Desktop\github\CS-315\Project2\Entity.cpp
+
+CMakeFiles/Project2.dir/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/Entity.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kevin\Desktop\github\CS-315\Project2\Entity.cpp > CMakeFiles\Project2.dir\Entity.cpp.i
+
+CMakeFiles/Project2.dir/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/Entity.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kevin\Desktop\github\CS-315\Project2\Entity.cpp -o CMakeFiles\Project2.dir\Entity.cpp.s
+
 # Object files for target Project2
 Project2_OBJECTS = \
 "CMakeFiles/Project2.dir/main.cpp.obj" \
 "CMakeFiles/Project2.dir/JSONTokenizer.cpp.obj" \
 "CMakeFiles/Project2.dir/JSONToken.cpp.obj" \
-"CMakeFiles/Project2.dir/JSONParser.cpp.obj"
+"CMakeFiles/Project2.dir/JSONParser.cpp.obj" \
+"CMakeFiles/Project2.dir/Pair.cpp.obj" \
+"CMakeFiles/Project2.dir/EntityInstance.cpp.obj" \
+"CMakeFiles/Project2.dir/Entity.cpp.obj"
 
 # External object files for target Project2
 Project2_EXTERNAL_OBJECTS =
@@ -122,11 +164,14 @@ Project2.exe: CMakeFiles/Project2.dir/main.cpp.obj
 Project2.exe: CMakeFiles/Project2.dir/JSONTokenizer.cpp.obj
 Project2.exe: CMakeFiles/Project2.dir/JSONToken.cpp.obj
 Project2.exe: CMakeFiles/Project2.dir/JSONParser.cpp.obj
+Project2.exe: CMakeFiles/Project2.dir/Pair.cpp.obj
+Project2.exe: CMakeFiles/Project2.dir/EntityInstance.cpp.obj
+Project2.exe: CMakeFiles/Project2.dir/Entity.cpp.obj
 Project2.exe: CMakeFiles/Project2.dir/build.make
 Project2.exe: CMakeFiles/Project2.dir/linklibs.rsp
 Project2.exe: CMakeFiles/Project2.dir/objects1.rsp
 Project2.exe: CMakeFiles/Project2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Kevin\Desktop\github\CS-315\Project2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Project2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Kevin\Desktop\github\CS-315\Project2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Project2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

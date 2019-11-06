@@ -4,6 +4,9 @@
 #include <iostream>
 #include "JSONToken.hpp"
 #include "JSONParser.hpp"
+#include "EntityInstance.hpp"
+#include "Pair.hpp"
+#include "Entity.hpp"
 
 
 EntityInstance JSONParser::parseJSONObject() {
@@ -30,4 +33,8 @@ EntityInstance JSONParser::parseJSONObject() {
         exit(1);
     }
     return instance;
+}
+
+Pair parseAPair(){
+
 }

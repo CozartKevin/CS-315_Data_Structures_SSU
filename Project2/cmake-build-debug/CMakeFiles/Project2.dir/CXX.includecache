@@ -6,23 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONToken.hpp
-string
--
-
-C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONTokenizer.cpp
+C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONToken.cpp
 iostream
--
-fstream
--
-JSONTokenizer.hpp
-C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONTokenizer.hpp
-
-C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONTokenizer.hpp
-string
--
-fstream
 -
 JSONToken.hpp
 C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONToken.hpp
+
+C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONToken.hpp
+string
+-
 

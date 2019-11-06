@@ -16,7 +16,16 @@ public:
     bool &isOpenBracket();
     bool &isOpenBrace();
     bool &isCloseBrace();
+    bool &isComma();
     bool &endOfFile();
+    bool &isDouble();
+
+    void makeOpenBrace(std::string name);
+    void makeCloseBrace(std::string name);
+    void makeComma(std::string name);
+    void makeOpenBracket(std::string name);
+    void makeCloseBracket(std::string name);
+    void makeDouble(std::string name);
 
 
     std::string tagName();
@@ -26,12 +35,10 @@ public:
     void print();
 
 private:
-    bool _isOpenTag, _isCloseTag,_isOpenBracket, _isCloseBracket, _isCloseBrace, _isOpenBrace,
+    bool _isOpenTag, _isCloseTag,_isOpenBracket, _isCloseBracket, _isCloseBrace, _isOpenBrace,_isComma, _isDouble,
             _eof ;
 
     std::string _tagName;
-    int _lineNumber, _charPos;
-
 
 };
 

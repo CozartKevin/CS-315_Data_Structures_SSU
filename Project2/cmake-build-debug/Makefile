@@ -122,6 +122,60 @@ Project2/fast:
 	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/build
 .PHONY : Project2/fast
 
+Entity.obj: Entity.cpp.obj
+
+.PHONY : Entity.obj
+
+# target to build an object file
+Entity.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Entity.cpp.obj
+.PHONY : Entity.cpp.obj
+
+Entity.i: Entity.cpp.i
+
+.PHONY : Entity.i
+
+# target to preprocess a source file
+Entity.cpp.i:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Entity.cpp.i
+.PHONY : Entity.cpp.i
+
+Entity.s: Entity.cpp.s
+
+.PHONY : Entity.s
+
+# target to generate assembly for a file
+Entity.cpp.s:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Entity.cpp.s
+.PHONY : Entity.cpp.s
+
+EntityInstance.obj: EntityInstance.cpp.obj
+
+.PHONY : EntityInstance.obj
+
+# target to build an object file
+EntityInstance.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/EntityInstance.cpp.obj
+.PHONY : EntityInstance.cpp.obj
+
+EntityInstance.i: EntityInstance.cpp.i
+
+.PHONY : EntityInstance.i
+
+# target to preprocess a source file
+EntityInstance.cpp.i:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/EntityInstance.cpp.i
+.PHONY : EntityInstance.cpp.i
+
+EntityInstance.s: EntityInstance.cpp.s
+
+.PHONY : EntityInstance.s
+
+# target to generate assembly for a file
+EntityInstance.cpp.s:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/EntityInstance.cpp.s
+.PHONY : EntityInstance.cpp.s
+
 JSONParser.obj: JSONParser.cpp.obj
 
 .PHONY : JSONParser.obj
@@ -203,6 +257,33 @@ JSONTokenizer.cpp.s:
 	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/JSONTokenizer.cpp.s
 .PHONY : JSONTokenizer.cpp.s
 
+Pair.obj: Pair.cpp.obj
+
+.PHONY : Pair.obj
+
+# target to build an object file
+Pair.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Pair.cpp.obj
+.PHONY : Pair.cpp.obj
+
+Pair.i: Pair.cpp.i
+
+.PHONY : Pair.i
+
+# target to preprocess a source file
+Pair.cpp.i:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Pair.cpp.i
+.PHONY : Pair.cpp.i
+
+Pair.s: Pair.cpp.s
+
+.PHONY : Pair.s
+
+# target to generate assembly for a file
+Pair.cpp.s:
+	$(MAKE) -f CMakeFiles\Project2.dir\build.make CMakeFiles/Project2.dir/Pair.cpp.s
+.PHONY : Pair.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -239,6 +320,12 @@ help:
 	@echo ... Project2
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Entity.obj
+	@echo ... Entity.i
+	@echo ... Entity.s
+	@echo ... EntityInstance.obj
+	@echo ... EntityInstance.i
+	@echo ... EntityInstance.s
 	@echo ... JSONParser.obj
 	@echo ... JSONParser.i
 	@echo ... JSONParser.s
@@ -248,6 +335,9 @@ help:
 	@echo ... JSONTokenizer.obj
 	@echo ... JSONTokenizer.i
 	@echo ... JSONTokenizer.s
+	@echo ... Pair.obj
+	@echo ... Pair.i
+	@echo ... Pair.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/Entity.cpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/Entity.hpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/EntityInstance.cpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/EntityInstance.hpp">
+			<Option target="Project2"/>
+		</Unit>
 		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONParser.cpp">
 			<Option target="Project2"/>
 		</Unit>
@@ -96,6 +108,12 @@
 			<Option target="Project2"/>
 		</Unit>
 		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/JSONTokenizer.hpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/Pair.cpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/Pair.hpp">
 			<Option target="Project2"/>
 		</Unit>
 		<Unit filename="C:/Users/Kevin/Desktop/github/CS-315/Project2/main.cpp">

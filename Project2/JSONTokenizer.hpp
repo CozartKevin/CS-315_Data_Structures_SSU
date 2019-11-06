@@ -25,6 +25,8 @@ private:
     bool charOfInterest(char c);
 
     std::string &getString(char c,std::string &tagName, std::istream &inputStream) const;
+    double &getString(char c, double &tagName, std::istream &inputStream) const;
+
 };
 
 

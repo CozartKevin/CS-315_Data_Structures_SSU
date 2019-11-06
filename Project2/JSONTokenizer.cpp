@@ -70,7 +70,9 @@ JSONToken JSONTokenizer::getToken()
         jsontoken.endOfFile() = true;
         return jsontoken;
     }
-
+//Todo Seperate out all the symbols so that we can set the boolean flags for easier parsing in JSONParser.
+// Create setters for each symbol in hfile
+//Verify that you can still parse the file propery..
     if (c == '[' || c == ']' || c == '{' || c == '}'|| c == ',')
     {
         jsontoken.makeTag(c);
@@ -81,7 +83,7 @@ JSONToken JSONTokenizer::getToken()
 
     }else if(isdigit(c)){
         inputStream.putback(c);
-        std::string tagName;
+        double tagName;
         tagName = getString(c, tagName, inputStream);
         jsontoken.makeTag(tagName);
         return jsontoken;
@@ -109,6 +111,20 @@ std::cout <<  " End of get Token,  call ran away" << std::endl;
 
 
 std::string &JSONTokenizer::getString(char c, std::string &tagName, std::istream &inputStream) const
+{
+
+    do
+    {
+        inputStream.get(c);
+        tagName = tagName + c;
+      //  std::cout << tagName << " Tagname in loop" << std::endl;
+    } while (inputStream.peek() != '"' && inputStream.peek() != ',' && !inputStream.eof());
+   // std::cout << tagName << " Tagname after getString" << std::endl;
+  //  std::cout << " before tagname return" << std::endl;
+    return tagName;
+}
+
+double &JSONTokenizer::getString(char c, double &tagName, std::istream &inputStream) const
 {
 
     do
