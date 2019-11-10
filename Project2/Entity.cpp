@@ -2,6 +2,7 @@
 // Created by Kevin on 11/5/2019.
 //
 #include <iostream>
+#include <vector>
 #include "Entity.hpp"
 
 
@@ -38,9 +39,39 @@ int Entity::numberOfInstances()
 Entity Entity::intersection(Entity e)
 {
 
-    e.find(this[0].getID());
+    for(unsigned int i = 0; i < instances.size(); i++){
+        multiPass.insert(std::pair<std::string,EntityInstance>(getID(i),instances[i]));// ID TO SEARCH Entity e with)
 
-    return;
+    }
+    for(unsigned int j = 0; j < e.instances.size(); j++){
+        multiPass.insert(std::pair<std::string,EntityInstance>(e.getID(j),e.instances[j]));
+    }
+std::cout << " MULTI PASS PRINT OUT" << std::endl;
+
+
+    for (std::multimap<std::string,EntityInstance>::iterator it=multiPass.begin(); it!=multiPass.end(); )
+    {
+        std::pair <std::multimap<std::string,EntityInstance>::iterator, std::multimap<std::string, EntityInstance>::iterator> it2;
+        std::string key  = it->first;
+
+        it2 = multiPass.equal_range(key);
+
+        std::cout << it->first << std::endl;
+        for (auto i = it2.first; i != it2.second; ++i)
+        {
+            //TODO INSERT INTO new Entity with all gpa and terms but only one ID.
+            // New Entity
+            // Combine Entity Instances for the same ID
+            // Push new Entity Instance with all ID into new Entity
+            i->second.print();
+        }
+        do
+        {
+            it++;
+        }while(it != multiPass.end() && key == it->first);
+
+    }
+return e;
 }
 
 //TODO write find for intersection on entities. returns entity
@@ -48,12 +79,14 @@ Entity Entity::intersection(Entity e)
 //TODO write getPairID which returns the ID string that is in the instance.
 //TODO write find for Entity that checks the Pair ID of another entity for the string you input.
 
-Entity Find(){
-    this = e
-}
-void Entity::setIds(EntityInstance ei)
-{
-    ei.getPairID();
-    ei.getPairGPA();
 
+
+std::string Entity::getID(int index){
+    return instances[index].getPairID();
+}
+std::string Entity::getTerm(int index){
+    return instances[index].getPairTerm();
+}
+double Entity::getGpa(int index){
+    return instances[index].getPairGpa();
 }

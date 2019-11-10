@@ -5,6 +5,7 @@
 #ifndef PROJECT2_ENTITY_HPP
 #define PROJECT2_ENTITY_HPP
 #include <vector>
+#include <map>
 #include "EntityInstance.hpp"
 
 class Entity {
@@ -15,13 +16,16 @@ public:
     void print();    // prints all instances of this Entity.
     int numberOfInstances();
     Entity intersection(Entity e);
+    Entity find(Entity e);
     void setIds(EntityInstance ei);
-    void getID();
+    std::string getID(int index);
+    std::string getTerm(int index);
+    double getGpa(int index);
     // more member functions here.
 
 private:
     std::vector<EntityInstance> instances;
-    std::string id;
+    std::multimap<std::string, EntityInstance> multiPass;
     int _numberOfInstances;
 };
 

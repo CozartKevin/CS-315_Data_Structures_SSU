@@ -7,7 +7,7 @@ EntityInstance::EntityInstance(): numberOfAttributes{0}{
 }
 void EntityInstance::addAttribute(Pair &insertedPair){
     numberOfAttributes++;
-    entityAttributeNames.push_back(insertedPair.attributeName());
+    //entityAttributeNames.push_back(insertedPair.attributeName());
     entityAttributes.push_back(insertedPair);
 
 }
@@ -15,12 +15,12 @@ void EntityInstance::addAttribute(Pair &insertedPair){
 int EntityInstance::numAttributes(){
     return numberOfAttributes;
 }
-
+/*
 std::vector<std::string> & EntityInstance::attributeNames(){
 
 return;
 }
-
+*/
 
 void EntityInstance::print(){
     std::cout << "{" << std::endl;
@@ -31,6 +31,36 @@ void EntityInstance::print(){
             std::cout << "," << std::endl;
         }else{
             std::cout <<  std::endl << "}" << std::endl;
+        }
+    }
+}
+
+std::string EntityInstance::getPairID()
+{
+    for(unsigned int i = 0; i < entityAttributes.size(); i++){
+        if(  entityAttributes[i].attributeName()  == "id")
+        {
+            return entityAttributes[i].stringValue();
+        }
+    }
+}
+
+std::string EntityInstance::getPairTerm()
+{
+    for(unsigned int i = 0; i < entityAttributes.size(); i++){
+        if(  entityAttributes[i].attributeName()  == "term")
+        {
+            return entityAttributes[i].stringValue();
+        }
+    }
+}
+
+double EntityInstance::getPairGpa()
+{
+    for(unsigned int i = 0; i < entityAttributes.size(); i++){
+        if(  entityAttributes[i].attributeName()  == "gpa")
+        {
+            return entityAttributes[i].numberValue();
         }
     }
 }

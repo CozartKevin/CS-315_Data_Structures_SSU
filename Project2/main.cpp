@@ -45,6 +45,6 @@ int main(int argc, char *argv[])
  std::cout << numInst << std::endl;
     //testEntity2.print();
 
-    entity3 =  testEntity.intersection(testEntity2);
+    testEntity.intersection(testEntity2);
 
 }

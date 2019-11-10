@@ -32,7 +32,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab1" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -68,7 +68,7 @@
       <workItem from="1572910238519" duration="1469000" />
       <workItem from="1572973919530" duration="75000" />
       <workItem from="1573000634027" duration="3734000" />
-      <workItem from="1573331772658" duration="20417000" />
+      <workItem from="1573331772658" duration="32350000" />
     </task>
     <servers />
   </component>

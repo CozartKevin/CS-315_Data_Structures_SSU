@@ -1,29 +1,12 @@
-file 1
 [
    {
       "gpa": 2.33256,
       "term": "2197",
-      "id": "MDcwNTAwMDQxNDUzNTkwMjky"
+      "id": "apple"
+   },
+   {
+      "gpa": 3.7562,
+      "term": "2198", 
+      "id": "ok"
    }
    ]
-   
-   file 2
-   [
-   {
-      "gpa": 3.97562,
-      "term": "2198", 
-      "id": "MDcwNTAwMDQxNDUzNTkwMjky"
-   }
-]
-intersection = file 3
-
-file 3 
-[
-   {
-		"gpa": 2.33256,
-      "term": "2197",
-      "gpa": 3.97562,
-      "term": "2198", 
-      "id": "MDcwNTAwMDQxNDUzNTkwMjky"
-   }
-]
