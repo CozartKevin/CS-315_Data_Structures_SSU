@@ -17,25 +17,26 @@ public:
     bool &isOpenBrace();
     bool &isCloseBrace();
     bool &isComma();
+    bool &isColon();
     bool &endOfFile();
-    bool &isDouble();
+    bool &isNumber();
+    bool &isString();
+
 
     void makeOpenBrace(std::string name);
     void makeCloseBrace(std::string name);
     void makeComma(std::string name);
+    void makeColon(std::string name);
     void makeOpenBracket(std::string name);
     void makeCloseBracket(std::string name);
-    void makeDouble(std::string name);
-
-
-    std::string tagName();
-
-    void makeTag(std::string);
-    void makeTag(char);
+    void makeNumber(std::string name);
+    void makeString(std::string);
+    double toDouble();
     void print();
 
+    std::string tagName();
 private:
-    bool _isOpenTag, _isCloseTag,_isOpenBracket, _isCloseBracket, _isCloseBrace, _isOpenBrace,_isComma, _isDouble,
+    bool _isOpenTag, _isCloseTag,_isOpenBracket, _isCloseBracket, _isCloseBrace, _isOpenBrace,_isComma, _isColon, _isNumber, _isString,
             _eof ;
 
     std::string _tagName;

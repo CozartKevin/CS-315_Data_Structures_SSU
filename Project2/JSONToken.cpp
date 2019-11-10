@@ -10,7 +10,9 @@ JSONToken::JSONToken(): _isOpenTag{false},
                                  _isOpenBrace{false},
                                  _isComma{false},
                                  _isCloseBrace{false},
-                                 _isDouble{false},
+                                 _isNumber{false},
+                                 _isColon{false},
+                                 _isString{false},
                                  _tagName{""},
                                  _eof{false}{}
 
@@ -20,12 +22,15 @@ bool &JSONToken::isOpenBracket(){ return _isOpenBracket; }
 bool &JSONToken::isCloseBracket() { return _isCloseBracket; }
 bool &JSONToken::isOpenBrace(){ return _isOpenBrace; }
 bool &JSONToken::isCloseBrace() { return _isCloseBrace; }
-bool &JSONToken::isDouble(){return _isDouble;}
+bool &JSONToken::isNumber(){return _isNumber;}
+bool &JSONToken::isString(){return _isString;}
 bool &JSONToken::isComma(){return _isComma;}
+bool &JSONToken::isColon(){return _isColon;}
 bool &JSONToken::endOfFile() { return _eof; }
 
 
 std::string JSONToken::tagName() { return _tagName; }
+
 void JSONToken::makeOpenBrace(std::string name) {
     _isOpenBrace = true;
     _tagName = name;
@@ -41,22 +46,28 @@ void JSONToken::makeComma(std::string name){
 void JSONToken::makeOpenBracket(std::string name){
     _isOpenBracket = true;
     _tagName = name;
-};
+}
 void JSONToken::makeCloseBracket(std::string name){
     _isCloseBracket = true;
     _tagName = name;
-};
-void JSONToken::makeDouble(std::string name){
-    _isDouble = true;
+}
+void JSONToken::makeNumber(std::string name){
+    _isNumber = true;
     _tagName = name;
-};
-void JSONToken::makeTag(std::string name) {
+}
+void JSONToken::makeColon(std::string name) {
+    _isColon = true;
     _tagName = name;
 
 }
-void JSONToken::makeTag(char name) {
+void JSONToken::makeString(std::string name) {
+    _isString = true;
     _tagName = name;
 
+}
+double JSONToken::toDouble()
+{
+    return std::stod(_tagName);
 }
 
 void JSONToken::print() {

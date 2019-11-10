@@ -11,15 +11,20 @@
 
 class EntityInstance {
 public:
+    EntityInstance();
     void addAttribute(Pair &);
     int numAttributes();
-    std::vector<std::string> &attributeNames();
+   std::vector<std::string> &attributeNames();
     void print();   // prints this object
+
     // more member functions here.
 
 private:
     std::vector<Pair> entityAttributes;
-    // more variables here.
+ //   std::vector<std::string> entityAttributeNames;
+    int numberOfAttributes;
+    std::string id;
+    // more variabl{}es here.
 };
 
 #endif //PROJECT2_ENTITYINSTANCE_HPP

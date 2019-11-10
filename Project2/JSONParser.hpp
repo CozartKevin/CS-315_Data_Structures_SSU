@@ -13,6 +13,8 @@ class JSONParser {
 public:
     JSONParser(JSONTokenizer &tokenizer);
 
+
+
     Pair parseAPair();
     EntityInstance parseJSONObject();
     Entity parseJSONEntity();

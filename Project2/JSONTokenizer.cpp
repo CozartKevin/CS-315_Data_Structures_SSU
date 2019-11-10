@@ -15,30 +15,8 @@
 bool JSONTokenizer::charOfInterest(char c)
 {
     // is c the initial (or the sole) character of a token?
-    if (c == '[')
+    if (c == '[' || c == ']' || c == '{' || c == '}' || c == ':' || c == ',' || c == '"')
     {
-        return true;
-    } else if (c == ']')
-    {
-        return true;
-    }
-    else if (c == '{')
-    {
-        return true;
-    }else if (c == '}')
-    {
-        return true;
-    }else if (c == ':')
-    {
-        return true;
-    }
-    else if (c == ',')
-    {
-        return true;
-    }
-    else if (c == '"') //TODO Concerned that '"' wont compare properly.  Test it.
-    {
-      //  std::cout << " inside iffy compare " << std::endl;
         return true;
     }else if(isdigit(c)){
         return true;
@@ -70,33 +48,44 @@ JSONToken JSONTokenizer::getToken()
         jsontoken.endOfFile() = true;
         return jsontoken;
     }
-//Todo Seperate out all the symbols so that we can set the boolean flags for easier parsing in JSONParser.
-// Create setters for each symbol in hfile
+
 //Verify that you can still parse the file propery..
-    if (c == '[' || c == ']' || c == '{' || c == '}'|| c == ',')
+    if (c == '[' ){
+        jsontoken.makeOpenBracket("[");
+        return jsontoken;
+}else if(c == ']' ){
+        jsontoken.makeCloseBracket("]");
+        return jsontoken;
+    }else if( c == '{' ){
+        jsontoken.makeOpenBrace("{");
+        return jsontoken;
+    }else if( c == '}' ){
+        jsontoken.makeCloseBrace("}");
+        return jsontoken;
+    }else if(c == ',')
     {
-        jsontoken.makeTag(c);
+        jsontoken.makeComma(",");
         return jsontoken;
     }else if(c == ':'){
-                 jsontoken.makeTag(':');
+                 jsontoken.makeColon(":");
             return jsontoken;
 
     }else if(isdigit(c)){
         inputStream.putback(c);
-        double tagName;
+        std::string tagName;
         tagName = getString(c, tagName, inputStream);
-        jsontoken.makeTag(tagName);
+        jsontoken.makeNumber(tagName);
         return jsontoken;
 
 
-    }else if(c == '"')//TODO same todo as earlier ' " ' comparison.
+    }else if(c == '"')
     {
      //   std::cout << " Inside iffy compare 2.0 before tagname set" << std::endl;
         std::string tagName;
         tagName = getString(c, tagName, inputStream);
      //   std::cout << tagName << " after GetString" << std::endl;
       //  std::cout << " before tagname Make for jsontoken" << std::endl;
-        jsontoken.makeTag(tagName);
+        jsontoken.makeString(tagName);
         if(inputStream.peek() == '"') {
             inputStream.get(c);
         }
@@ -118,21 +107,7 @@ std::string &JSONTokenizer::getString(char c, std::string &tagName, std::istream
         inputStream.get(c);
         tagName = tagName + c;
       //  std::cout << tagName << " Tagname in loop" << std::endl;
-    } while (inputStream.peek() != '"' && inputStream.peek() != ',' && !inputStream.eof());
-   // std::cout << tagName << " Tagname after getString" << std::endl;
-  //  std::cout << " before tagname return" << std::endl;
-    return tagName;
-}
-
-double &JSONTokenizer::getString(char c, double &tagName, std::istream &inputStream) const
-{
-
-    do
-    {
-        inputStream.get(c);
-        tagName = tagName + c;
-      //  std::cout << tagName << " Tagname in loop" << std::endl;
-    } while (inputStream.peek() != '"' && inputStream.peek() != ',' && !inputStream.eof());
+    } while (inputStream.peek() != '"' && inputStream.peek() != ',' && inputStream.peek() != '}' && !inputStream.eof());
    // std::cout << tagName << " Tagname after getString" << std::endl;
   //  std::cout << " before tagname return" << std::endl;
     return tagName;
