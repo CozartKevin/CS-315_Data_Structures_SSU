@@ -6,18 +6,12 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Project2/Entity.cpp
-iostream
--
-vector
--
-Entity.hpp
-G:/SSU Courses/CS-315/Project2/Entity.hpp
-
 G:/SSU Courses/CS-315/Project2/Entity.hpp
 vector
 -
 map
+-
+fstream
 -
 EntityInstance.hpp
 G:/SSU Courses/CS-315/Project2/EntityInstance.hpp
@@ -30,13 +24,41 @@ vector
 string
 -
 
+G:/SSU Courses/CS-315/Project2/JSONParser.hpp
+JSONTokenizer.hpp
+G:/SSU Courses/CS-315/Project2/JSONTokenizer.hpp
+Pair.hpp
+G:/SSU Courses/CS-315/Project2/Pair.hpp
+EntityInstance.hpp
+G:/SSU Courses/CS-315/Project2/EntityInstance.hpp
+Entity.hpp
+G:/SSU Courses/CS-315/Project2/Entity.hpp
+
 G:/SSU Courses/CS-315/Project2/JSONToken.hpp
 string
 -
+
+G:/SSU Courses/CS-315/Project2/JSONTokenizer.hpp
+string
+-
+fstream
+-
+JSONToken.hpp
+G:/SSU Courses/CS-315/Project2/JSONToken.hpp
 
 G:/SSU Courses/CS-315/Project2/Pair.hpp
 string
 -
 JSONToken.hpp
 G:/SSU Courses/CS-315/Project2/JSONToken.hpp
+
+G:/SSU Courses/CS-315/Project2/main.cpp
+iostream
+-
+fstream
+-
+JSONTokenizer.hpp
+G:/SSU Courses/CS-315/Project2/JSONTokenizer.hpp
+JSONParser.hpp
+G:/SSU Courses/CS-315/Project2/JSONParser.hpp
 

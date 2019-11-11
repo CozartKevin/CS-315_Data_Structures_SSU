@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Transitions</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/colorbrewer.v1.min.js"></script>
+
+    <script>
+
+        const ticksForChordWithStep = step => chord => ticksForChord(chord, step);
+
+        const ticksForChord = (chord, step) => {
+            const tickGap = (chord.endAngle - chord.startAngle) / chord.value;
+            return d3.range(0, chord.value, step ).map(i => ({
+                    angle: chord.startAngle + i * tickGap,
+                    label: i % (step * 5) === 0 ? i : null,
+                    index: chord.index
+            }));
+        };
+
+        function labelsForChords() {
+            // GPA bands -- for the most part they correspond to A, A-, etc.
+
+            return ['0.0-1.67', '1.67-2.0', '2.0-2.3', '2.3-2.67', '2.67-3.0', '3.0-3.3', '3.3-3.67', '3.67-4.0'].reverse();
+        }
+
+        d3.json("cs315project2.json").then( matrix => {
+
+            const width = 800, height = 800;
+            var svg = d3.select("#chord-chart-container")
+                .append("svg")
+                .attr('class', 'main-svg')
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr('class', 'main-group')
+                .attr("transform", `translate(${width / 2},${height / 2})`);
+
+
+            // give this matrix to d3.chord(): it will calculates all the info we need to draw arc and ribbon
+
+            // The values on the diagonal (top-left to bottom-right) of the matrix
+            // represent values that have remained in the same category. Setting them
+            // to zero will make the chord diagram to display the data that has changed across the two
+            // semesters.
+            const includeDiagonal = false;
+            let step = 50;
+            if( ! includeDiagonal) {
+                step = 15;
+                matrix = matrix.map((d, i) => {
+                    d[i] = 0;
+                    return d;
+                    });
+            }
+
+            var chords = d3.chord()
+                .padAngle(0.05)     // padding between entities (black arc)
+                .sortSubgroups(d3.descending)
+                (matrix);
+
+            const outerRadius = 210, innerRadius = 200;
+            let colorBrewerSet = colorbrewer.Set1[8];
+
+//            chords.forEach((c, i) => console.log(`chord ${i} is `, c));
+
+            svg
+                .datum(chords)
+                .append("g")
+                .attr('class', 'all-ribbon-group')
+                .selectAll(".chord-groups-group")
+                .data(d => d.groups)
+                .enter()
+                .append("g")
+                .attr('class', 'chord-groups-bands')
+                .append("path")
+                .attr('class', 'chord-bands')
+                    .attr("d", d3.arc()
+                    .innerRadius(innerRadius)
+                    .outerRadius(outerRadius)
+                )
+                .style("fill", (d, i) => colorBrewerSet[i % colorBrewerSet.length])
+                .style("storke-width", 1);
+
+            svg.selectAll('.chord-groups-bands')
+                .on('mouseover', function(a, b) {
+                    d3.select(this).style('fill', 'black');
+                    d3.selectAll('.ribbon-path')
+                        .transition()
+                        .duration(1000)
+                        .style('opacity',
+                        dd => (a.index === dd.source.index || a.index === dd.source.subindex) ? 1 : 0);
+                })
+                .on('mouseout', function(d, i) {
+                    d3.select(this).style('fill', colorBrewerSet[i]);
+                    d3.selectAll('.ribbon-path')
+                        .transition()
+                        .duration(1000)
+                        .style('opacity', );
+                });
+
+            // Not used!
+            let colorScale = d3.scaleLinear().domain([0, chords.length - 1]).range(colorBrewerSet);
+
+            // Add the chords for each groups
+
+            svg
+                .append("g")
+                .selectAll("path")
+                .data(d => d)
+                .enter()
+                .append("path")
+                .attr('class', 'ribbon-path')
+                .attr("d", d3.ribbon()
+//                    .radius((d, i) => i * 5 + innerRadius - 2)
+                    .radius((d, i) => innerRadius - 2)
+                )
+                .style("fill", (d, i) => colorBrewerSet[d['source']['index']])
+                .style("stroke", (d, i) => d3.rgb(colorBrewerSet[i]).darker())
+                .style("storke-width", 1);
+
+
+
+            const ticksRadius = outerRadius + 10;
+            const tickCollection = svg
+                .selectAll('chords')
+                .data(d => d.groups)
+                .enter()
+                .append('g')
+                .selectAll('markers')
+                .data(ticksForChordWithStep(step))
+                .enter()
+                .append('g')
+                .attr('class', 'tick-g')
+                .attr('transform', d => `rotate(${d['angle'] * 180 / Math.PI - 90})
+                                         translate(${ticksRadius}, 0)`);
+
+            // add gradation lines and scale markers.
+            tickCollection
+                .append('line')
+                .attr('x0', 0)
+                .attr('y0', 0)
+                .attr('x1', d => d['label'] || d['label'] === 0 ? 10 : 5)
+                .attr('y1', 0)
+                .attr('stroke', 'black');
+
+            // add the label for each grade arc.
+            tickCollection
+                .append('g')
+                .attr('transform', d => `rotate(${d.angle >  Math.PI ? 180 : 0})
+                                         translate(${d.angle >  Math.PI ? -30 : 0}, 0)`)
+                .append('text')
+                .attr('text-anchor', d => d.angle > Math.PI ? 'end' : 'begin')
+                .attr('x', 15)
+                .attr('dy', '.35em')
+                .text(d => d.label);
+
+            const gradeLabelRadius = ticksRadius + 60;
+
+            const textOnCircle = svg.selectAll('pga-labels')
+                .data(chords.groups)
+                .enter()
+                .append('g')
+                .attr('class', 'text-on-circle');
+
+            textOnCircle
+                .append('path')
+                .attr('id', (d, i) => `${labelsForChords()[i]}`)
+                .attr('d', d3.arc()
+                    .innerRadius(gradeLabelRadius)
+                    .outerRadius(gradeLabelRadius + 5))
+                .attr('fill', 'none');
+
+            textOnCircle
+                .append('text')
+                .append('textPath')
+                .attr('text-anchor', 'middle')
+                .attr('startOffset', '25%')
+                .attr('xlink:href', (d, i) => `#${labelsForChords()[i]}`)
+                .text( (d, i) => labelsForChords()[i])
+                .attr('stroke', 'red')
+                .attr('test', (d, i)=> console.log(labelsForChords()[i]));
+
+        });
+    </script>
+</head>
+
+<body>
+<div id="chord-chart-container"></div>
+</body>
+</html>
