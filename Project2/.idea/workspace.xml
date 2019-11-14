@@ -48,7 +48,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Project2" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="input.txt input2.txt" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project2" TARGET_NAME="Project2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project2" RUN_TARGET_NAME="Project2">
+    <configuration name="Project2" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="prev_pp.json cur_pp.json" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project2" TARGET_NAME="Project2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project2" RUN_TARGET_NAME="Project2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -72,6 +72,7 @@
       <workItem from="1573428751138" duration="8884000" />
       <workItem from="1573439444081" duration="636000" />
       <workItem from="1573515146369" duration="68000" />
+      <workItem from="1573699333026" duration="87000" />
     </task>
     <servers />
   </component>
