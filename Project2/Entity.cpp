@@ -39,6 +39,7 @@ int Entity::numberOfInstances()
 Entity Entity::intersection(Entity e)
 {
     Entity intersectedEntity;
+    Entity tempEntity;
 
     for(unsigned int i = 0; i < instances.size(); i++){
         multiPass.insert(std::pair<std::string,EntityInstance>(getID(i),instances[i]));// ID TO SEARCH Entity e with)
@@ -59,7 +60,7 @@ Entity Entity::intersection(Entity e)
             //std::cout << it->first << std::endl;
             for (auto i = it2.first; i != it2.second; ++i)
             {
-                intersectedEntity.addObject(i->second);
+                tempEntity.addObject(i->second);
                // i->second.print();
             }
         }
@@ -69,6 +70,19 @@ Entity Entity::intersection(Entity e)
             } while (it != multiPass.end() && key == it->first);
 
     }
+
+    for (int i = 0; i < tempEntity.entitySize(); i+=2)
+    {
+
+        Pair pair("curr_gpa", tempEntity.instances[i+1].getPairGpa());
+        tempEntity.instances[i].addAttribute(pair);
+     //   tempEntity.instances[i+1].print();
+       // tempEntity.instances[i].print();
+      //+  getchar();
+        intersectedEntity.addObject(tempEntity.instances[i]);
+    }
+//intersectedEntity.print();
+
 return intersectedEntity;
 }
 
@@ -78,9 +92,16 @@ std::string Entity::getID(int index){
 std::string Entity::getTerm(int index){
     return instances[index].getPairTerm();
 }
-double Entity::getGpa(int index){
-    return instances[index].getPairGpa();
-}
+double Entity::getGpa(int index, bool getCur){
+ if(!getCur)
+ {
+     return instances[index].getPairGpa();
+ }else
+ {
+     return instances[index].getPairCurGpa();
+ }
+
+ }
 
 int Entity::entitySize(){
     return instances.size();
@@ -88,41 +109,64 @@ int Entity::entitySize(){
 
 void Entity::createGPABand()
 {
+
     int prevSem = 0;
     int curSem = 0;
-    for (int i = 0; i < entitySize(); i+=2)
+    for (int i = 0; i < entitySize(); i++)
     {
         if (getTerm(i) == "2187")
         {
-            prevSem = getArrayPlace(i);
-            curSem = getArrayPlace(i + 1);
+            getGpa(i,false);
+            getGpa(i,true);
+
+            prevSem = getArrayPlace(i, false);
+            curSem = getArrayPlace(i, true);
         }
         GPABand[prevSem][curSem]++;
     }
 }
 
-int Entity::getArrayPlace(int j){
+int Entity::getArrayPlace(int j, bool currentOrPrevious){
 
     int arrayPlace;
-    if(getGpa(j) > 3.67 && getGpa(j) <= 4.0){
+    if (getGpa(j, currentOrPrevious) > 3.67 && getGpa(j, currentOrPrevious) <= 4.0)
+    {
         arrayPlace = 0;
-    }else if(getGpa(j) > 3.3 && getGpa(j) <= 3.67){
-        arrayPlace = 1;
-    }else if(getGpa(j) > 3.0 && getGpa(j) <= 3.3){
-        arrayPlace = 2;
-    }else if(getGpa(j) > 2.67 && getGpa(j) <= 3.0){
-        arrayPlace = 3;
-    }else if(getGpa(j) > 2.3 && getGpa(j) <= 2.76){
-        arrayPlace = 4;
-    }else if(getGpa(j) > 2.0 && getGpa(j) <= 2.3){
-        arrayPlace = 5;
-    }else if(getGpa(j) > 1.67 && getGpa(j) <= 2.0){
-        arrayPlace = 6;
-    }else if(getGpa(j) >= 0.0 && getGpa(j) <= 1.67){
-        arrayPlace = 7;
-    }else{
-        std::cout << " GPA out of bounds " << getID(j) << " " << getTerm(j) << " " << getGpa(j) << std::endl;
     }
+    else if (getGpa(j, currentOrPrevious) > 3.3 && getGpa(j, currentOrPrevious) <= 3.67)
+    {
+        arrayPlace = 1;
+    }
+    else if (getGpa(j, currentOrPrevious) > 3.0 && getGpa(j, currentOrPrevious) <= 3.3)
+    {
+        arrayPlace = 2;
+    }
+    else if (getGpa(j, currentOrPrevious) > 2.67 && getGpa(j, currentOrPrevious) <= 3.0)
+    {
+        arrayPlace = 3;
+    }
+    else if (getGpa(j, currentOrPrevious) > 2.3 && getGpa(j, currentOrPrevious) <= 2.76)
+    {
+        arrayPlace = 4;
+    }
+    else if (getGpa(j, currentOrPrevious) > 2.0 && getGpa(j, currentOrPrevious) <= 2.3)
+    {
+        arrayPlace = 5;
+    }
+    else if (getGpa(j, currentOrPrevious) > 1.67 && getGpa(j, currentOrPrevious) <= 2.0)
+    {
+        arrayPlace = 6;
+    }
+    else if (getGpa(j, currentOrPrevious) >= 0.0 && getGpa(j, currentOrPrevious) <= 1.67)
+    {
+        arrayPlace = 7;
+    }
+    else
+    {
+        std::cout << " GPA out of bounds " << getID(j) << " " << getTerm(j) << " " << getGpa(j, currentOrPrevious)
+                  << std::endl;
+    }
+
     return arrayPlace;
 }
 
@@ -162,6 +206,11 @@ void Entity::outputGPABand(std::ofstream& GPAOutput)
         GPAOutput << std::endl;
     }
     GPAOutput << ']' << std::endl;
+}
+
+void Entity::addInstanceAttribute(Pair &pair, int index)
+{
+    instances[index].addAttribute(pair);
 }
 
 

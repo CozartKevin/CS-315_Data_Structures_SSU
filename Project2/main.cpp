@@ -46,13 +46,14 @@ int main(int argc, char *argv[])
     //testEntity2.print();
 Entity outputEntity;
    outputEntity = testEntity.intersection(testEntity2);
-   // std::cout << "Entity output from intersection" << std::endl;
-  //  std::cout << printEntity.numberOfInstances() << std::endl;
+    std::cout << "Entity output from intersection" << std::endl;
+   std::cout << outputEntity.numberOfInstances() << std::endl;
+  // outputEntity.print();
     outputEntity.createGPABand();
-    outputEntity.printGPABand();
+   outputEntity.printGPABand();
     std::ofstream GPABandOutput;
-    GPABandOutput.open ("cs315project2.json");
-    outputEntity.outputGPABand(GPABandOutput);
+   GPABandOutput.open ("cs315project2.json");
+   outputEntity.outputGPABand(GPABandOutput);
     GPABandOutput.close();
 
     // printEntity.print();

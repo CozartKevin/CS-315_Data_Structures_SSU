@@ -58,7 +58,20 @@ std::string EntityInstance::getPairTerm()
 double EntityInstance::getPairGpa()
 {
     for(unsigned int i = 0; i < entityAttributes.size(); i++){
-        if(  entityAttributes[i].attributeName()  == "gpa")
+
+
+           if (entityAttributes[i].attributeName() == "gpa")
+           {
+               return entityAttributes[i].numberValue();
+           }
+    }
+}
+
+double EntityInstance::getPairCurGpa(){
+    for(unsigned int i = 0; i < entityAttributes.size(); i++)
+    {
+
+        if (entityAttributes[i].attributeName() == "curr_gpa")
         {
             return entityAttributes[i].numberValue();
         }

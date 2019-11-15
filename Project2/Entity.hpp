@@ -19,11 +19,13 @@ public:
     Entity intersection(Entity e);
     std::string getID(int index);
     std::string getTerm(int index);
-    double getGpa(int index);
+    void addInstanceAttribute(Pair &pair, int index);
+    double getGpa(int index, bool getCur);
     int entitySize();
     void createGPABand();
     void printGPABand();
     void outputGPABand(std::ofstream& GPAOutput);
+
     // more member functions here.
 
 private:
@@ -32,7 +34,7 @@ private:
     int _numberOfInstances;
     int GPABand[8][8] = { };
 
-    int getArrayPlace(int i);
+    int getArrayPlace(int i, bool currentOrPrevious);
 
 };
 

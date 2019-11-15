@@ -20,7 +20,7 @@ public:
     std::string getPairID();
     std::string getPairTerm();
     double getPairGpa();
-
+    double getPairCurGpa();
 private:
     std::vector<Pair> entityAttributes;
 
