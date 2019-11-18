@@ -80,17 +80,13 @@ JSONToken JSONTokenizer::getToken()
 
     }else if(c == '"')
     {
-     //   std::cout << " Inside iffy compare 2.0 before tagname set" << std::endl;
+
         std::string tagName;
         tagName = getString(c, tagName, inputStream);
-     //   std::cout << tagName << " after GetString" << std::endl;
-      //  std::cout << " before tagname Make for jsontoken" << std::endl;
         jsontoken.makeString(tagName);
         if(inputStream.peek() == '"') {
             inputStream.get(c);
         }
-      //  std::cout << " jsontoken tagname before return" << std::endl;
-      //  jsontoken.print();
         return jsontoken;
     }
 
@@ -106,9 +102,7 @@ std::string &JSONTokenizer::getString(char c, std::string &tagName, std::istream
     {
         inputStream.get(c);
         tagName = tagName + c;
-      //  std::cout << tagName << " Tagname in loop" << std::endl;
     } while (inputStream.peek() != '"' && inputStream.peek() != ',' && inputStream.peek() != '}' && !inputStream.eof());
-   // std::cout << tagName << " Tagname after getString" << std::endl;
-  //  std::cout << " before tagname return" << std::endl;
+
     return tagName;
 }

@@ -26,29 +26,19 @@ int main(int argc, char *argv[])
         exit(2);
     }
     inputStream2.close();
-   // std::cout << "ENTITY 1 from FILE 1" << std::endl;
     JSONTokenizer jsonTokenizer(argv[1]); // The Tokenizer opens and reads from the input file.
-   // std::cout << " before parser creation " << std::endl;
     JSONParser parser(jsonTokenizer);
-   // std::cout << " before entity creation " << std::endl;
     Entity testEntity;
   testEntity = parser.parseJSONEntity();
-//  std::cout << testEntity.numberOfInstances() << std::endl;
-  //testEntity.print();
 
-   // std::cout << "ENTITY 2 from FILE 2" << std::endl;
     JSONTokenizer jsonTokenizer2(argv[2]); // The Tokenizer opens and reads from the input file.
     JSONParser parser2(jsonTokenizer2);
     Entity testEntity2;
     testEntity2 = parser2.parseJSONEntity();
- //std::cout << testEntity2.numberOfInstances() << std::endl;
 
-    //testEntity2.print();
 Entity outputEntity;
    outputEntity = testEntity.intersection(testEntity2);
-    std::cout << "Entity output from intersection" << std::endl;
-   std::cout << outputEntity.numberOfInstances() << std::endl;
-  // outputEntity.print();
+
     outputEntity.createGPABand();
    outputEntity.printGPABand();
     std::ofstream GPABandOutput;
@@ -56,11 +46,4 @@ Entity outputEntity;
    outputEntity.outputGPABand(GPABandOutput);
     GPABandOutput.close();
 
-    // printEntity.print();
-  //  for(int i = 0; i < printEntity.entitySize(); i++)
-  //  {
-  //      std::cout << printEntity.getID(i) << std::endl;
-  //      std::cout << printEntity.getTerm(i) << std::endl;
-    //    std::cout << printEntity.getGpa(i) << std::endl;
-  //  }
 }

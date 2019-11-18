@@ -7,7 +7,6 @@ EntityInstance::EntityInstance(): numberOfAttributes{0}{
 }
 void EntityInstance::addAttribute(Pair &insertedPair){
     numberOfAttributes++;
-    //entityAttributeNames.push_back(insertedPair.attributeName());
     entityAttributes.push_back(insertedPair);
 
 }

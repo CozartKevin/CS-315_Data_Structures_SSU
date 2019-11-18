@@ -76,12 +76,8 @@ Entity Entity::intersection(Entity e)
 
         Pair pair("curr_gpa", tempEntity.instances[i+1].getPairGpa());
         tempEntity.instances[i].addAttribute(pair);
-     //   tempEntity.instances[i+1].print();
-       // tempEntity.instances[i].print();
-      //+  getchar();
         intersectedEntity.addObject(tempEntity.instances[i]);
     }
-//intersectedEntity.print();
 
 return intersectedEntity;
 }
@@ -172,8 +168,10 @@ int Entity::getArrayPlace(int j, bool currentOrPrevious){
 
 void Entity::printGPABand()
 {
+    std::cout << '[' << std::endl;
     for(int i = 0; i < 8; i++)
     {
+        std::cout << '[';
         for(int j = 0; j < 8; j++)
         {
             std::cout <<   GPABand[i][j];
@@ -181,9 +179,13 @@ void Entity::printGPABand()
                 std::cout << ',';
             }
         }
-        std::cout <<  std::endl;
+        std::cout << ']';
+        if(i < 7){
+            std::cout << ',' ;
+        }
+        std::cout << std::endl;
     }
-
+    std::cout << ']' << std::endl;
 }
 
 void Entity::outputGPABand(std::ofstream& GPAOutput)
