@@ -57,7 +57,7 @@ public:
     bool isSubtractionOperator() const    { return _symbol == '-'; } 
     bool isModuloOperator() const         { return _symbol == '%'; } 
     bool isDivisionOperator() const       { return _symbol == '/'; } 
-    bool isAVariable() const              { return _symbol >= 'a' && _symbol <= 'z'; } 
+    bool isAVariable() const              { return _symbol >= 'a' && _symbol <= 'z'; }
     char getVariable() const              { return _symbol; }
 
     bool isRomanNumber() const { return _romanNumber.length() > 0; } 

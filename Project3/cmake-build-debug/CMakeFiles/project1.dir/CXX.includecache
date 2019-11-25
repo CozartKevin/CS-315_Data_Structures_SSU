@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/SSU Courses/CS-315/Project3/Token.hpp
+iostream
+-
+string
+-
+
+G:/SSU Courses/CS-315/Project3/assignmentStatementCleanup.cpp
+assignmentStatementCleanup.hpp
+G:/SSU Courses/CS-315/Project3/assignmentStatementCleanup.hpp
+
+G:/SSU Courses/CS-315/Project3/assignmentStatementCleanup.hpp
+vector
+-
+Token.hpp
+G:/SSU Courses/CS-315/Project3/Token.hpp
+

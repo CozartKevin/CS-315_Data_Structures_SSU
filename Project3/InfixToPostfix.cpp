@@ -27,6 +27,7 @@ void InfixToPostfix::convert( std::vector<Token *> &tokens, std::vector<Token *>
     lex = new TokenIterator( tokens );
     root = expr();
     Token *token = lex->next();
+
     if( token == nullptr || ! token->eol() ) {
         std::cout << "Malformed expression. The unexpected token is: ";
         token->print();
