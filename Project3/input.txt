@@ -1,5 +1,6 @@
-a = II + II
 b = XII
 c = MMDCCCLXXXVIII + b
 b = c - b
+
 a = (M + X*II + IV)*II
+

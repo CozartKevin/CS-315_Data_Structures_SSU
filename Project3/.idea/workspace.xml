@@ -57,7 +57,10 @@
       <workItem from="1574554832492" duration="10636000" />
       <workItem from="1574635233587" duration="11347000" />
       <workItem from="1575057863484" duration="14944000" />
-      <workItem from="1575078928114" duration="6524000" />
+      <workItem from="1575078928114" duration="7661000" />
+      <workItem from="1575086907380" duration="493000" />
+      <workItem from="1575147399501" duration="58000" />
+      <workItem from="1575150180854" duration="4571000" />
     </task>
     <servers />
   </component>
@@ -71,11 +74,6 @@
           <url>file://$PROJECT_DIR$/Token.hpp</url>
           <line>6</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>6</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

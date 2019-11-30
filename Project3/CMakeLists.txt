@@ -11,6 +11,6 @@ set(SOURCE_FILES
         InfixToPostfix.hpp
         Token.cpp
         TokenIterator.cpp
-        TokenIterator.hpp numeralParser.cpp numeralParser.hpp assignmentStatementCleanup.cpp assignmentStatementCleanup.hpp Tokenizer.cpp Tokenizer.hpp)
+        TokenIterator.hpp numeralParser.cpp numeralParser.hpp Tokenizer.cpp Tokenizer.hpp)
 
 add_executable(project1 ${SOURCE_FILES})

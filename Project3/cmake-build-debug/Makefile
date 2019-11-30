@@ -232,33 +232,6 @@ Tokenizer.cpp.s:
 	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\Tokenizer.cpp.s
 .PHONY : Tokenizer.cpp.s
 
-assignmentStatementCleanup.obj: assignmentStatementCleanup.cpp.obj
-
-.PHONY : assignmentStatementCleanup.obj
-
-# target to build an object file
-assignmentStatementCleanup.cpp.obj:
-	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.obj
-.PHONY : assignmentStatementCleanup.cpp.obj
-
-assignmentStatementCleanup.i: assignmentStatementCleanup.cpp.i
-
-.PHONY : assignmentStatementCleanup.i
-
-# target to preprocess a source file
-assignmentStatementCleanup.cpp.i:
-	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.i
-.PHONY : assignmentStatementCleanup.cpp.i
-
-assignmentStatementCleanup.s: assignmentStatementCleanup.cpp.s
-
-.PHONY : assignmentStatementCleanup.s
-
-# target to generate assembly for a file
-assignmentStatementCleanup.cpp.s:
-	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.s
-.PHONY : assignmentStatementCleanup.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -334,9 +307,6 @@ help:
 	@echo ... Tokenizer.obj
 	@echo ... Tokenizer.i
 	@echo ... Tokenizer.s
-	@echo ... assignmentStatementCleanup.obj
-	@echo ... assignmentStatementCleanup.i
-	@echo ... assignmentStatementCleanup.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

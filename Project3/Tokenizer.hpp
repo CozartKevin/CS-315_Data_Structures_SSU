@@ -11,14 +11,13 @@
 
 class Tokenizer {
 public:
-    Tokenizer(std::string);
-    Token *getTokenName();
+    explicit Tokenizer(std::string);
     void buildVector(std::vector<Token *> &tokens);
+    void setVariable(std::vector<Token *>& tokenVector, std::vector<Token * > &outputVector);
 private:
     std::string toProcessString;
 
-    bool charOfInterest(char c);
-    std::string parseTagName(char c, std::string tagName, std::istream &inputStream) const;
+
 
 };
 

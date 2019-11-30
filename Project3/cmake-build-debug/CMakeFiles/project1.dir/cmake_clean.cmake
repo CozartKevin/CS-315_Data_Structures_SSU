@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/project1.dir/Token.cpp.obj"
   "CMakeFiles/project1.dir/TokenIterator.cpp.obj"
   "CMakeFiles/project1.dir/Tokenizer.cpp.obj"
-  "CMakeFiles/project1.dir/assignmentStatementCleanup.cpp.obj"
   "CMakeFiles/project1.dir/main.cpp.obj"
   "CMakeFiles/project1.dir/numeralParser.cpp.obj"
   "project1.exe"
