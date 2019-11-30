@@ -205,6 +205,33 @@ TokenIterator.cpp.s:
 	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\TokenIterator.cpp.s
 .PHONY : TokenIterator.cpp.s
 
+Tokenizer.obj: Tokenizer.cpp.obj
+
+.PHONY : Tokenizer.obj
+
+# target to build an object file
+Tokenizer.cpp.obj:
+	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\Tokenizer.cpp.obj
+.PHONY : Tokenizer.cpp.obj
+
+Tokenizer.i: Tokenizer.cpp.i
+
+.PHONY : Tokenizer.i
+
+# target to preprocess a source file
+Tokenizer.cpp.i:
+	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\Tokenizer.cpp.i
+.PHONY : Tokenizer.cpp.i
+
+Tokenizer.s: Tokenizer.cpp.s
+
+.PHONY : Tokenizer.s
+
+# target to generate assembly for a file
+Tokenizer.cpp.s:
+	$(MAKE) -f CMakeFiles\project1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project1.dir\Tokenizer.cpp.s
+.PHONY : Tokenizer.cpp.s
+
 assignmentStatementCleanup.obj: assignmentStatementCleanup.cpp.obj
 
 .PHONY : assignmentStatementCleanup.obj
@@ -304,6 +331,9 @@ help:
 	@echo ... TokenIterator.obj
 	@echo ... TokenIterator.i
 	@echo ... TokenIterator.s
+	@echo ... Tokenizer.obj
+	@echo ... Tokenizer.i
+	@echo ... Tokenizer.s
 	@echo ... assignmentStatementCleanup.obj
 	@echo ... assignmentStatementCleanup.i
 	@echo ... assignmentStatementCleanup.s

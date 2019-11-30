@@ -6,7 +6,7 @@
 #include <stack>
 Token *numeralParser::calculateRomanNumeral(std::vector<Token *> vector)
 {
-    std::cout << "Top CalculateRomanNumeral" << std::endl;
+   // std::cout << "Top CalculateRomanNumeral" << std::endl;
     int tempValue = 0;
     std::stack<int> s;
     for (unsigned int i = 0; i < vector.size(); i++)
@@ -14,17 +14,17 @@ Token *numeralParser::calculateRomanNumeral(std::vector<Token *> vector)
        while(vector[i]->isRomanNumber())
         {
 
-               std::cout << "Before s.push" << std::endl;
+            //   std::cout << "Before s.push" << std::endl;
 
-               std::cout << " Here" << std::endl;
+            //   std::cout << " Here" << std::endl;
                s.push(romanNumeralToDecimal(vector[i]->romanNumber()));
-               std::cout << "after s.push" << std::endl;
+             //  std::cout << "after s.push" << std::endl;
                  if(i+1 == vector.size()){
                      break;
                  }
                 i++;
         }
-        std::cout << "Before get Operand" << std::endl;
+     //   std::cout << "Before get Operand" << std::endl;
         char tempChar = getOperand(vector[i]);
 
         if (tempChar == '+')
@@ -56,6 +56,7 @@ Token *numeralParser::calculateRomanNumeral(std::vector<Token *> vector)
             tempValue = s.top();
             s.pop();
             tempValue = s.top() / tempValue;
+            std::cout << tempValue << " -------------------------------------------------------- AFTER divide OPERATION " << std::endl;
             s.pop();
             s.push(tempValue);
         }
@@ -63,12 +64,13 @@ Token *numeralParser::calculateRomanNumeral(std::vector<Token *> vector)
         {
             tempValue = s.top();
             s.pop();
-            tempValue %= s.top();
+            tempValue = s.top() %= tempValue;
+            std::cout << tempValue << " -------------------------------------------------------- AFTER MOD OPERATION " << std::endl;
             s.pop();
             s.push(tempValue);
         }
     }
-    std::cout << " Near the end" << std::endl;
+   // std::cout << " Near the end" << std::endl;
     int outputDecimal = s.top();
     Token * returnToken = new Token();
          returnToken->romanNumber(decimalToRomanNumeral(outputDecimal));
@@ -78,8 +80,8 @@ Token *numeralParser::calculateRomanNumeral(std::vector<Token *> vector)
 
 int numeralParser::romanValue(char c)
 {
-    std::cout << "Top romanValue" << std::endl;
-    std::cout << c << std::endl;
+   // std::cout << "Top romanValue" << std::endl;
+  //  std::cout << c << std::endl;
     switch (c)
     {
         case 'I': // code to be executed if n = 1;
@@ -103,8 +105,8 @@ int numeralParser::romanValue(char c)
 
 int numeralParser::romanNumeralToDecimal(std::string romanNumeral)
 {
-    std::cout << "Top romanNumeralToDecimal" << std::endl;
-    std::cout << romanNumeral << std::endl;
+    //std::cout << "Top romanNumeralToDecimal" << std::endl;
+   // std::cout << romanNumeral << std::endl;
 
     int Value = 0;
     for(unsigned int i = 0; i < romanNumeral.length(); i++){
@@ -122,9 +124,9 @@ int numeralParser::romanNumeralToDecimal(std::string romanNumeral)
             Value += s1;
         }
     }
-std::cout << " Why you no go here" <<std::endl;
-    std::cout << " Return value before return call" << std::endl;
-    std::cout << Value << std::endl;
+//std::cout << " Why you no go here" <<std::endl;
+    //std::cout << " Return value before return call" << std::endl;
+   // std::cout << Value << std::endl;
     return Value;
 std::cout << " I should never get here" << std::endl;
 }
@@ -136,8 +138,8 @@ char numeralParser::getOperand(Token *curToken)
 
 std::string numeralParser::decimalToRomanNumeral(int decimal) // Leveraged from https://www.geeksforgeeks.org/converting-decimal-number-lying-between-1-to-3999-to-roman-numerals/
 {
-    std::cout << "Top decimalToRomanNumeral" << std::endl;
-    std::cout << decimal << std::endl;
+    //std::cout << "Top decimalToRomanNumeral" << std::endl;
+  //  std::cout << decimal << std::endl;
     std::string output ="";
     int num[] = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
     std::string sym[] = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
@@ -152,7 +154,7 @@ std::string numeralParser::decimalToRomanNumeral(int decimal) // Leveraged from 
         }
         i--;
     }
-    std::cout << "Output" << std::endl;
-    std::cout << output << std::endl;
+   // std::cout << "Output" << std::endl;
+  //  std::cout << output << std::endl;
     return output;
 }

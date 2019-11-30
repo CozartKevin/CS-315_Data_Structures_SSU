@@ -41,6 +41,7 @@ public:
 
     std::string romanNumber() const     { return _romanNumber; }
     void romanNumber( std::string str ) { _romanNumber = str; }
+    void setSymbol(char c){_symbol = c;}
 
     bool eof() const { return _eof; }
     void eof(bool v) { _eof = v;    }

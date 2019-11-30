@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "G:/SSU Courses/CS-315/Project3/InfixToPostfix.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/InfixToPostfix.cpp.obj"
   "G:/SSU Courses/CS-315/Project3/Token.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/Token.cpp.obj"
   "G:/SSU Courses/CS-315/Project3/TokenIterator.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/TokenIterator.cpp.obj"
+  "G:/SSU Courses/CS-315/Project3/Tokenizer.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/Tokenizer.cpp.obj"
   "G:/SSU Courses/CS-315/Project3/assignmentStatementCleanup.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/assignmentStatementCleanup.cpp.obj"
   "G:/SSU Courses/CS-315/Project3/main.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/main.cpp.obj"
   "G:/SSU Courses/CS-315/Project3/numeralParser.cpp" "G:/SSU Courses/CS-315/Project3/cmake-build-debug/CMakeFiles/project1.dir/numeralParser.cpp.obj"

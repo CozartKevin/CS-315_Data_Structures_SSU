@@ -13,6 +13,10 @@ CMakeFiles\project1.dir\TokenIterator.cpp.obj: ..\Token.hpp
 CMakeFiles\project1.dir\TokenIterator.cpp.obj: ..\TokenIterator.cpp
 CMakeFiles\project1.dir\TokenIterator.cpp.obj: ..\TokenIterator.hpp
 
+CMakeFiles\project1.dir\Tokenizer.cpp.obj: ..\Token.hpp
+CMakeFiles\project1.dir\Tokenizer.cpp.obj: ..\Tokenizer.cpp
+CMakeFiles\project1.dir\Tokenizer.cpp.obj: ..\Tokenizer.hpp
+
 CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.obj: ..\Token.hpp
 CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.obj: ..\assignmentStatementCleanup.cpp
 CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.obj: ..\assignmentStatementCleanup.hpp
@@ -20,6 +24,7 @@ CMakeFiles\project1.dir\assignmentStatementCleanup.cpp.obj: ..\assignmentStateme
 CMakeFiles\project1.dir\main.cpp.obj: ..\InfixToPostfix.hpp
 CMakeFiles\project1.dir\main.cpp.obj: ..\Token.hpp
 CMakeFiles\project1.dir\main.cpp.obj: ..\TokenIterator.hpp
+CMakeFiles\project1.dir\main.cpp.obj: ..\Tokenizer.hpp
 CMakeFiles\project1.dir\main.cpp.obj: ..\assignmentStatementCleanup.hpp
 CMakeFiles\project1.dir\main.cpp.obj: ..\main.cpp
 CMakeFiles\project1.dir\main.cpp.obj: ..\numeralParser.hpp

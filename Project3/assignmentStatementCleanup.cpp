@@ -7,15 +7,18 @@
 void assignmentStatementCleanup::setVariable(std::vector<Token *> &tokens, std::vector<Token *> &outputVector)
 {
 
-
-    if(tokens.front()->isAVariable()){
-        do{
-            if(!tokens.front()->isEqualSign())
+   // std::cout << " Top set Variable" << std::endl;
+    if (tokens.front()->isAVariable())
+    {
+        do
+        {
+            if (!tokens.front()->isEqualSign())
             {
+
                 outputVector.push_back(tokens.front());
             }
             tokens.erase(tokens.begin());
-        }while(tokens.front()->isEqualSign());
+        } while (tokens.front()->isEqualSign());
     }
 /*
     for( auto token : outputVector  ) // outputs the output vector after removing variable and equal sign
@@ -26,25 +29,32 @@ void assignmentStatementCleanup::setVariable(std::vector<Token *> &tokens, std::
         token->print();
     std::cout << std::endl;
 8*/
-std::cout << " Before second variable search" << std::endl;
-    for(unsigned int i = 0; i < tokens.size(); i++){
-       // tokens[i]->print();
-      //  std::cout << tokens[i]->getVariable() << std::endl;
-       // std::cout << std::endl;
+  //  std::cout << " Before second variable search" << std::endl;
+    for (unsigned int i = 0; i < tokens.size(); i++)
+    {
+        // tokens[i]->print();
+        //  std::cout << tokens[i]->getVariable() << std::endl;
+        // std::cout << std::endl;
 
-            if(tokens[i]->isAVariable()){
-                tokens[i]->print();
-                std::cout << " is a variable" << std::endl;
-                int j = 0;
-               for(unsigned int j = 0; j < outputVector.size(); j++)
-                std::cout << outputVector[j]->getVariable() << std::endl;
-                std::cout << " is an OUTPUT VECTOR variable" << std::endl;
-                if(tokens[i]->getVariable() == outputVector[j]->getVariable()){
-                    std::cout << " inside match" << std::endl;
+        if (tokens[i]->isAVariable())
+        {
+          //  tokens[i]->print();
+         //   std::cout << " is a variable" << std::endl;
+            int j = 0;
+            for (unsigned int j = 0; j < outputVector.size(); j++)
+            {
+            //    std::cout << outputVector[j]->getVariable();
+            //    std::cout << " is an OUTPUT VECTOR variable" << std::endl;
+                if (tokens[i]->getVariable() == outputVector[j]->getVariable())
+                {
+                 //   std::cout << " inside match" << std::endl;
                     tokens[i] = new Token(outputVector[j]->romanNumber());
-                    std::cout << tokens[i]->romanNumber() << std::endl;
-                }else{
+                   // std::cout << tokens[i]->romanNumber() << std::endl;
+                }
+                else
+                {
 
+                }
             }
         }
     }

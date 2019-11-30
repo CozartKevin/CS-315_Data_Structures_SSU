@@ -102,6 +102,12 @@
 		<Unit filename="G:/SSU Courses/CS-315/Project3/TokenIterator.hpp">
 			<Option target="project1"/>
 		</Unit>
+		<Unit filename="G:/SSU Courses/CS-315/Project3/Tokenizer.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="G:/SSU Courses/CS-315/Project3/Tokenizer.hpp">
+			<Option target="project1"/>
+		</Unit>
 		<Unit filename="G:/SSU Courses/CS-315/Project3/assignmentStatementCleanup.cpp">
 			<Option target="project1"/>
 		</Unit>
