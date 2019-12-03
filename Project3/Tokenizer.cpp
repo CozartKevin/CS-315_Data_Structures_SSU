@@ -2,8 +2,6 @@
 // Created by Raggdoll on 11/29/2019.
 //
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <utility>
 #include "Tokenizer.hpp"
 
@@ -44,8 +42,6 @@ void Tokenizer::buildVector(std::vector<Token *> &tokens)
             if (c == '+' || c == '*' || c == '-' || c == '/' || c == '%' || c == '(' || c == ')' || c == '=' ||
                 (c >= 'a' && c <= 'z'))
             {
-               std::cout << " Symbol tokens are ";
-                std::cout << c << std::endl;
                 tokens.push_back(new Token(c));
             }
         }
@@ -78,16 +74,12 @@ void Tokenizer::setVariable(std::vector<Token *> &tokens, std::vector<Token *> &
     {
         if (tokens[i]->isAVariable())
         {
-            int j = 0;
+
             for (unsigned int j = 0; j < outputVector.size(); j++)
             {
                 if (tokens[i]->getVariable() == outputVector[j]->getVariable())
                 {
                     tokens[i] = new Token(outputVector[j]->romanNumber());
-                }
-                else
-                {
-
                 }
             }
         }
