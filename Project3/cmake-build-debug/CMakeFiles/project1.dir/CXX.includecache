@@ -6,48 +6,16 @@
 
 #IncludeRegexTransform: 
 
-G:/SSU Courses/CS-315/Project3/InfixToPostfix.hpp
-Token.hpp
-G:/SSU Courses/CS-315/Project3/Token.hpp
-TokenIterator.hpp
-G:/SSU Courses/CS-315/Project3/TokenIterator.hpp
-vector
--
-
 G:/SSU Courses/CS-315/Project3/Token.hpp
 iostream
 -
 string
 -
 
-G:/SSU Courses/CS-315/Project3/TokenIterator.hpp
-vector
--
-Token.hpp
-G:/SSU Courses/CS-315/Project3/Token.hpp
-
-G:/SSU Courses/CS-315/Project3/Tokenizer.hpp
-string
--
-fstream
--
-vector
--
-Token.hpp
-G:/SSU Courses/CS-315/Project3/Token.hpp
-
-G:/SSU Courses/CS-315/Project3/main.cpp
-Token.hpp
-G:/SSU Courses/CS-315/Project3/Token.hpp
-Tokenizer.hpp
-G:/SSU Courses/CS-315/Project3/Tokenizer.hpp
-InfixToPostfix.hpp
-G:/SSU Courses/CS-315/Project3/InfixToPostfix.hpp
+G:/SSU Courses/CS-315/Project3/numeralParser.cpp
 numeralParser.hpp
 G:/SSU Courses/CS-315/Project3/numeralParser.hpp
-vector
--
-fstream
+stack
 -
 
 G:/SSU Courses/CS-315/Project3/numeralParser.hpp

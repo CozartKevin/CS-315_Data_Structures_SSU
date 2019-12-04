@@ -32,6 +32,8 @@ int main(int argc, char *argv[])
     {
         Tokenizer Tokenizer(toProcess);
         Tokenizer.buildVector(tokens);
+        if(tokens[0]->isAVariable())
+        {
 
         for( auto token : tokens )
             token->print();
@@ -41,12 +43,22 @@ int main(int argc, char *argv[])
         {
             Tokenizer.setVariable(tokens, outputVector);
 
-            auto *itop = new InfixToPostfix();
-            std::vector<Token *> postfixTokens;
-            itop->convert(tokens, postfixTokens);
+                auto *itop = new InfixToPostfix();
+                std::vector<Token *> postfixTokens;
+                itop->convert(tokens, postfixTokens);
 
-            outputVector[outputVector.size() - 1]->romanNumber(numeralParser::calculateRomanNumeral(
-                    postfixTokens)->romanNumber());
+                outputVector[outputVector.size() - 1]->romanNumber(numeralParser::calculateRomanNumeral(
+                        postfixTokens)->romanNumber());
+        }
+        }else{
+            std::cout << " There is no variable in the assignment statement." << std::endl;
+
+            for( auto token : tokens )
+                token->print();
+            std::cout << std::endl;
+
+            std::cout << "Exiting Program" << std::endl;
+            exit(1);
         }
         tokens.clear();
     }

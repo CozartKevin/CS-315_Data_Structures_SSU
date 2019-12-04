@@ -63,25 +63,36 @@ void Tokenizer::setVariable(std::vector<Token *> &tokens, std::vector<Token *> &
         {
             if (!tokens.front()->isEqualSign())
             {
+
                 outputVector.push_back(tokens.front());
             }
             tokens.erase(tokens.begin());
         } while (tokens.front()->isEqualSign());
-    }
 
-
-    for (unsigned int i = 0; i < tokens.size(); i++)
-    {
-        if (tokens[i]->isAVariable())
+        for (unsigned int i = 0; i < tokens.size(); i++)
         {
-
-            for (unsigned int j = 0; j < outputVector.size(); j++)
+            if (tokens[i]->isAVariable())
             {
-                if (tokens[i]->getVariable() == outputVector[j]->getVariable())
+                char curVar = tokens[i]->getVariable();
+                bool varFound = false;
+                for (unsigned int j = 0; j < outputVector.size(); j++)
                 {
-                    tokens[i] = new Token(outputVector[j]->romanNumber());
+                    if (tokens[i]->getVariable() == outputVector[j]->getVariable())
+                    {
+                        varFound = true;
+                        tokens[i] = new Token(outputVector[j]->romanNumber());
+                    }
+                }
+                if(varFound == false){
+                    std::cout << curVar << " is Undefined" << std::endl;
+                    std::cout << "Exiting Program" << std::endl;
+                    exit(1);
                 }
             }
         }
     }
+
+/*
+
+    */
 }
